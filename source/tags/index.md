@@ -1,5 +1,5 @@
 ---
-title: tags
+title: Tags
 date: 2019-12-25 20:38:34
 type: "tags"
 categories:
@@ -8,3 +8,4 @@ tags:
   - PS3
   - Games
 ---
+

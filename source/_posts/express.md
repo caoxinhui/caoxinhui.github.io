@@ -4,9 +4,9 @@ date: 2019-12-28 17:43:21
 tags:
 ---
 
-根据官方文档
-使用express访问静态文件
-`安装nodemon`
+
+### 安装nodemon 
+
 ```javascript
 var express = require('express')
 var app = express()
@@ -17,7 +17,7 @@ app.listen(3000,function(){
 })
 ```
 
-express实现路由
+### express实现路由
 ```javascript
 var express = require('express')
 var app = express()
@@ -32,30 +32,31 @@ app.listen(3000,function(){
 })
 ```
 
-express路由的正则匹配
+### express路由的正则匹配
 ```javascript
+// 这里的正则匹配与通常的正则匹配不一致，通常的* 匹配{0,n} 因为这里不是正则匹配
+// 但是这里的*匹配任意字符，而* 前面的ab和后面的cd是必须要有的
 app.get('/ab*cd',function(req,res){
     res.send('ab')
 })
 ```
-这里的正则匹配与通常的正则匹配不一致，通常的* 匹配{0,n} 因为这里不是正则匹配
-但是这里的*匹配任意字符，而* 前面的ab和后面的cd是必须要有的
 
-完全的正则匹配，注意和上面的区别
+
 ```javascript
+//完全的正则匹配，注意和上面的区别
 app.get(/a/,function(req,res){
     res.send('anything string has a')
 })
 ```
 
 ```javascript
+// 返回json字符串
+// 同样还有-和.匹配
 app.get('/users/:userId/books/:bookId',function(req,res){
     res.send(req.params)
 })
 ```
-返回json字符串
 
-同样还有-和.匹配
 
 
 ```javascript

@@ -1,14 +1,10 @@
 ---
-title: AnchorNav
+title: 锚点导航
 date: 2019-12-28 17:40:11
 tags: 项目经历
 ---
 ## 分享内容
 
-    首先用纯node.js实现一个文件管理系统
-    用express实现文件管理系统
-    用koa实现文件管理系统
-    比较使用上的体验，自己实现一个express或者一个koa
 
 实现一个 codesandbox
 
@@ -24,16 +20,6 @@ webpack 作用
 
 webpack 可以通过 CLI 指定配置文件,不指定配置文件的情况下，webpack 会自动在当前目录寻找文件名为 webpack.config.js 的配置文件
 
-关于 npm 代理设置(让 npm 走翻墙代理加快海外源下载/发布速度)
-应该是上面设置的代理导致的，以下是删除 npm 代理
-npm config delete proxy
-npm config delete https-proxy
-
-子网隔离
-
-命令行打开浏览器窗口 - windows：start https://www.baidu.com - mac: open https://www.baidu.com - Linux: x-www-browser https://www.baidu.com
-
-使用 & 运算符判断一个数的奇偶性
 
 ```javascript
 //偶数 & 1 = 0
@@ -42,33 +28,7 @@ npm config delete https-proxy
 
 使用 & | 来设计一个权限或者状态等等，
 
-在 vscode 中，当在命令行中打开了，但是找不到文件路径，可以用 code .在编辑器中打开该项目
-
-今天重新用 mac 重新配置了 github，需要在.ssh 文件夹下面新增一个 config 文件，加上一些配置
-
-今天在家打算登陆公司的账号看一下项目，发现本机的账号没有公司的权限，所以应该如何设置使自己能够登上公司的系统，并使用公司的设置呢？将自己本机的 ssh key 增加到公司的 gitlab ssh key 配置里面 打开 ssh 文件快捷键 open ～/.ssh
-安装插件 gitlens 显示当前行的 commit 信息
-
 延展操作符...属于浅拷贝，只会复制一层
-
-<!-- 滴滴前端框架 -->
-
-https://github.com/didi/chameleon
-https://cmljs.org/#/
-https://jakearchibald.com/2016/fun-hacks-faster-content/
-https://github.com/myliang/x-spreadsheet web 版电子表格
-
-- 探索 npm 代理
-
-  发布系统使用的代理
-
-
-  删除 NPM 代理
-
-  ```bash
-    npm config delete proxy
-    npm config delete https-proxy
-  ```
 
 
 - React 黑科技
@@ -94,11 +54,6 @@ https://github.com/myliang/x-spreadsheet web 版电子表格
   }
   ```
 
-今天的锚点导航项目，投机取巧使用了固定值，造成了样式显示的问题。
-项目中，不能信任拿到的值，需要对拿到的值作兼容考虑，有可能拿到的值是老的页面配置。值有可能是不合理的。需要充分考虑兼容情况
-
-scroll-behavior: smooth
-css 控制滚动动画
 
 锚点导航锚不中的问题：今天又迎来了新进展
 

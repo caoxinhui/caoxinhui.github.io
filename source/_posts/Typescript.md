@@ -1,7 +1,7 @@
 ---
 title: Typescript
 date: 2019-12-28 17:52:28
-tags:
+tags: Typescript
 ---
 
 ## Typescript 学习教程

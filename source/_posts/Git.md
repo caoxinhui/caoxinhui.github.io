@@ -5,6 +5,22 @@ tags: Git
 ---
 
 
+### 代码自动格式化
+```json
+// 安装husky，prettier,lint-staged
+"husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write \"src/**/*.{js,jsx}\"",
+      "git add"
+    ]
+  }
+```
+
 ### 本机权限问题
 `git pull` 的时候 ` error: cannot open .git/FETCH_HEAD: Permission denied ` ,因为没有当前目录的修改权限
 `sudo chmod -R g+w .git ` 修改目录权限。即可正常 `git pull`
@@ -52,12 +68,12 @@ tags: Git
 ### 新建分支
 `git branch testing 新建testing分支 在当前commit对象上新建一个分支指针，不会自动切换到该分支中去`
 `git checkout -b iss53 新建分支并切换到该分支`
-
+`git push -u origin 分支名` 提交新建的分支到远程
 `git fetch origin 同步远程服务器上的数据到本地。`
 
 
 ### 删除远程分支
-`git push origin :[分支名] 删除远程分支`
+`git push origin :[分支名]` 删除远程分支
 
 <!--SSH公钥默认存储在账户的主目录下的~/.ssh目录 -->
 ### ssh key
@@ -74,10 +90,15 @@ git config --global user.email "johnode@example.com"
 
 ### 合并commit
 `git` 修改多个`commit`为一个`commit`
-`git rebase -i HEAD~3`
-后面的多个`commit pick`改为`s`
-`esc`键退出编辑
-`:wq`退出
+1. 从HEAD版本开始往过去数3个版本 `git rebase -i HEAD~3` 
+或者，指明要合并的版本之前的版本号 `git rebase -i commitId（不参与合并）`
+2. 后面的多个`commit pick`改为`s`
+3. `esc`键退出编辑
+4. `:wq`退出
+5. `git add .`
+6. `git rebase --continue` 
+7. `git rebase --abort` 放弃压缩
+
 
 
 
@@ -119,6 +140,10 @@ git merge abort 取消合并
 
 
 
+
+### Git撤销中间某次提交
+
+
 ### 不常用Git命令
 
 
@@ -141,3 +166,9 @@ git merge abort 取消合并
 `git config --global alias.last 'log -1 HEAD'`
 `git branch --merged查看哪些分支已被并入当前分支`
 `git branch --no-merged查看尚未合并的工作。`
+
+### Git rebase 变基
+
+
+
+

@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="本机权限问题git pull 的时候 error: cannot open .git&#x2F;FETCH_HEAD: Permission denied ,因为没有当前目录的修改权限sudo chmod -R g+w .git 修改目录权限。即可正常 git pull git表情提示符全局安装git-cz 或者 gitmojinpm install -g git-cznpm i -g gitmoji-cl">
+<meta name="description" content="代码自动格式化123456789101112&#x2F;&#x2F; 安装husky，prettier,lint-staged&quot;husky&quot;: &amp;#123;    &quot;hooks&quot;: &amp;#123;      &quot;pre-commit&quot;: &quot;lint-staged&quot;    &amp;#125;  &amp;#125;,  &quot;lint-staged&quot;: &amp;#123;    &quot;*.&amp;#123;js,jsx&amp;#125;&quot;: [      &quot;pr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git">
 <meta property="og:url" content="https://caoxinhui.github.io/2019/12/28/Git/index.html">
 <meta property="og:site_name" content="caoxinhui">
-<meta property="og:description" content="本机权限问题git pull 的时候 error: cannot open .git&#x2F;FETCH_HEAD: Permission denied ,因为没有当前目录的修改权限sudo chmod -R g+w .git 修改目录权限。即可正常 git pull git表情提示符全局安装git-cz 或者 gitmojinpm install -g git-cznpm i -g gitmoji-cl">
+<meta property="og:description" content="代码自动格式化123456789101112&#x2F;&#x2F; 安装husky，prettier,lint-staged&quot;husky&quot;: &amp;#123;    &quot;hooks&quot;: &amp;#123;      &quot;pre-commit&quot;: &quot;lint-staged&quot;    &amp;#125;  &amp;#125;,  &quot;lint-staged&quot;: &amp;#123;    &quot;*.&amp;#123;js,jsx&amp;#125;&quot;: [      &quot;pr">
 <meta property="article:published_time" content="2019-12-28T09:24:28.000Z">
-<meta property="article:modified_time" content="2019-12-28T13:19:57.976Z">
+<meta property="article:modified_time" content="2019-12-29T08:33:35.598Z">
 <meta property="article:author" content="caoxinhui">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
@@ -328,7 +328,9 @@
       
 
       
-        <h3 id="本机权限问题"><a href="#本机权限问题" class="headerlink" title="本机权限问题"></a>本机权限问题</h3><p><code>git pull</code> 的时候 <code>error: cannot open .git/FETCH_HEAD: Permission denied</code> ,因为没有当前目录的修改权限<br><code>sudo chmod -R g+w .git</code> 修改目录权限。即可正常 <code>git pull</code></p>
+        <h3 id="代码自动格式化"><a href="#代码自动格式化" class="headerlink" title="代码自动格式化"></a>代码自动格式化</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 安装husky，prettier,lint-staged</span></span><br><span class="line">"husky": &#123;</span><br><span class="line">    "hooks": &#123;</span><br><span class="line">      "pre-commit": "lint-staged"</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  "lint-staged": &#123;</span><br><span class="line">    "*.&#123;js,jsx&#125;": [</span><br><span class="line">      "prettier --write \"src/**/*.&#123;js,jsx&#125;\"",</span><br><span class="line">      <span class="string">"git add"</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="本机权限问题"><a href="#本机权限问题" class="headerlink" title="本机权限问题"></a>本机权限问题</h3><p><code>git pull</code> 的时候 <code>error: cannot open .git/FETCH_HEAD: Permission denied</code> ,因为没有当前目录的修改权限<br><code>sudo chmod -R g+w .git</code> 修改目录权限。即可正常 <code>git pull</code></p>
 <h3 id="git表情提示符"><a href="#git表情提示符" class="headerlink" title="git表情提示符"></a>git表情提示符</h3><p>全局安装<code>git-cz</code> 或者 <code>gitmoji</code><br><code>npm install -g git-cz</code><br><code>npm i -g gitmoji-cli</code></p>
 <h3 id="撤销错误的提交"><a href="#撤销错误的提交" class="headerlink" title="撤销错误的提交"></a>撤销错误的提交</h3><p><code>git reset --soft HEAD^</code> 撤销commit，并保留更改<br><code>git push origin &lt;分支名&gt; --force</code></p>
 <h3 id="清理分支"><a href="#清理分支" class="headerlink" title="清理分支"></a>清理分支</h3><p><code>git remote prune origin</code> 清理远程分支，把本地不存在的远程分支删除，同时<code>git branch -a</code> 拉到的也是远程最新的分支，不会保留已删除的远程的分支<br><code>git remote show origin</code>，可以查看<code>remote</code>地址，远程分支，还有本地分支与之相对应关系等信息。</p>
@@ -339,13 +341,21 @@
 <h3 id="git撤销操作"><a href="#git撤销操作" class="headerlink" title="git撤销操作"></a>git撤销操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 只会产生一次提交，第二次提交修正了第一次的提交内容 --&gt;</span><br><span class="line">&#96;git commit -m &#39;initial commit&#39;&#96;</span><br><span class="line">&#96;git add forgotten_file&#96;</span><br><span class="line">&#96;git commit --amend&#96;</span><br></pre></td></tr></table></figure>
 
 
-<h3 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h3><p><code>git branch testing 新建testing分支 在当前commit对象上新建一个分支指针，不会自动切换到该分支中去</code><br><code>git checkout -b iss53 新建分支并切换到该分支</code></p>
-<p><code>git fetch origin 同步远程服务器上的数据到本地。</code></p>
-<h3 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h3><p><code>git push origin :[分支名] 删除远程分支</code></p>
+<h3 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h3><p><code>git branch testing 新建testing分支 在当前commit对象上新建一个分支指针，不会自动切换到该分支中去</code><br><code>git checkout -b iss53 新建分支并切换到该分支</code><br><code>git push -u origin 分支名</code> 提交新建的分支到远程<br><code>git fetch origin 同步远程服务器上的数据到本地。</code></p>
+<h3 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h3><p><code>git push origin :[分支名]</code> 删除远程分支</p>
 <!--SSH公钥默认存储在账户的主目录下的~/.ssh目录 -->
 <h3 id="ssh-key"><a href="#ssh-key" class="headerlink" title="ssh key"></a>ssh key</h3><p><code>cd ~/.ssh</code><br>查找有没有<code>something</code>和<code>something.pub</code>来命名的一对文件，这个<code>something</code>通常是<code>id_dsa</code> 或 <code>id_rsa</code>。<br>有<code>.pub</code>后缀的文件就是公钥，另一个文件是私钥。若<code>.ssh</code>目录没有，可以用<code>ssh-keygen</code>来创建。</p>
 <h3 id="设置git用户名和密码"><a href="#设置git用户名和密码" class="headerlink" title="设置git用户名和密码"></a>设置git用户名和密码</h3><p>git config –global user.name “your name”<br>git config –global user.email “<a href="mailto:johnode@example.com">johnode@example.com</a>“</p>
-<h3 id="合并commit"><a href="#合并commit" class="headerlink" title="合并commit"></a>合并commit</h3><p><code>git</code> 修改多个<code>commit</code>为一个<code>commit</code><br><code>git rebase -i HEAD~3</code><br>后面的多个<code>commit pick</code>改为<code>s</code><br><code>esc</code>键退出编辑<br><code>:wq</code>退出</p>
+<h3 id="合并commit"><a href="#合并commit" class="headerlink" title="合并commit"></a>合并commit</h3><p><code>git</code> 修改多个<code>commit</code>为一个<code>commit</code></p>
+<ol>
+<li>从HEAD版本开始往过去数3个版本 <code>git rebase -i HEAD~3</code><br>或者，指明要合并的版本之前的版本号 <code>git rebase -i commitId（不参与合并）</code></li>
+<li>后面的多个<code>commit pick</code>改为<code>s</code></li>
+<li><code>esc</code>键退出编辑</li>
+<li><code>:wq</code>退出</li>
+<li><code>git add .</code></li>
+<li><code>git rebase --continue</code> </li>
+<li><code>git rebase --abort</code> 放弃压缩</li>
+</ol>
 <h3 id="撤销改动"><a href="#撤销改动" class="headerlink" title="撤销改动"></a>撤销改动</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout ./publish</span><br><span class="line">git clean -f ./publish</span><br></pre></td></tr></table></figure>
 
 <h3 id="merge-分支"><a href="#merge-分支" class="headerlink" title="merge 分支"></a>merge 分支</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// merge 代码用</span></span><br><span class="line">git merge 分支名 --squash</span><br><span class="line">git merge abort 取消合并</span><br></pre></td></tr></table></figure>
@@ -362,8 +372,8 @@
 <li><code>git remote add origin https 地址</code></li>
 <li><code>git push -u origin master</code></li>
 </ol>
-<h3 id="不常用Git命令"><a href="#不常用Git命令" class="headerlink" title="不常用Git命令"></a>不常用Git命令</h3><p><code>git add</code> 暂存某个文件后，取消暂存，<code>git reset HEAD</code> 被暂存的文件名。<br>如果觉得某个文件的修改没有必要，通过<code>git checkout -- 文件名</code> 取消修改<br><code>git remote</code>查看当前配置有哪些远程仓库，<code>git remote -v</code> 显示对应的克隆地址。<br><code>git fetch origin</code>会抓取从你上次克隆以来别人上传到此远程仓库中的所有更新<br><code>git remote rename</code>修改某个远程仓库在本地的简称<br><code>git remote rm</code>分支名 移除对应的远端仓库。<br><code>git tag</code>列出现有标签<br><code>git tag -l &#39;v1.4.2.*&#39;</code>我们可以用特定的搜索模式列出符合条件的标签。<br>创建一个含附注类型的标签，用 <code>-a</code> 指定标签名， <code>-m</code> 指定了对应的标签说明<br><code>git tag -a v1.4 -m</code><br><code>git show v1.4</code>查看相应标签的版本信息<br><code>git tag v1.4-lw</code><br><code>git show v1.4-lw</code><br><code>git push origin v1.5</code>分享标签，分享标签到远端仓库<br><code>git push origin --tags</code>推送所有本地新增的标签<br><code>git config --global alias.co checkout 设置别名</code><br><code>git config --global alias.last &#39;log -1 HEAD&#39;</code><br><code>git branch --merged查看哪些分支已被并入当前分支</code><br><code>git branch --no-merged查看尚未合并的工作。</code></p>
-
+<h3 id="Git撤销中间某次提交"><a href="#Git撤销中间某次提交" class="headerlink" title="Git撤销中间某次提交"></a>Git撤销中间某次提交</h3><h3 id="不常用Git命令"><a href="#不常用Git命令" class="headerlink" title="不常用Git命令"></a>不常用Git命令</h3><p><code>git add</code> 暂存某个文件后，取消暂存，<code>git reset HEAD</code> 被暂存的文件名。<br>如果觉得某个文件的修改没有必要，通过<code>git checkout -- 文件名</code> 取消修改<br><code>git remote</code>查看当前配置有哪些远程仓库，<code>git remote -v</code> 显示对应的克隆地址。<br><code>git fetch origin</code>会抓取从你上次克隆以来别人上传到此远程仓库中的所有更新<br><code>git remote rename</code>修改某个远程仓库在本地的简称<br><code>git remote rm</code>分支名 移除对应的远端仓库。<br><code>git tag</code>列出现有标签<br><code>git tag -l &#39;v1.4.2.*&#39;</code>我们可以用特定的搜索模式列出符合条件的标签。<br>创建一个含附注类型的标签，用 <code>-a</code> 指定标签名， <code>-m</code> 指定了对应的标签说明<br><code>git tag -a v1.4 -m</code><br><code>git show v1.4</code>查看相应标签的版本信息<br><code>git tag v1.4-lw</code><br><code>git show v1.4-lw</code><br><code>git push origin v1.5</code>分享标签，分享标签到远端仓库<br><code>git push origin --tags</code>推送所有本地新增的标签<br><code>git config --global alias.co checkout 设置别名</code><br><code>git config --global alias.last &#39;log -1 HEAD&#39;</code><br><code>git branch --merged查看哪些分支已被并入当前分支</code><br><code>git branch --no-merged查看尚未合并的工作。</code></p>
+<h3 id="Git-rebase-变基"><a href="#Git-rebase-变基" class="headerlink" title="Git rebase 变基"></a>Git rebase 变基</h3>
       
     </div>
     
@@ -492,7 +502,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -505,7 +515,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -554,7 +564,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#本机权限问题"><span class="nav-number">1.</span> <span class="nav-text">本机权限问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git表情提示符"><span class="nav-number">2.</span> <span class="nav-text">git表情提示符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销错误的提交"><span class="nav-number">3.</span> <span class="nav-text">撤销错误的提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清理分支"><span class="nav-number">4.</span> <span class="nav-text">清理分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改git的用户名和密码"><span class="nav-number">5.</span> <span class="nav-text">修改git的用户名和密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回退到之前的版本号"><span class="nav-number">6.</span> <span class="nav-text">回退到之前的版本号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除远程分支-不需要先切换到其他分支"><span class="nav-number">7.</span> <span class="nav-text">删除远程分支(不需要先切换到其他分支)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除本地分支"><span class="nav-number">8.</span> <span class="nav-text">删除本地分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git撤销操作"><span class="nav-number">9.</span> <span class="nav-text">git撤销操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建分支"><span class="nav-number">10.</span> <span class="nav-text">新建分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除远程分支"><span class="nav-number">11.</span> <span class="nav-text">删除远程分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh-key"><span class="nav-number">12.</span> <span class="nav-text">ssh key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置git用户名和密码"><span class="nav-number">13.</span> <span class="nav-text">设置git用户名和密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并commit"><span class="nav-number">14.</span> <span class="nav-text">合并commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销改动"><span class="nav-number">15.</span> <span class="nav-text">撤销改动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#merge-分支"><span class="nav-number">16.</span> <span class="nav-text">merge 分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销已经提交的commit"><span class="nav-number">17.</span> <span class="nav-text">撤销已经提交的commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rn-项目操作命令"><span class="nav-number">18.</span> <span class="nav-text">rn 项目操作命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关联本地项目与GitHub"><span class="nav-number">19.</span> <span class="nav-text">关联本地项目与GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不常用Git命令"><span class="nav-number">20.</span> <span class="nav-text">不常用Git命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码自动格式化"><span class="nav-number">1.</span> <span class="nav-text">代码自动格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本机权限问题"><span class="nav-number">2.</span> <span class="nav-text">本机权限问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git表情提示符"><span class="nav-number">3.</span> <span class="nav-text">git表情提示符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销错误的提交"><span class="nav-number">4.</span> <span class="nav-text">撤销错误的提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清理分支"><span class="nav-number">5.</span> <span class="nav-text">清理分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改git的用户名和密码"><span class="nav-number">6.</span> <span class="nav-text">修改git的用户名和密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回退到之前的版本号"><span class="nav-number">7.</span> <span class="nav-text">回退到之前的版本号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除远程分支-不需要先切换到其他分支"><span class="nav-number">8.</span> <span class="nav-text">删除远程分支(不需要先切换到其他分支)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除本地分支"><span class="nav-number">9.</span> <span class="nav-text">删除本地分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git撤销操作"><span class="nav-number">10.</span> <span class="nav-text">git撤销操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建分支"><span class="nav-number">11.</span> <span class="nav-text">新建分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除远程分支"><span class="nav-number">12.</span> <span class="nav-text">删除远程分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh-key"><span class="nav-number">13.</span> <span class="nav-text">ssh key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置git用户名和密码"><span class="nav-number">14.</span> <span class="nav-text">设置git用户名和密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并commit"><span class="nav-number">15.</span> <span class="nav-text">合并commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销改动"><span class="nav-number">16.</span> <span class="nav-text">撤销改动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#merge-分支"><span class="nav-number">17.</span> <span class="nav-text">merge 分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销已经提交的commit"><span class="nav-number">18.</span> <span class="nav-text">撤销已经提交的commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rn-项目操作命令"><span class="nav-number">19.</span> <span class="nav-text">rn 项目操作命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关联本地项目与GitHub"><span class="nav-number">20.</span> <span class="nav-text">关联本地项目与GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git撤销中间某次提交"><span class="nav-number">21.</span> <span class="nav-text">Git撤销中间某次提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不常用Git命令"><span class="nav-number">22.</span> <span class="nav-text">不常用Git命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-rebase-变基"><span class="nav-number">23.</span> <span class="nav-text">Git rebase 变基</span></a></li></ol></div>
             
 
           </div>

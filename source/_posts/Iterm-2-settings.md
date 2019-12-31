@@ -51,3 +51,7 @@ plugins=(
   )
 source ~/.zshrc
 ```
+
+
+### code . 自动在新窗口中打开项目
+`shift + command + p`  -> shell command  -> install 'code' command in PATH

@@ -34,3 +34,17 @@ tags: SSR
 1. SEO
   爬虫不能理解JavaScript，它们只认识 HTML，不做服务端渲染，爬虫看到的是空白页面
 2. 更好的首屏性能，不需要提前先下载一堆 CSS 和 JS 后才看到页面
+
+
+### React 服务端渲染原理
+> React 的虚拟 DOM 以对象树的形式存在内存中，并且可以在任何支持JavaScript的环境中生成，所以可以在浏览器和Node中生成。这为前后端同构提供了先决条件。
+
+  #### 虚拟dom 在前后端都是以对象树的形式存在，但是展露原型的方式不一样。
+
+- 虚拟dom -- client --> DOM Element
+  React提供ReactDOMServer.renderToString和ReactDOMServer.renderToStaticMarkup 可将其渲染为HTML字符串。
+- 虚拟dom -- server --> HTML String 
+  在浏览器，React通过ReactDOM的render方法将虚拟dom渲染到真实的dom树上，生成网页
+
+
+renderToString，会为组件增加checksum，react在客户端通过checksum判断是否需要重新render，相同则不重新render，省略创建dom和挂载dom的过程，接着触发componentDidMount等事件来处理服务端上的未尽事宜（事件绑定等），从而加快了交互时间。不同时，组件将客户端上重新挂载render

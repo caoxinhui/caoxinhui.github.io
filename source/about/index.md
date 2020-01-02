@@ -45,5 +45,5 @@ type: "about"
 ## 自我评价
 1. 本人做事认真，对待工作负责，责任心较强，保持学习
 2. 有较强的学习能力和团队协作精神，能够很快适应工作环境
-3. [twitter caoxinhui](https://twitter.com/caoxinhui)
+3. [twitter caoxinhui](https://twitter.com/caoxinhui1)
 

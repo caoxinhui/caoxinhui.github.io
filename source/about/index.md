@@ -9,8 +9,7 @@ type: "about"
 ## 个人信息
 | 姓名：曹昕卉 | 出生年月： 1992/12 |
 | ------ |------ |
-| 邮箱：caoxinhui1111@163.com | 最高学历：硕士 |
-| 邮箱：caoxinhui1204@gmail.com | 最高学历：硕士 |
+| 邮箱：caoxinhui1111@163.com、caoxinhui1204@gmail.com | 最高学历：硕士 |
 | 职位：前端开发工程师 | 博客：[技术博客](https://caoxinhui.github.io)|
 
 

@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1234567891011121314151617181920212223&#x2F;&#x2F; 通过props传递值export default class App extends React.Component &amp;#123;  render() &amp;#123;    return &lt;Toolbar theme&#x3D;&quot;dark&quot;&#x2F;&gt;  &amp;#125;&amp;#125;function Toolbar(props)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React-IMVC">
+<meta property="og:url" content="https://caoxinhui.github.io/2019/12/28/React-IMVC/index.html">
+<meta property="og:site_name" content="caoxinhui">
+<meta property="og:description" content="1234567891011121314151617181920212223&#x2F;&#x2F; 通过props传递值export default class App extends React.Component &amp;#123;  render() &amp;#123;    return &lt;Toolbar theme&#x3D;&quot;dark&quot;&#x2F;&gt;  &amp;#125;&amp;#125;function Toolbar(props)">
+<meta property="article:published_time" content="2019-12-28T09:41:18.000Z">
+<meta property="article:modified_time" content="2020-01-02T13:55:25.964Z">
+<meta property="article:author" content="caoxinhui">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://caoxinhui.github.io/2019/12/28/React-IMVC/"/>
+
+
+
+
+
+  <title>React-IMVC | caoxinhui</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://caoxinhui.github.io" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">caoxinhui</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2019/12/28/React-IMVC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="caoxinhui">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="caoxinhui">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">React-IMVC</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-28T17:41:18+08:00">
+                2019-12-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过props传递值</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Toolbar</span> <span class="attr">theme</span>=<span class="string">"dark"</span>/&gt;</span></span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml">function Toolbar(props) &#123;</span></span><br><span class="line"><span class="xml">  return (</span></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;ThemeButton theme=&#123;props.theme&#125;/&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line">class ThemeButton extends React.Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return &lt;Button theme=&#123;this.props.theme&#125;/&gt;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Button extends React.Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return &lt;input type="button" value="按钮" theme=&#123;this.props.theme&#125;/&gt;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用context传递值</span></span><br><span class="line"><span class="keyword">const</span> ThemeContext = React.createContext(&#123;</span><br><span class="line">  background: <span class="string">'red'</span>,</span><br><span class="line">  color: <span class="string">'white'</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render () &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;ThemeContext.Provider value=&#123;&#123;<span class="attr">background</span>: <span class="string">'green'</span>, <span class="attr">color</span>: <span class="string">'white'</span>&#125;&#125;&gt;</span><br><span class="line">        &lt;Header /&gt;</span><br><span class="line">      &lt;<span class="regexp">/ThemeContext.Provider&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">class Header extends React.Component &#123;</span></span><br><span class="line"><span class="regexp">  render () &#123;</span></span><br><span class="line"><span class="regexp">    return (</span></span><br><span class="line"><span class="regexp">      &lt;Title&gt;Hello React Context API&lt;/</span>Title&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Title</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render () &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;ThemeContext.Consumer&gt;</span><br><span class="line">        &#123;context =&gt; (</span><br><span class="line">          &lt;h1 style=&#123;&#123;<span class="attr">background</span>: context.background, <span class="attr">color</span>: context.color&#125;&#125;&gt;</span><br><span class="line">            &#123;<span class="keyword">this</span>.props.children&#125;</span><br><span class="line">          &lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">        )&#125;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>ThemeContext.Consumer&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 高阶组件由来</span></span><br><span class="line"><span class="comment">// react-imvc 高阶组件源码</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * connect 是一个高阶函数，第一次调用时接受 selector 函数作为参数，返回 withData 函数。</span></span><br><span class="line"><span class="comment"> * withData 函数接受一个 React 组件作为参数，返回新的 React 组件。withData 会将 selector 函数返回的数据，作为 props 传入新的 React 组件</span></span><br><span class="line"><span class="comment"> * selector(&#123; state, handlers, actions &#125;) 函数将得到一个 data 参数，其中包含三个字段 state, handlers, acitons，分别对应 controller 里的 global state, global handlers 和 actions 对象。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> GlobalContext <span class="keyword">from</span> <span class="string">'../context'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> returnNull = <span class="function"><span class="params">()</span> =&gt;</span> <span class="literal">null</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (selector = returnNull) =&gt; <span class="function"><span class="params">InputComponent</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">Connector</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> (</span><br><span class="line">			&lt;GlobalContext.Consumer&gt;</span><br><span class="line">				&#123;(&#123; state, handlers, actions &#125;) =&gt; &#123;</span><br><span class="line">					<span class="keyword">return</span> (</span><br><span class="line">						&lt;InputComponent</span><br><span class="line">							&#123;...props&#125;</span><br><span class="line">							&#123;...selector(&#123; state, handlers, actions, props &#125;)&#125;</span><br><span class="line">						/&gt;</span><br><span class="line">					)</span><br><span class="line">				&#125;&#125;</span><br><span class="line">			&lt;<span class="regexp">/GlobalContext.Consumer&gt;</span></span><br><span class="line"><span class="regexp">		)</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>了解同构</p>
+<p>app.config.js 的作用是什么</p>
+<p>Pageheader 在 layout 里面用到了，然后在中间件也用到了，为何，传递的 headerIdentify 有什么用</p>
+<p>dangerouslySetInnerHTML，为何引入 style 组件也会用 dangerouslySetInnerHTML</p>
+<p>如果一个方法返回了一个 HTML 字符串，包括<br/>等，这个方法放在正常的 HTML 页面里面，它是会换行的，但是 React 不会，因为 react 不会自动帮你解析 html 代码，因为不合时宜的 innerHTML 可能会导致跨站脚本攻击 XSS。dangerouslySetInnerHTML 这个 prop 的命名是故意这么设计的，以此来警告，它的 prop 值（ 一个对象而不是字符串 ）应该被用来表明净化后的数据。这么做的意义在于，{__html:…} 背后的目的是表明它会被当成 “type/taint” 类型处理。 这种包裹对象，可以通过方法调用返回净化后的数据，随后这种标记过的数据可以</p>
+<p>如果在 react 里面不使用 dangerouslySetInnerHTML，他就是 type/taint 类型的，不会执行。加入 dangerouslySetInnerHTML 是可以执行 HTML 或者 JavaScript，HTML，CSS 脚本</p>
+<p>Layout 传入的 props 是通过中间件 res.locals 传进 props 的</p>
+<p>在外层 view 中传递值给内层引用的小组件。例如</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">View</span>(<span class="params">&#123; state, handlers, actions &#125;</span>) </span>&#123;&#125;</span><br><span class="line">&lt;Main state=&#123;state&#125; handlers=&#123;handlers&#125; /&gt;;</span><br></pre></td></tr></table></figure>
+
+<p>内层小组件拿到这些 state 和 handlers 的方式<br>如果是<code>function 组件</code><br><code>function({state,handlers,actions}){}</code><br>如果是<code>class 组件</code><br><code>this.props.handlers,this.props.state,this.props.actions</code></p>
+<p>imvc 中 export default View({state,handlers}),传入 state，handlers</p>
+<p>待学习网站<br><a href="https://philippspiess.com/scheduling-in-react/" target="_blank" rel="noopener">https://philippspiess.com/scheduling-in-react/</a><br><a href="http://www.cs.kent.edu/~jmaletic/papers/ICPC2010-CamelCaseUnderScoreClouds.pdf" target="_blank" rel="noopener">http://www.cs.kent.edu/~jmaletic/papers/ICPC2010-CamelCaseUnderScoreClouds.pdf</a><br><a href="http://paultaylor.eu/~pt/prafm/" target="_blank" rel="noopener">http://paultaylor.eu/~pt/prafm/</a><br><a href="http://lucifier129.github.io/webppt/07.html#/" target="_blank" rel="noopener">http://lucifier129.github.io/webppt/07.html#/</a><br><a href="https://overreacted.io/a-complete-guide-to-useeffect/" target="_blank" rel="noopener">https://overreacted.io/a-complete-guide-to-useeffect/</a> useEffect 的完全指南<br><a href="https://addyosmani.com/blog/react-window/" target="_blank" rel="noopener">https://addyosmani.com/blog/react-window/</a><br><a href="https://www.youtube.com/watch?v=UNMkLHzofQI" target="_blank" rel="noopener">https://www.youtube.com/watch?v=UNMkLHzofQI</a><br><a href="https://zhuanlan.zhihu.com/p/57131643" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/57131643</a><br><a href="https://developers.google.com/web/updates/2019/03/kv-storage" target="_blank" rel="noopener">https://developers.google.com/web/updates/2019/03/kv-storage</a><br><a href="http://lucifier129.github.io/webppt/10.html#/3" target="_blank" rel="noopener">http://lucifier129.github.io/webppt/10.html#/3</a> graphql 分享</p>
+<p><a href="https://github.com/Lucifier129/static-server-toy" target="_blank" rel="noopener">https://github.com/Lucifier129/static-server-toy</a><br><a href="https://overreacted.io/writing-resilient-components/" target="_blank" rel="noopener">https://overreacted.io/writing-resilient-components/</a></p>
+<p>编程面试题之最大并行任务池：1）给定一个 taskList 和 poolSize；2）task 是异步的，返回 promise；3）task 不会失败。要求：1）同时不能有超过 poolSize 的 task 在执行；2）所有 taskList 里的 task 最终都执行完毕</p>
+<p>如何实现一个 useInterval(f, interval)，只在 document.hidden 为 false 时，按照 interval 指定的间隔，定时调用 f ？<br>先实现 useVisibility，获取到 document 是否可见<br>再基于 useVisibility，实现 useInterval，只在 visibility 为 true 时启动一个定时器<br>visibility 作为 useEffect 的 dependencies，当它变化时， cleanup 先被执行，清理掉上次的定时器，然后注册的 effect 函数里，发现 visibility 为 false 不去启动定时器<br>在页面可见状态下，每隔 10 秒去获取一下消息数量。<br>详见图片 1.png 2.png 3.png</p>
+<p><a href="https://overreacted.io/making-setinterval-declarative-with-react-hooks/" target="_blank" rel="noopener">https://overreacted.io/making-setinterval-declarative-with-react-hooks/</a></p>
+<p>学习 Rxjs</p>
+<p><a href="https://dev.to/jfet97/the-shortest-way-to-conditional-insert-properties-into-an-object-literal-4ag7" target="_blank" rel="noopener">https://dev.to/jfet97/the-shortest-way-to-conditional-insert-properties-into-an-object-literal-4ag7</a><br><a href="https://gist.github.com/Lucifier129/526d5533128813008059a53fd1199328" target="_blank" rel="noopener">https://gist.github.com/Lucifier129/526d5533128813008059a53fd1199328</a><br>codesandbox 添加高阶函数例子，ref 例子，context 例子，熟悉 react 高阶属性</p>
+<p>学习 redux，学习 redux 源码<br><a href="https://github.com/ecmadao/Coding-Guide/blob/master/Notes/React/Redux/Redux%E5%85%A5%E5%9D%91%E8%BF%9B%E9%98%B6-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.md#%E6%9F%AF%E9%87%8C%E5%8C%96%E5%87%BD%E6%95%B0curry" target="_blank" rel="noopener">redux</a><br>了解 redux 思想，并了解 react-imvc 实现过程</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = &#123;</span><br><span class="line"><span class="string">'2'</span>:<span class="number">3</span>,</span><br><span class="line"><span class="string">'3'</span>:<span class="number">4</span>,</span><br><span class="line">length:<span class="number">2</span>,</span><br><span class="line">splice:<span class="built_in">Array</span>.prototype.splice,</span><br><span class="line">push:<span class="built_in">Array</span>.prototype.push</span><br><span class="line">&#125;</span><br><span class="line">a.push(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> withData = connect(<span class="function">(<span class="params">&#123; state &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    content: state.loadingText</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> withData(Loading);</span><br><span class="line"></span><br><span class="line">connect(selector)(ReactComponent);</span><br><span class="line"><span class="comment">// connect 是一个高阶函数，第一次调用时接受 selector 函数作为参数，返回 withData 函数。</span></span><br><span class="line"><span class="comment">// withData 函数接受一个 React 组件作为参数，返回新的 React 组件</span></span><br><span class="line"><span class="comment">// withData 会将 selector 函数返回的数据，作为 props 传入新的 React 组件。</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.defineProperties(exports, &#123;</span><br><span class="line">  For: &#123; <span class="attr">enumerable</span>: <span class="literal">true</span>, <span class="attr">value</span>: For &#125;,</span><br><span class="line">  __esModule: &#123; <span class="attr">value</span>: <span class="literal">true</span> &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">Object</span>.defineProperties(obj, props);</span><br><span class="line"><span class="comment">// __esModule表示引入的是es6模块</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, prop, descriptor);</span><br></pre></td></tr></table></figure>
+
+<p>为什么通常在发送数据埋点请求的时候使用的是 1x1 像素的透明 gif 图片</p>
+<p>react-imvc 服务端渲染，服务端请求到的数据，都放到 initialState 里面</p>
+<p>中间件 res.locals 中挂载的内容均可用于 Layout 中的 props</p>
+<p>取消浏览器记录滚动条位置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">"scrollRestoration"</span> <span class="keyword">in</span> history) &#123;</span><br><span class="line">  history.scrollRestoration = <span class="string">"manual"</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">window</span>.onunload = <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">window</span>.scrollTo(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>history.scrollRestoration 是新增的一个属性，值为 auto|manual,默认为 auto 记录滚动条位置, 设为 manual 时就禁用记录位置的功能</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount()&#123;</span><br><span class="line">  history.scrollRestoration = <span class="string">'manual'</span>;</span><br><span class="line">&#125;</span><br><span class="line">componentWillUnMount() &#123;</span><br><span class="line">  history.scrollRestoration = <span class="string">'auto'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>项目中的 routes 文件夹目录起到的是什么作用？</p>
+<p>服务端 routes 代码只会在页面初始化的时候执行一次，所以改动了之后要重新启动</p>
+<p>静态资源：js、css、img 等非服务器动态运行生成的文件。</p>
+<p>asset.vendor 是如何生成的</p>
+<h1> webpack </h1>
+
+<p>package.json 中 start 后面跟着 “webpack”，webpack 会找到 webpack.config.js 文件。然后根据配置的入口文件，进行打包</p>
+<p>单文件打包</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    index: [path.resolve(__dirname, <span class="string">"../src/single/index.js"</span>)]</span><br><span class="line">  &#125;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">"../dist"</span>),</span><br><span class="line">    filename: <span class="string">"[name].[chunkhash:8].js"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>webpack 中对代码进行了哪些操作？<br>1、 多文件时可以进行代码切割</p>
+<ul>
+<li>若入口（pageA,pageB）都用到了 utilB，我们希望把它抽离成单独文件，并且当用户访问 pageA 和 pageB 的时候都能去加载 utilB 这个公共模块，而不是存在于各自的入口文件中。</li>
+<li>pageB 中 utilC 不是页面一开始加载时候就需要的内容，假如 utilC 很大，我们不希望页面加载时就直接加载 utilC，而是当用户达到某种条件(如：点击按钮)才去异步加载 utilC，这时候我们需要将 utilC 抽离成单独文件，当用户需要的时候再去加载该文件。</li>
+</ul>
+<p>多文件打包示例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">"webpack"</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    pageA: [path.resolve(__dirname, <span class="string">"./src/multiple/pageA.js"</span>)],</span><br><span class="line">    pageB: path.resolve(__dirname, <span class="string">"./src/multiple/pageB.js"</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">"./dist"</span>),</span><br><span class="line">    filename: <span class="string">"[name].[chunkhash:8].js"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  optimization: &#123;</span><br><span class="line">    splitChunks: &#123;</span><br><span class="line">      cacheGroups: &#123;</span><br><span class="line">        commons: &#123;</span><br><span class="line">          chunks: <span class="string">"initial"</span>,</span><br><span class="line">          minChunks: <span class="number">2</span>,</span><br><span class="line">          maxInitialRequests: <span class="number">5</span>,</span><br><span class="line">          minSize: <span class="number">0</span></span><br><span class="line">        &#125;,</span><br><span class="line">        vendor: &#123;</span><br><span class="line">          test: <span class="regexp">/node_modules/</span>,</span><br><span class="line">          chunks: <span class="string">"initial"</span>,</span><br><span class="line">          name: <span class="string">"vendor"</span>,</span><br><span class="line">          priority: <span class="number">10</span>,</span><br><span class="line">          enforce: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>打包出来分为：<br>1、 业务代码文件，<br>2、 共同模块文件<br>3、 异步加载的文件会直接抽离</p>
+<p>react-imvc preload是如何实现的？ </p>
+<p>preload提前加载的方式</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 使用 link 标签静态标记需要预加载的资源 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"preload"</span> <span class="attr">href</span>=<span class="string">"/path/to/style.css"</span> <span class="attr">as</span>=<span class="string">"style"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 或使用脚本动态创建一个 link 标签后插入到 head 头部</span></span><br><span class="line"><span class="comment">// 当浏览器解析到这行代码就会去加载 href 中对应的资源但不执行，待到真正使用到的时候再执行</span></span><br><span class="line"><span class="keyword">const</span> link = <span class="built_in">document</span>.createElement(<span class="string">'link'</span>);</span><br><span class="line">link.rel = <span class="string">'preload'</span>;</span><br><span class="line">link.as = <span class="string">'style'</span>;</span><br><span class="line">link.href = <span class="string">'/path/to/style.css'</span>;</span><br><span class="line"><span class="built_in">document</span>.head.appendChild(link);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在 HTTP 响应头中加上 preload 字段</span></span><br></pre></td></tr></table></figure>
+
+
+<p>react imvc 中 Model 里面 html:{title}是如何对应到页面的title的 </p>
+<p>shark<br>客户端请求，通过nodejs中间件拦截，对返回的数据进行处理，res就是接口返回的内容。<br>通过res.json返回JSON格式的数据</p>
+<p>fetch 方法会自动补足根域名，只需要自己填写pathname比如说是 /deals/接口名,就可以去请求参数</p>
+<p>服务端渲染 关闭服务端渲染与开启服务端渲染，两端渲染不一致问题。<br>产品列表数据请求了但是没有更新到状态里面<br>原因是请求接口的地方没有await需要等到接口请求结束之后，才能更新状态，不然UPDATE_STAET更新的可能是空数据</p>
+<p>映杰分享<br><a href="https://v8.dev/blog/cost-of-javascript-2019" target="_blank" rel="noopener">https://v8.dev/blog/cost-of-javascript-2019</a>  在 2019 年里 JS 执行层面的开销<br>相比 js 字面量作为 initial-state，套一层 JSON.parse 可以得到更快的启动速度</p>
+<p>React.createContext() 创建上下文</p>
+<p>react-imvc 对 context 上下文的应用。通过 context 提供一个全局态的 store， init component传递的参数(props, context) 中的 context就是 React中的上下文</p>
+<p>React组件还有很多个地方可以直接访问父组件提供的Context：</p>
+<ul>
+<li><p>构造方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(props, context)</span><br></pre></td></tr></table></figure></li>
+<li><p>生命周期</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- componentWillReceiveProps(nextProps, nextContext)</span><br><span class="line">- shouldComponentUpdate(nextProps, nextState, nextContext)</span><br><span class="line">- componetWillUpdate(nextProps, nextState, nextContext)</span><br></pre></td></tr></table></figure></li>
+<li><p>对于面向函数的无状态组件，可以通过函数的参数直接访问组件的context</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> StatelessComponent = <span class="function">(<span class="params">props, context</span>) =&gt;</span> (</span><br><span class="line">  ....</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>react-hooks useContext<br><a href="https://frontarm.com/james-k-nelson/usecontext-react-hook/" target="_blank" rel="noopener">https://frontarm.com/james-k-nelson/usecontext-react-hook/</a> </p>
+</li>
+</ul>
+<p>React.createContext 用法欠缺点。对于嵌套很深的context使用起来很臃肿</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> CurrentRoute = React.createContext(&#123; <span class="attr">path</span>: <span class="string">'/welcome'</span> &#125;)</span><br><span class="line"><span class="keyword">const</span> CurrentUser = React.createContext(&#123;<span class="attr">name</span>:<span class="string">'33'</span>&#125;)</span><br><span class="line"><span class="keyword">const</span> IsStatic = React.createContext(<span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;CurrentRoute.Consumer&gt;</span><br><span class="line">      &#123;currentRoute =&gt;</span><br><span class="line">        &lt;CurrentUser.Consumer&gt;</span><br><span class="line">          &#123;currentUser =&gt;</span><br><span class="line">            &lt;IsStatic.Consumer&gt;</span><br><span class="line">              &#123;isStatic =&gt;</span><br><span class="line">                !isStatic &amp;&amp;</span><br><span class="line">                currentRoute.path === <span class="string">'/welcome'</span> &amp;&amp;</span><br><span class="line">                (currentUser</span><br><span class="line">                  ? <span class="string">`Welcome back, <span class="subst">$&#123;currentUser.name&#125;</span>!`</span></span><br><span class="line">                  : <span class="string">'Welcome!'</span></span><br><span class="line">                )</span><br><span class="line">              &#125;</span><br><span class="line">            &lt;<span class="regexp">/IsStatic.Consumer&gt;</span></span><br><span class="line"><span class="regexp">          &#125;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>CurrentUser.Consumer&gt;</span><br><span class="line">      &#125;</span><br><span class="line">    &lt;<span class="regexp">/CurrentRoute.Consumer&gt;</span></span><br><span class="line"><span class="regexp">  )</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>useContext优化: 不用写各种 Consumer</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useContext &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> CurrentRoute = React.createContext(&#123; <span class="attr">path</span>: <span class="string">'/welcome'</span> &#125;)</span><br><span class="line"><span class="keyword">const</span> CurrentUser = React.createContext(<span class="literal">undefined</span>)</span><br><span class="line"><span class="keyword">const</span> IsStatic = React.createContext(<span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> currentRoute = useContext(CurrentRoute)</span><br><span class="line">  <span class="keyword">let</span> currentUser = useContext(CurrentUser)</span><br><span class="line">  <span class="keyword">let</span> isStatic = useContext(IsStatic)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    !isStatic &amp;&amp;</span><br><span class="line">    currentRoute.path === <span class="string">'/welcome'</span> &amp;&amp;</span><br><span class="line">    (currentUser</span><br><span class="line">      ? <span class="string">`Welcome back, <span class="subst">$&#123;currentUser.name&#125;</span>!`</span></span><br><span class="line">      : <span class="string">'Welcome!'</span></span><br><span class="line">    )</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>react-imvc 获取 controller实例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> React.createContext()</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useContext &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> GlobalContext <span class="keyword">from</span> <span class="string">'../context'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> &#123; ctrl &#125; = useContext(GlobalContext)</span><br><span class="line">  <span class="keyword">return</span> ctrl</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p><a href="https://gist.github.com/Rich-Harris/fd6c3c73e6e707e312d7c5d7d0f3b2f9" target="_blank" rel="noopener">https://gist.github.com/Rich-Harris/fd6c3c73e6e707e312d7c5d7d0f3b2f9</a></p>
+<p><a href="https://kentcdodds.com/blog/application-state-management-with-react" target="_blank" rel="noopener">只用 react-hooks 来做状态管理的介绍文章</a></p>
+<p><a href="https://webpack.docschina.org/guides/tree-shaking/" target="_blank" rel="noopener">tree shaking</a></p>
+<p><a href="https://twitter.com/dan_abramov/status/1120971795425832961" target="_blank" rel="noopener">https://twitter.com/dan_abramov/status/1120971795425832961</a></p>
+<p>ref某些情况下你需要在典型数据流外强制修改子组件</p>
+<p>检测是否是合法的json数据格式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">handleCheckIsJSON</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="built_in">JSON</span>.parse(str);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>ctrl + P 查找文件</p>
+<p>请求接口获得参数后转换名字</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123; <span class="attr">a</span>: newName &#125; = <span class="keyword">this</span>.get()</span><br><span class="line"><span class="comment">// a,this.get()返回的参数</span></span><br></pre></td></tr></table></figure>
+
+
+<p>文章推荐<br><a href="https://mp.weixin.qq.com/s/l0Wx2ubdDGfNeE7blMQkjw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/l0Wx2ubdDGfNeE7blMQkjw</a><br><a href="https://mp.weixin.qq.com/s/7GrwURsC-4ksrySv2ww7UA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/7GrwURsC-4ksrySv2ww7UA</a></p>
+<p>高阶组件</p>
+<p>react-imvc框架</p>
+<p>connect是一个高阶函数，第一次调用时接受selector函数作为参数，返回withData函数<br>withData函数接受一个React组件作为参数，返回新的react组件，withData会将selector函数返回的数据，作为props传入新的react组件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> connect <span class="keyword">from</span> <span class="string">'react-imvc/hoc/connect'</span></span><br><span class="line"><span class="keyword">const</span> withData = connect(<span class="function">(<span class="params">&#123;state&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    content: state.loadingText</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> withData(Loading)</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Loading</span>(<span class="params">props</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(!props.content)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div id=<span class="string">"wxloading"</span> className=<span class="string">"wx_loading"</span>&gt;</span><br><span class="line">      &lt;div className=<span class="string">"wx_loading_inner"</span>&gt;</span><br><span class="line">        &lt;i className=<span class="string">"wx_loading_icon"</span>/&gt;</span><br><span class="line">        &#123;props.content&#125;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://juejin.im/post/5af443856fb9a07abc29f1eb" target="_blank" rel="noopener">React 实现服务端渲染</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/63744358?utm_source=wechat_session&utm_medium=social&utm_oi=940270556197728256" target="_blank" rel="noopener">函数式编程思想推荐阅读</a></p>
+<p>缓动曲线类似于二阶函数，函数变化率越高，速度越快。<br>其中变量是t，c是变化率，b是常亮</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> easeFunctions = &#123;</span><br><span class="line">  easeInQuad: <span class="function"><span class="keyword">function</span> (<span class="params">t, b, c, d</span>) </span>&#123;</span><br><span class="line">    t /= d;</span><br><span class="line">    <span class="keyword">return</span> c * t * t + b;</span><br><span class="line">  &#125;,</span><br><span class="line">  easeOutQuad: <span class="function"><span class="keyword">function</span> (<span class="params">t, b, c, d</span>) </span>&#123;</span><br><span class="line">    t /= d;</span><br><span class="line">    <span class="keyword">return</span> -c * t* (t - <span class="number">2</span>) + b;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> moveTo = <span class="keyword">new</span> MoveTo(&#123;</span><br><span class="line">  tolerance: activeTop,</span><br><span class="line">  duration: <span class="number">200</span>,</span><br><span class="line">  easing: <span class="string">'easeOutQuad'</span></span><br><span class="line">&#125;, easeFunctions)</span><br><span class="line">moveTo.move(targetEle)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p><a href="https://www.weibo.com/ttarticle/p/show?id=2309404382107785933493#_0" target="_blank" rel="noopener">映杰分享</a></p>
+<p><a href="https://imweb.io/topic/5b189d04d4c96b9b1b4c4ed6" target="_blank" rel="noopener">React setState 实现原理</a></p>
+<p><a href="https://dev.to/" target="_blank" rel="noopener">开发网站</a></p>
+<p><a href="https://mp.weixin.qq.com/s/23f64lu-qAEAK76lFYyzow" target="_blank" rel="noopener">利用webpack搭建脚手架一套完整流程</a></p>
+<p><a href="https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/" target="_blank" rel="noopener">How Browsers Work: Behind the scenes of modern web browsers</a></p>
+<p><a href="https://mp.weixin.qq.com/s/-Il3V0dtDA3JR1okK2yJyw" target="_blank" rel="noopener">同构</a></p>
+<p><a href="https://overreacted.io/how-does-the-development-mode-work/" target="_blank" rel="noopener">To read</a></p>
+<p><a href="https://mp.weixin.qq.com/s/W8-Cu8Mjh00Rze5o4bFKag" target="_blank" rel="noopener">css 整理</a></p>
+
+      
+    </div>
+    
+    
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+
+    
+
+    
+
+
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/28/AnchorNav/" rel="next" title="锚点导航">
+                <i class="fa fa-chevron-left"></i> 锚点导航
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/28/Debounce-throttle/" rel="prev" title="Debounce & throttle">
+                Debounce & throttle <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpeg"
+                alt="caoxinhui" />
+            
+              <p class="site-author-name" itemprop="name">caoxinhui</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:caoxinhui1111@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text"> webpack </span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">caoxinhui</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

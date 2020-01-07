@@ -1,10 +1,10 @@
 ---
-title: Git
+title: Git & npm
 date: 2019-12-28 17:24:28
 tags: Git
 ---
 
-
+## Git 
 ### 代码自动格式化
 ```json
 // 安装husky，prettier,lint-staged
@@ -141,34 +141,7 @@ git merge abort 取消合并
 
 
 
-### Git撤销中间某次提交
 
-
-### 不常用Git命令
-
-
-`git add` 暂存某个文件后，取消暂存，`git reset HEAD` 被暂存的文件名。
-如果觉得某个文件的修改没有必要，通过`git checkout -- 文件名` 取消修改
-`git remote`查看当前配置有哪些远程仓库，`git remote -v` 显示对应的克隆地址。
-`git fetch origin `会抓取从你上次克隆以来别人上传到此远程仓库中的所有更新
-`git remote rename`修改某个远程仓库在本地的简称
-`git remote rm `分支名 移除对应的远端仓库。
-`git tag`列出现有标签
-`git tag -l 'v1.4.2.*' `我们可以用特定的搜索模式列出符合条件的标签。
-创建一个含附注类型的标签，用 `-a` 指定标签名， `-m` 指定了对应的标签说明
-`git tag -a v1.4 -m `
-`git show v1.4 `查看相应标签的版本信息
-`git tag v1.4-lw`
-`git show v1.4-lw`
-`git push origin v1.5`分享标签，分享标签到远端仓库
-`git push origin --tags`推送所有本地新增的标签
-`git config --global alias.co checkout 设置别名`
-`git config --global alias.last 'log -1 HEAD'`
-`git branch --merged查看哪些分支已被并入当前分支`
-`git branch --no-merged查看尚未合并的工作。`
-
-### Git rebase 变基
-
-
-
-
+## npm
+npm rebuild  重建软件包
+npm build

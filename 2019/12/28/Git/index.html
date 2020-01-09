@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="caoxinhui">
 <meta property="og:description" content="Git代码自动格式化123456789101112&#x2F;&#x2F; 安装husky，prettier,lint-staged&quot;husky&quot;: &amp;#123;    &quot;hooks&quot;: &amp;#123;      &quot;pre-commit&quot;: &quot;lint-staged&quot;    &amp;#125;  &amp;#125;,  &quot;lint-staged&quot;: &amp;#123;    &quot;*.&amp;#123;js,jsx&amp;#125;&quot;: [">
 <meta property="article:published_time" content="2019-12-28T09:24:28.000Z">
-<meta property="article:modified_time" content="2020-01-07T07:51:33.036Z">
+<meta property="article:modified_time" content="2020-01-09T06:50:25.825Z">
 <meta property="article:author" content="caoxinhui">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
@@ -341,7 +341,10 @@
 <h3 id="git撤销操作"><a href="#git撤销操作" class="headerlink" title="git撤销操作"></a>git撤销操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 只会产生一次提交，第二次提交修正了第一次的提交内容 --&gt;</span><br><span class="line">&#96;git commit -m &#39;initial commit&#39;&#96;</span><br><span class="line">&#96;git add forgotten_file&#96;</span><br><span class="line">&#96;git commit --amend&#96;</span><br></pre></td></tr></table></figure>
 
 
-<h3 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h3><p><code>git branch testing 新建testing分支 在当前commit对象上新建一个分支指针，不会自动切换到该分支中去</code><br><code>git checkout -b iss53 新建分支并切换到该分支</code><br><code>git push -u origin 分支名</code> 提交新建的分支到远程<br><code>git fetch origin 同步远程服务器上的数据到本地。</code></p>
+<h3 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h3><p><code>git branch testing 新建testing分支 在当前commit对象上新建一个分支指针，不会自动切换到该分支中去</code><br><code>git checkout -b iss53 新建分支并切换到该分支</code><br><code>git push -u origin 分支名</code> 提交新建的分支到远程<br><code>git push origin 分支名:分支名</code> 推送新分支到远程<br><code>git fetch origin 同步远程服务器上的数据到本地。</code></p>
+<blockquote>
+<p>如果没有推送的远程的话，commit之后只会显示 working tree clean</p>
+</blockquote>
 <h3 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h3><p><code>git push origin :[分支名]</code> 删除远程分支</p>
 <!--SSH公钥默认存储在账户的主目录下的~/.ssh目录 -->
 <h3 id="ssh-key"><a href="#ssh-key" class="headerlink" title="ssh key"></a>ssh key</h3><p><code>cd ~/.ssh</code><br>查找有没有<code>something</code>和<code>something.pub</code>来命名的一对文件，这个<code>something</code>通常是<code>id_dsa</code> 或 <code>id_rsa</code>。<br>有<code>.pub</code>后缀的文件就是公钥，另一个文件是私钥。若<code>.ssh</code>目录没有，可以用<code>ssh-keygen</code>来创建。</p>

@@ -69,7 +69,9 @@ tags: Git
 `git branch testing 新建testing分支 在当前commit对象上新建一个分支指针，不会自动切换到该分支中去`
 `git checkout -b iss53 新建分支并切换到该分支`
 `git push -u origin 分支名` 提交新建的分支到远程
+`git push origin 分支名:分支名` 推送新分支到远程
 `git fetch origin 同步远程服务器上的数据到本地。`
+> 如果没有推送的远程的话，commit之后只会显示 working tree clean
 
 
 ### 删除远程分支

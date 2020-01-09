@@ -121,7 +121,7 @@ git merge abort 取消合并
 ### 撤销已经提交的commit
 `git reset --hand HEAD~1` 撤销上次的commit，保留之前的更改
 `git reset --hard <需要回退到的版本号（只需输入前几位）>`
-`git push origin <分支名> --force`
+`git push origin <分支名> --force` 或者 `git push --force` 强制提交
 
 
 

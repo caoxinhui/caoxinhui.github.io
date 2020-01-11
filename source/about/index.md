@@ -4,12 +4,13 @@ date: 2019-12-28 17:11:38
 type: "about"
 ---
 
-> 我要和生活再死磕几年，要么我就毁灭，要么我就注定铸就辉煌。如果有一天，你发现我再平庸面前低了头，请想我开炮
+
 
 ## 个人信息
 | 姓名：曹昕卉 | 出生年月： 1992/12 |
 | ------ |------ |
-| 邮箱：caoxinhui1111@163.com、caoxinhui1204@gmail.com | 最高学历：硕士 |
+| 邮箱：caoxinhui1111@163.com、caoxinhui1204@gmail.com| 最高学历：硕士 |
+| 电话：18251825790| twitter：https://twitter.com/caoxinhui1 |
 | 职位：前端开发工程师 | 博客：[技术博客](https://caoxinhui.github.io)|
 
 
@@ -44,5 +45,5 @@ type: "about"
 ## 自我评价
 1. 本人做事认真，对待工作负责，责任心较强，保持学习
 2. 有较强的学习能力和团队协作精神，能够很快适应工作环境
-3. [twitter caoxinhui](https://twitter.com/caoxinhui1)
+
 

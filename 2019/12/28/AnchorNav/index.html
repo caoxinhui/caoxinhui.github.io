@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="caoxinhui">
 <meta property="og:description" content="分享内容实现一个 codesandbox webpack 产生的背景： - 多 js 文件下全局对象冲突 - 模块加载顺序 - 解决模块或库的依赖 - 大工程模块过多，难以管理。webpack 作用  将所有的依赖拆分成块且按需加载 首屏渲染耗时少 所有的静态文件都是一个模块 第三方也可以作为一个模块被加载 自定义程度高，可以按需自定义打包的整个流程 适用于大 project 的开发场景。  we">
 <meta property="article:published_time" content="2019-12-28T09:40:11.000Z">
-<meta property="article:modified_time" content="2020-01-09T07:10:30.756Z">
+<meta property="article:modified_time" content="2020-01-12T05:19:59.536Z">
 <meta property="article:author" content="caoxinhui">
 <meta property="article:tag" content="项目经历">
 <meta name="twitter:card" content="summary">
@@ -341,8 +341,7 @@
 <p>webpack 可以通过 CLI 指定配置文件,不指定配置文件的情况下，webpack 会自动在当前目录寻找文件名为 webpack.config.js 的配置文件</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//偶数 &amp; 1 = 0</span></span><br><span class="line"><span class="comment">//奇数 &amp; 1 = 1</span></span><br></pre></td></tr></table></figure>
 
-<p>使用 &amp; | 来设计一个权限或者状态等等，</p>
-<p>延展操作符…属于浅拷贝，只会复制一层</p>
+
 <ul>
 <li><p>React 黑科技</p>
 <ul>
@@ -368,13 +367,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">onTouchMove = &#123; e =&gt; &#123;</span><br><span class="line">  <span class="keyword">this</span>.handleFoldAnchor()</span><br><span class="line">&#125;&#125;</span><br><span class="line">onClick=&#123;e =&gt; &#123;</span><br><span class="line">  <span class="keyword">this</span>.handleFoldAnchor();</span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure>
 
 
-<p> 实现数组快速浅拷贝<br> arr.slice()</p>
-<p> 函数名首字母大写，蠢哭</p>
-<p>作用域：块语句（大括号”{}”中间的语句），如if 和 switch 条件语句或for和while循环语句，不像函数，它们不会创建一个新的作用域。在块语句中定义的变量将保留它们已经存在的作用域中</p>
-<p>块级作用域可通过新增命令 let 和 const 声明，所声明的变量在指定块的作用域外无法被访问。块级作用域在如下情况被创建：</p>
-<p>在一个函数内部<br>在一个代码块（由一对花括号包裹）内部</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">f</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">20</span></span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    f() <span class="comment">//10，而不是20</span></span><br><span class="line">  &#125;)()</span><br><span class="line">&#125;</span><br><span class="line">show(fn)</span><br></pre></td></tr></table></figure>
-<p>要到创建 fn 函数的那个作用域中取，无论 fn 函数将在哪里调用。<font color="red">静态作用域</font></p>
+<h3 id="实现数组快速浅拷贝"><a href="#实现数组快速浅拷贝" class="headerlink" title="实现数组快速浅拷贝"></a>实现数组快速浅拷贝</h3><p> arr.slice()<br>延展操作符…属于浅拷贝，只会复制一层</p>
 
       
     </div>
@@ -508,7 +501,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -570,7 +563,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#分享内容"><span class="nav-number">1.</span> <span class="nav-text">分享内容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#分享内容"><span class="nav-number">1.</span> <span class="nav-text">分享内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现数组快速浅拷贝"><span class="nav-number">1.1.</span> <span class="nav-text">实现数组快速浅拷贝</span></a></li></ol></li></ol></div>
             
 
           </div>

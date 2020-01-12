@@ -124,6 +124,17 @@ git merge abort 取消合并
 `git push origin <分支名> --force` 或者 `git push --force` 强制提交
 
 
+### git reset分为三种模式
+- soft 
+- mixed 
+- hard
+
+**git reset --hard commitId**
+重置暂存区和工作区，完全重置为指定的commitId，当前分支没有commit的代码会被清除
+**git reset --soft commitId**
+保留工作目录，把指定的commit节点与当前分支的差异都存入暂存区。没有被commit的代码也能够保留下来
+**git reset commitId**
+不带参数，就是mixed模式。将会保留工作目录，并把工作区、暂存区、以及与reset的差异都放到工作区，然后清空暂存区。
 
 ### rn 项目操作命令
 `xcrun simctl list devices`  获取所有设备名称

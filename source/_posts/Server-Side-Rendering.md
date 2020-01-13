@@ -6,7 +6,8 @@ tags: SSR
 
 
 ### 实现一个简单的服务端渲染
-
+在前后端渲染相同的component，将输出一致的dom结构。完善的component属性及生命周期与客户端的render时机是react同构的关键
+react的虚拟dom以对象树的形式保存在内存中，并且是可以在任何支持JavaScript的环境中生成的，所以可以在浏览器和node中生成。这为前后端同构提供了先决条件。
 
 #### 参考文献：
 - [实现一个简单的服务端渲染](https://medium.com/@mahesh_joshi/understanding-server-side-rendering-in-react-in-easy-way-d2984bb7aa51)
@@ -18,9 +19,10 @@ tags: SSR
 > 服务端渲染：在服务端生成的页面，在客户端使用。
 
 
+
 ### CSR 与 SSR 的区别
-- 客户端渲染：浏览器下载一个很小的HTML，将JavaScript和文件填充进去
-- 服务端渲染：在服务端渲染页面，输出完整的HTML页面
+- 客户端渲染：浏览器下载一个很小的HTML，将JavaScript和文件填充进去，页面渲染由JS负责进行
+- 服务端渲染：服务器返回一堆HTML字符串，让浏览器显示
 
 
 ### SSR 的弊端
@@ -35,6 +37,8 @@ tags: SSR
   爬虫不能理解JavaScript，它们只认识 HTML，不做服务端渲染，爬虫看到的是空白页面
 2. 更好的首屏性能，不需要提前先下载一堆 CSS 和 JS 后才看到页面
 
+### 同构
+> 一套代码在服务端运行一遍，在客户端又运行一遍，服务端完成页面构建，客户端完成事件绑定
 
 ### React 服务端渲染原理
 > React 的虚拟 DOM 以对象树的形式存在内存中，并且可以在任何支持JavaScript的环境中生成，所以可以在浏览器和Node中生成。这为前后端同构提供了先决条件。
@@ -48,3 +52,6 @@ tags: SSR
 
 
 renderToString，会为组件增加checksum，react在客户端通过checksum判断是否需要重新render，相同则不重新render，省略创建dom和挂载dom的过程，接着触发componentDidMount等事件来处理服务端上的未尽事宜（事件绑定等），从而加快了交互时间。不同时，组件将客户端上重新挂载render
+
+
+### 静态资源处理方案

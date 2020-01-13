@@ -69,7 +69,9 @@ tags: Git
 `git branch testing 新建testing分支 在当前commit对象上新建一个分支指针，不会自动切换到该分支中去`
 `git checkout -b iss53 新建分支并切换到该分支`
 `git push -u origin 分支名` 提交新建的分支到远程
+`git push origin 分支名:分支名` 推送新分支到远程
 `git fetch origin 同步远程服务器上的数据到本地。`
+> 如果没有推送的远程的话，commit之后只会显示 working tree clean
 
 
 ### 删除远程分支
@@ -119,9 +121,20 @@ git merge abort 取消合并
 ### 撤销已经提交的commit
 `git reset --hand HEAD~1` 撤销上次的commit，保留之前的更改
 `git reset --hard <需要回退到的版本号（只需输入前几位）>`
-`git push origin <分支名> --force`
+`git push origin <分支名> --force` 或者 `git push --force` 强制提交
 
 
+### git reset分为三种模式
+- soft 
+- mixed 
+- hard
+
+**git reset --hard commitId**
+重置暂存区和工作区，完全重置为指定的commitId，当前分支没有commit的代码会被清除
+**git reset --soft commitId**
+保留工作目录，把指定的commit节点与当前分支的差异都存入暂存区。没有被commit的代码也能够保留下来
+**git reset commitId**
+不带参数，就是mixed模式。将会保留工作目录，并把工作区、暂存区、以及与reset的差异都放到工作区，然后清空暂存区。
 
 ### rn 项目操作命令
 `xcrun simctl list devices`  获取所有设备名称
@@ -145,3 +158,6 @@ git merge abort 取消合并
 ## npm
 npm rebuild  重建软件包
 npm build
+ ### ^ 与 ~ 的区别
+  - ~ 会匹配最近的小版本依赖包，~1.2.3 会匹配 1.2.x 
+  - ^ 会匹配最新的大版本依赖包，^1.2.3 会匹配 1.x.x

@@ -190,8 +190,6 @@ function ImageHelper({imgUniqueId, textUniqueId }) {
 }
 ```
 
-chrome 模拟图片加载失败， 不显示任何图片
-`chrome://settings/content `
 
 
 ```js
@@ -401,38 +399,8 @@ const getTextColor = (isCurrent, type, selectedTextColor, defaultTextColor) => {
   return textColor;
 };
 ```
-
-
-[全局获取的状态 curVideoId 放到 useEffect 中，报错curVideo is not defined](https://overreacted.io/zh-hans/a-complete-guide-to-useeffect/)
-
-useEffect  [] 中传入的变量，要在useEffect外部声明，而不是在useEffect里面声明，在里面声明报 not defined
-
-
-组件 没有`import React from react` 报服务端错误？？？？
-
-获取DOM元素宽度
-`document.querySelector(".classname")`,使用better-scroll, ul外面的包裹层与ul等款，绑定wrapper的宽度应当固定
-
-
-
-获取视频真实宽高
-```js
-document.querySelector("video").videoWidth
-document.querySelector("video").videoHeight
-```
-
-let encodedData = window.btoa(stringToEncode);
-stringToEncode
-一个字符串, 其字符分别表示要编码为 ASCII 的二进制数据的单个字节
-
-android webview 在3.0+后显示flash要启用硬件加速 ，所以会导致，Android的视频组件播放白屏的问题
-
-
-
-
-- 解决问题
-  - 弹出蒙层后，禁止掉蒙层下面的内容滚动
-   开始做法：
+### 解决问题
+  **弹出蒙层后，禁止掉蒙层下面的内容滚动**
    - 方法一
 ```js
 disableWindowScroll() {
@@ -448,13 +416,12 @@ enableWindowScroll() {
   htmlEl.style.overflow = "";
 }
 ```
-   - 这种方法虽然能禁用掉页面的滚动，但是如果页面超长的话，会一下滑动到页面最顶部。
+这种方法虽然能禁用掉页面的滚动，但是如果页面超长的话，会一下滑动到页面最顶部。
 
 
 
-  - 对移动端，可以引入`touch-action`，限制为`none`，但`ios`的`safari`上不支持该属性,
-  - 这时候，就需要结合`event.preventDefault`属性来用了。注意在绑定`addEventListener`的时候，需要多传一个`options`，强调这个事件不是`passive`的，否则谷歌等新版浏览器会报错。同时最好也指定capture: true，这样可以早点禁止该事件。报错是`Unable to preventDefault inside passive event listener due to target being treated as passive.`谷歌建议一般情况下，将 `passive` 标志添加到每个没有调用 `preventDefault()` 的 `wheel`、`mousewheel`、`touchstart` 和 `touchmove` 事件侦听器,
-  - 优化后方法二
+  对移动端，可以引入`touch-action`，限制为`none`，但`ios`的`safari`上不支持该属性,这时候，就需要结合`event.preventDefault`属性来用了。注意在绑定`addEventListener`的时候，需要多传一个`options`，强调这个事件不是`passive`的，否则谷歌等新版浏览器会报错。同时最好也指定capture: true，这样可以早点禁止该事件。报错是`Unable to preventDefault inside passive event listener due to target being treated as passive.`谷歌建议一般情况下，将 `passive` 标志添加到每个没有调用 `preventDefault()` 的 `wheel`、`mousewheel`、`touchstart` 和 `touchmove` 事件侦听器,
+  - 方法二
 ```js
 preventDefaultBehavior = e => {
     e.preventDefault();
@@ -474,9 +441,9 @@ enableWindowScroll = () => {
   });
 }
 ```
+  上述方法会禁用掉浏览器的所有滚动事件
 
  - 方法三
-  上述方法会禁用掉浏览器的所有滚动事件
 
   ```js
     getScrollY = () => {
@@ -502,18 +469,3 @@ enableWindowScroll = () => {
     window.scrollTo(0, top)
   };
   ```
-`this` 的指向问题
-
-组件内是没有 `this` 的，调用的 `BaseController.js` 里面的方法，例如 `getSomeCode`， 如果 `getSomeCode` 是一个 `function(){}`，这个函数里面是拿不到 `this` 的，只有将 `getSomeCode` 定义成一个箭头函数 `getSomeCode = () => {}` 才可以拿到 `this`。并且可以通过在函数里面 `this.getAnotherCode()`调用 `BaseController.js` 中定义的 `getAnotherCode(){}` 方法，并且，如果在 `getAnotherCode` 中使用了 `this`，那么 `this` 也是全局的 `controller`
-
-
-`window.addEventListener() 与 document.addEventListener() 区别`？
-`resize` 事件只在 `window` 对象上，`DOMContentLoaded` 事件只在 `document` 对象上
-
-
-
-底部导航监听长按事件触发选中，安卓机在长按后不会触发click事件，所以将事件绑定在onTouchEnd上，兼容各端。
-
-
-获取给定时间时间戳
-new Date("2019-12-12 00:11:22").getTime()

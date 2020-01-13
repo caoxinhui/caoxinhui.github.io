@@ -3,6 +3,8 @@ title: Debounce & throttle
 date: 2019-12-28 17:42:33
 tags:
 ---
+<!-- more -->
+
 ```js
 const throttle = (fn, wait) => {
   let previous = 0;

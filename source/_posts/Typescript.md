@@ -5,6 +5,7 @@ tags: Typescript
 ---
 
 ## Typescript 学习教程
+<!-- more -->
 
 ### typescript 通过类型注解提供编译时的静态类型检查
 ```js

@@ -8,6 +8,7 @@ tags: SSR
 ### 实现一个简单的服务端渲染
 在前后端渲染相同的component，将输出一致的dom结构。完善的component属性及生命周期与客户端的render时机是react同构的关键
 react的虚拟dom以对象树的形式保存在内存中，并且是可以在任何支持JavaScript的环境中生成的，所以可以在浏览器和node中生成。这为前后端同构提供了先决条件。
+<!-- more -->
 
 #### 参考文献：
 - [实现一个简单的服务端渲染](https://medium.com/@mahesh_joshi/understanding-server-side-rendering-in-react-in-easy-way-d2984bb7aa51)

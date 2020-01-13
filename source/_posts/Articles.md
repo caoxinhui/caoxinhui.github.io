@@ -12,3 +12,4 @@ tags:
 
 [typescript](https://medium.com/@martin_hotell/react-typescript-and-defaultprops-dilemma-ca7f81c661c7)
 
+<!-- more -->

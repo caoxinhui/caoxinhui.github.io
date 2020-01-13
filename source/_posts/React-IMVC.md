@@ -17,6 +17,7 @@ tags:
 
 [利用webpack搭建脚手架一套完整流程](https://mp.weixin.qq.com/s/23f64lu-qAEAK76lFYyzow)
 
+<!-- more -->
 
 [同构](https://mp.weixin.qq.com/s/-Il3V0dtDA3JR1okK2yJyw)
 

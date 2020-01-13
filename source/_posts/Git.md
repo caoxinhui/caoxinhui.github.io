@@ -20,6 +20,7 @@ tags: Git
     ]
   }
 ```
+<!-- more -->
 
 ### 本机权限问题
 `git pull` 的时候 ` error: cannot open .git/FETCH_HEAD: Permission denied ` ,因为没有当前目录的修改权限

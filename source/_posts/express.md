@@ -4,9 +4,9 @@ date: 2019-12-28 17:43:21
 tags:
 ---
 
-<!-- more -->
 
 ### 安装nodemon 
+<!-- more -->
 
 ```javascript
 var express = require('express')

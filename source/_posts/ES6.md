@@ -3,7 +3,6 @@ title: ES6
 date: 2020-01-01 13:56:44
 tags: 读书笔记
 ---
-<!-- more -->
 
 ### 第14章 Iterator 和 for...of 循环
 遍历器是一种接口，为各种不同的数据结构提供统一的访问机制。任何数据结构，只要部署Iterator接口，就可以完成遍历操作
@@ -19,6 +18,8 @@ tags: 读书笔记
 每一次调用next方法，都会返回数据结构的当前成员的信息（返回一个包含value和done两个属性的对象）
 
 一个数据结构，只要具有Symbol.iterator属性，就可以认为是可遍历的，调用Symbol.iterator方法，就会得到当前数据接口默认的遍历器生成函数
+<!-- more -->
+
 ```js
 let arr = ['a','b','c']
 let iter = arr[Symbol.iterator]()

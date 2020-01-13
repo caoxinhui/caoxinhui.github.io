@@ -4,7 +4,6 @@ date: 2019-12-28 17:45:06
 tags:
 ---
 
-<!-- more -->
 
 `cat /etc/shells`
 查看系统有几个shell bash是mac中terminal自带的shell，把它换成zsh，这个的功能要多得多。拥有语法高亮，命令行tab补全，自动提示符，显示Git仓库状态等功能 
@@ -18,6 +17,7 @@ tags:
 `clear` 清空
 `pwd` 显示当前目录
 
+<!-- more -->
 
 ### 安装 oh my zsh
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`

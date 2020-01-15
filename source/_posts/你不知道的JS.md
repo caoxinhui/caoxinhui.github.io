@@ -4,7 +4,7 @@ date: 2019-12-28 17:53:30
 tags: 读书笔记
 ---
 
-你不知道的JavaScript氛围 上、中、下 卷，耐心阅读哦~
+你不知道的JavaScript分为 上、中、下 卷，耐心阅读哦~
 
 [你不知道的JavaScript](https://kingyinliang.github.io/PDF/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84JavaScript%EF%BC%88%E4%B8%8A%E5%8D%B7%EF%BC%89.pdf)
 

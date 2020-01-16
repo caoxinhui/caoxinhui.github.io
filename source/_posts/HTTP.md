@@ -4,6 +4,10 @@ date: 2020-01-13 16:51:57
 tags:
 ---
 
+本篇整理 《图解HTTP》 以及 《HTTP》相关知识点
+
+### HTTP 首部
+
 ### Access-Control-Expose-Headers
 > 列出了哪些首部可以作为响应的一部分暴露给外部
 

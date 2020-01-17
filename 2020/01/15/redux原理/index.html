@@ -40,21 +40,21 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: '',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
-  <meta name="description" content="原文链接">
+  <meta name="description" content="本文介绍了 react-imvc 和 redux 对状态更新的原理 react-imvc 状态原理首先回顾一下 react-imvc 更新状态的使用方法。 将 更新状态的方法，放到 this.store.actions 中，例如 UPDATE_COUNT_DOWN_DATA 方法，然后通过 UPDATE_COUNT_DOWN_DATA(countDownList) 执行方法 UPDATE_COUN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="redux原理">
 <meta property="og:url" content="https://caoxinhui.github.io/2020/01/15/redux%E5%8E%9F%E7%90%86/index.html">
 <meta property="og:site_name" content="caoxinhui">
-<meta property="og:description" content="原文链接">
+<meta property="og:description" content="本文介绍了 react-imvc 和 redux 对状态更新的原理 react-imvc 状态原理首先回顾一下 react-imvc 更新状态的使用方法。 将 更新状态的方法，放到 this.store.actions 中，例如 UPDATE_COUNT_DOWN_DATA 方法，然后通过 UPDATE_COUNT_DOWN_DATA(countDownList) 执行方法 UPDATE_COUN">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-15T10:55:49.000Z">
-<meta property="article:modified_time" content="2020-01-16T03:55:11.795Z">
+<meta property="article:modified_time" content="2020-01-17T02:10:21.408Z">
 <meta property="article:author" content="caoxinhui">
 <meta name="twitter:card" content="summary">
 
@@ -158,9 +158,34 @@
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -217,7 +242,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-16 11:55:11" itemprop="dateModified" datetime="2020-01-16T11:55:11+08:00">2020-01-16</time>
+                <time title="修改时间：2020-01-17 10:10:21" itemprop="dateModified" datetime="2020-01-17T10:10:21+08:00">2020-01-17</time>
               </span>
 
           
@@ -238,10 +263,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><a href="https://github.com/brickspert/blog/issues/22" target="_blank" rel="noopener">原文链接</a></p>
+        <p>本文介绍了 react-imvc 和 redux 对状态更新的原理</p>
+<h2 id="react-imvc-状态原理"><a href="#react-imvc-状态原理" class="headerlink" title="react-imvc 状态原理"></a>react-imvc 状态原理</h2><p>首先回顾一下 react-imvc 更新状态的使用方法。</p>
+<p>将 更新状态的方法，放到 <code>this.store.actions</code> 中，例如 <code>UPDATE_COUNT_DOWN_DATA</code> 方法，然后通过 <code>UPDATE_COUNT_DOWN_DATA(countDownList)</code> 执行方法 <code>UPDATE_COUNT_DOWN_DATA</code> 中的方法。<br>其中，UPDATE_COUNT_DOWN_DATA 方法中的第一个参数是全局的state状态，后面一个参数就是传入的参数。 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> UPDATE_COUNT_DOWN_DATA = <span class="function">(<span class="params">state,payload</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; countdownlist &#125; = payload</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    ...state,</span><br><span class="line">    countdownlist</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样就增加了一个全局的状态countdownlist</p>
 <a id="more"></a>
 
-
+<h2 id="redux-状态管理"><a href="#redux-状态管理" class="headerlink" title="redux 状态管理"></a>redux 状态管理</h2><p><a href="https://github.com/brickspert/blog/issues/22" target="_blank" rel="noopener">redux原理原文链接</a></p>
 <h3 id="状态值-只有-count-值"><a href="#状态值-只有-count-值" class="headerlink" title="状态值 只有 count 值"></a>状态值 只有 count 值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 修改count值后，使用count的地方都能收到通知。使用发布-订阅模式</span></span><br><span class="line"><span class="keyword">let</span> state = &#123;</span><br><span class="line">  count: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> listeners = []</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">subscribe</span>(<span class="params">listener</span>) </span>&#123;</span><br><span class="line">  listeners.push(listener)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeCount</span>(<span class="params">count</span>) </span>&#123;</span><br><span class="line">  state.count = count</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; listeners.length; i++) &#123;</span><br><span class="line">    <span class="keyword">const</span> listener = listeners[i]</span><br><span class="line">    listener()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">subscribe(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(state.count)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">changeCount(<span class="number">2</span>)</span><br><span class="line">changeCount(<span class="number">3</span>)</span><br><span class="line">changeCount(<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
 
 <h3 id="将-count-值调整为-initState"><a href="#将-count-值调整为-initState" class="headerlink" title="将 count 值调整为 initState"></a>将 count 值调整为 initState</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> createStore = <span class="function"><span class="keyword">function</span> (<span class="params">initState</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> state = initState</span><br><span class="line">  <span class="keyword">let</span> listeners = []</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">subscribe</span>(<span class="params">listener</span>) </span>&#123;</span><br><span class="line">    listeners.push(listener)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">changeState</span>(<span class="params">newState</span>) </span>&#123;</span><br><span class="line">    state = newState</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; listeners.length; i++) &#123;</span><br><span class="line">      <span class="keyword">const</span> listener = listeners[i]</span><br><span class="line">      listener()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">getState</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> state</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    getState,</span><br><span class="line">    changeState,</span><br><span class="line">    subscribe</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -337,7 +366,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#状态值-只有-count-值"><span class="nav-number">1.</span> <span class="nav-text">状态值 只有 count 值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将-count-值调整为-initState"><span class="nav-number">2.</span> <span class="nav-text">将 count 值调整为 initState</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对状态约束，只允许通过-action-操作。（明确改动范围）"><span class="nav-number">3.</span> <span class="nav-text">对状态约束，只允许通过 action 操作。（明确改动范围）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number">3.1.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多文件协作"><span class="nav-number">4.</span> <span class="nav-text">多文件协作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-1"><span class="nav-number">4.1.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#state-拆分与合并"><span class="nav-number">5.</span> <span class="nav-text">state 拆分与合并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中间件-middleware"><span class="nav-number">6.</span> <span class="nav-text">中间件 middleware</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#react-imvc-状态原理"><span class="nav-number">1.</span> <span class="nav-text">react-imvc 状态原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#redux-状态管理"><span class="nav-number">2.</span> <span class="nav-text">redux 状态管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#状态值-只有-count-值"><span class="nav-number">2.1.</span> <span class="nav-text">状态值 只有 count 值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将-count-值调整为-initState"><span class="nav-number">2.2.</span> <span class="nav-text">将 count 值调整为 initState</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对状态约束，只允许通过-action-操作。（明确改动范围）"><span class="nav-number">2.3.</span> <span class="nav-text">对状态约束，只允许通过 action 操作。（明确改动范围）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number">2.3.1.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多文件协作"><span class="nav-number">2.4.</span> <span class="nav-text">多文件协作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-1"><span class="nav-number">2.4.1.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#state-拆分与合并"><span class="nav-number">2.5.</span> <span class="nav-text">state 拆分与合并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中间件-middleware"><span class="nav-number">2.6.</span> <span class="nav-text">中间件 middleware</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -477,6 +506,10 @@
   </script>
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 

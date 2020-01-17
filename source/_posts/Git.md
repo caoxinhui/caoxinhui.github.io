@@ -95,7 +95,7 @@ git config --global user.email "johnode@example.com"
 `git` 修改多个`commit`为一个`commit`
 1. 从HEAD版本开始往过去数3个版本 `git rebase -i HEAD~3` 
 或者，指明要合并的版本之前的版本号 `git rebase -i commitId（不参与合并）`
-2. 后面的多个`commit pick`改为`s`
+2. 除了第一个以外，后面的多个`commit pick`改为`s`
 3. `esc`键退出编辑
 4. `:wq`退出
 5. `git add .`

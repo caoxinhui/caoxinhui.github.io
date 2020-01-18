@@ -146,7 +146,7 @@ git merge abort 取消合并
 
 1. 在本地项目`git init`
 2. `git add .`
-3. `git commit -m "message"`
+3. `git commit -m " message"`
 4. 在`GitHub`建立一个项目
 5. 复制项目`HTTPS`地址
 6. `git remote add origin https 地址`

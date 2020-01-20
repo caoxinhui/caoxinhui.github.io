@@ -51,11 +51,22 @@ tags: Git
 
 
 ### 删除远程分支(不需要先切换到其他分支)
-`git push origin --delete 要删除的分支名` 
+1. `git push origin --delete 要删除的分支名` 
+2. `git push origin -d 分支名`
+3. `git push <远程分支名> -d 分支名`
 
 ### 删除本地分支
 `git branch -d 本地分支名`
 `git branch -D 本地分支名(分支没有完全merge会报错提示，改为强制删除即可)`
+
+### 暂存修改
+1. 暂存`git stash`
+2. 恢复`git stash apply`
+3. 删除`git stash drop`
+4. 恢复 + 删除`git stash pop` 
+
+### 查看远程仓库信息
+1. `git remote -v`
 
 ### git撤销操作
 ```
@@ -152,9 +163,21 @@ git merge abort 取消合并
 6. `git remote add origin https 地址`
 7. `git push -u origin master`
 
+### 代码版本
+1. 查看过去版本 `git log --pretty=oneline`
 
 
+### 暂存区文件撤销
+1. `git reset HEAD 文件`
 
+### 删除文件
+1. 从版本库中删除文件 `git rm 文件名`
+2. 从版本库中删除文件，但是本地不删除该文件 `git rm --cached 文件名`
+
+
+### 创建分支
+1. 仅创建 `git branch 分支名`
+2. 创建并切换 `git checkout -b 分支名`
 
 ## npm
 npm rebuild  重建软件包
@@ -162,3 +185,6 @@ npm build
  ### ^ 与 ~ 的区别
   - ~ 会匹配最近的小版本依赖包，~1.2.3 会匹配 1.2.x 
   - ^ 会匹配最新的大版本依赖包，^1.2.3 会匹配 1.x.x
+
+
+![git 命令](../../images/git.jpg)

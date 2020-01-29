@@ -10,6 +10,7 @@ tags:
 ### 带着问题去学习
 1. 什么情况会引起内存泄漏
 2. JavaScript内存泄漏机制
+<!-- more -->
 
 [参考文章](https://auth0.com/blog/four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/)
 

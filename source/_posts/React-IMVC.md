@@ -4,6 +4,18 @@ date: 2019-12-28 17:41:18
 tags:
 ---
 
+### 带着问题去学习
+1. nodejs环境如何加载前端组件
+2. 组件的数据如何获取
+3. HMR怎么做
+4. CSS如何处理
+5. 如何拼接成完整的HTML结构返回
+6. 双端渲染结果不一致怎么办
+7. 如何进行路由分割
+8. 如何降级为客户端渲染
+9. 生产环境如何发布应用
+<!-- more -->
+
 
 [React 实现服务端渲染](https://juejin.im/post/5af443856fb9a07abc29f1eb)
 
@@ -17,7 +29,6 @@ tags:
 
 [利用webpack搭建脚手架一套完整流程](https://mp.weixin.qq.com/s/23f64lu-qAEAK76lFYyzow)
 
-<!-- more -->
 
 [同构](https://mp.weixin.qq.com/s/-Il3V0dtDA3JR1okK2yJyw)
 

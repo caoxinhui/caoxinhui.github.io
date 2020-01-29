@@ -4,8 +4,34 @@ date: 2020-01-15 18:55:49
 tags:
 ---
 
-[原文链接](https://github.com/brickspert/blog/issues/22)
+本文介绍了 react-imvc 和 redux 对状态更新的原理
+
+## react-imvc 状态原理
+首先回顾一下 react-imvc 更新状态的使用方法。
+
+将 更新状态的方法，放到 `this.store.actions` 中，例如 `UPDATE_COUNT_DOWN_DATA` 方法，然后通过 `UPDATE_COUNT_DOWN_DATA(countDownList)` 执行方法 `UPDATE_COUNT_DOWN_DATA` 中的方法。
+其中，UPDATE_COUNT_DOWN_DATA 方法中的第一个参数是全局的state状态，后面一个参数就是传入的参数。 
+```js
+const UPDATE_COUNT_DOWN_DATA = (state,payload)=>{
+  const { countdownlist } = payload
+  return {
+    ...state,
+    countdownlist
+  }
+}
+```
+这样就增加了一个全局的状态countdownlist
+
+
+
+
+
+
 <!-- more -->
+
+## redux 状态管理
+
+[redux原理原文链接](https://github.com/brickspert/blog/issues/22)
 
 
 ### 状态值 只有 count 值

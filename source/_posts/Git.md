@@ -187,4 +187,12 @@ npm build
   - ^ 会匹配最新的大版本依赖包，^1.2.3 会匹配 1.x.x
 
 
+## Unexpected end of JSON input while parsing near '..."http://registry.npm.'
+第一步
+`npm cache clean --force`
+第二步
+`npm install --registry=https://registry.npm（镜像）`
+
+
+
 ![git 命令](../../images/git.jpg)

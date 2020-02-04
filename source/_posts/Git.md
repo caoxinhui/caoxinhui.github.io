@@ -135,6 +135,12 @@ git merge abort 取消合并
 `git reset --hard <需要回退到的版本号（只需输入前几位）>`
 `git push origin <分支名> --force` 或者 `git push --force` 强制提交
 
+### 删除中间某次提交
+1. 首先 `git log` 查看提交记录，找到出错的前一笔提交的 `commit_id`
+2. 用命令 `git rebase -i commit_id`,查找提交记录
+3. 将出错那次提交的 `pick` 改为 `drop`
+4. `Esc，:wq`
+5. 完成！
 
 ### git reset分为三种模式
 - soft 

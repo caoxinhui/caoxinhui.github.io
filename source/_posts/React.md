@@ -16,7 +16,7 @@ class Greeting extends React.Component {
     }
 }
 ```
-
+<!-- more -->
 如果 Greeting 是一个函数，React 需要调用它。
 
 ``` js
@@ -54,7 +54,6 @@ new Greeting(); // 😳 Greeting {}
  dangerouslySetInnerHTML 是 React 提供的替换浏览器 DOM 中的 innerHTML 接口的一个参数。
 一般而言，使用 JS 代码设置 HTML 文档的内容是危险的，因为这样很容易把你的用户信息暴露给跨站脚本攻击. 所以，你虽然可以直接在 React 中设置 html 的内容，但你要使用 dangerouslySetInnerHTML 并向该函数传递一个含有\_\_html 键的对象，用来提醒你自己这样做很危险。
 
-<!-- more -->
 
 ``` javascript
 function ProfilePage(props) {

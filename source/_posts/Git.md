@@ -232,5 +232,5 @@ npm build
 
 &nbsp; &nbsp; 这是一个与npm缓存腐败的问题。尽管在较新版本的npm中他们实现了自我修复，这通常可以保证没有腐败，但似乎并不那么有效。
 
-![git 命令](../../images/git.jpg)
+![git.jpg](http://ww1.sinaimg.cn/large/92babc53gy1gbmq2fukejj21ai35sqm4.jpg)
 

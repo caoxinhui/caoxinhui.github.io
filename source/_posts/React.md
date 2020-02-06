@@ -4,6 +4,53 @@ date: 2019-12-28 17:31:24
 tags: React
 ---
 
+### [React 如何区分 class 和 functions](https://overreacted.io/zh-hans/how-does-react-tell-a-class-from-a-function/)
+
+``` js
+function Greeting() {
+    return <p > Hello < /p>;
+}
+class Greeting extends React.Component {
+    render() {
+        return <p > hello < /p>
+    }
+}
+```
+
+如果 Greeting 是一个函数，React 需要调用它。
+
+``` js
+const result = Greeting(props)
+```
+
+但如果 Greeting 是一个类，React 需要先用 new 操作符将其实例化，然后 调用刚才生成实例的 render 方法
+
+``` js
+const instance = new Greeting(props); // Greeting {}
+const result = instance.render(); // <p>Hello</p>
+```
+
+new 的作用：创建一个 {} 对象并把 Person 中的 this 指向那个对象，以便我可以通过类似 this.name 的形式去设置一些东西，然后把这个对象返回给我。
+
+``` js
+function Person(name) {
+    this.name = name;
+}
+var fred = new Person('Fred')
+```
+我们可以利用箭头函数没有 prototype 的特点来检测箭头函数
+```js
+(() => {}).prototype // undefined
+(function() {}).prototype // {constructor: f}
+```
+```js
+function Greeting() {
+  return 'Hello';
+}
+
+Greeting(); // ✅ 'Hello'
+new Greeting(); // 😳 Greeting {}
+```
  dangerouslySetInnerHTML 是 React 提供的替换浏览器 DOM 中的 innerHTML 接口的一个参数。
 一般而言，使用 JS 代码设置 HTML 文档的内容是危险的，因为这样很容易把你的用户信息暴露给跨站脚本攻击. 所以，你虽然可以直接在 React 中设置 html 的内容，但你要使用 dangerouslySetInnerHTML 并向该函数传递一个含有\_\_html 键的对象，用来提醒你自己这样做很危险。
 
@@ -137,8 +184,7 @@ function MessageThread() {
         /> <
         button onClick = {
             handleSendClick
-        } > Send < /button> < /
-        >
+        } > Send < /button> < / >
     );
 }
 ```
@@ -545,3 +591,4 @@ const HOC = (WrappedComponent) =>
 ```
 
 ### render 方法原理
+

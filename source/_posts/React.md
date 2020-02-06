@@ -544,3 +544,4 @@ const HOC = (WrappedComponent) =>
   //实际显示的效果是input的值为"may the force be with you"
 ```
 
+### render 方法原理

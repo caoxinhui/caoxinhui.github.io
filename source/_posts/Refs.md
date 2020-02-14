@@ -129,3 +129,74 @@ class Parent extends React.Component {
   }
 }
 ```
+
+### 应用
+[ref callback 实例](https://swizec.com/blog/ref-callbacks-measure-react-component-size/swizec/8444)
+#### 使用 ref callback 测量 component size 
+工作过程
+- React 渲染组件 
+- 浏览器布局
+- 触发 ref callback
+- 使用 getBoundingClientRect 获得元素尺寸
+- 使用获得的尺寸
+
+```js
+class FancyButton extends React.Component {
+  // class 组件中的方法，constructor 中的定义需要写 this，其余地方不需要
+  refCallback = el => {
+    if (el) {
+      console.log(el.getBoundingClientRect());
+    }
+  };
+
+  render() {
+    return <div ref={this.refCallback} />;
+  }
+}
+
+```
+
+当 react 放置此元素后，调用 refCallback , el 是对已放置在页面上 DOM 元素的引用
+
+目前看上去好像与 componentDidMount 差不多，但是当你的组件，在没有 remount 的情况下，改变了尺寸， 就不得不通过 componentDidUpdate 重新计算，但是这会 陷入 无限递归陷阱 🧐**componetdidupdate中执行setState**
+
+使用 ref callback 👇
+```js
+class ReportSize extends React.Component {
+  state = {
+    text: faker.lorem.paragraphs(Math.random() * 10)
+  };
+
+  shuffle = () => {
+    this.doReportSize = true;
+    this.setState({
+      text: faker.lorem.paragraphs(Math.random() * 10)
+    });
+  };
+
+  refCallback = element => {
+    if (element) {
+      this.elementRef = element;
+      this.props.getSize(element.getBoundingClientRect());
+    }
+  };
+
+  componentDidUpdate() {
+    if (this.doReportSize) {
+      this.props.getSize(this.elementRef.getBoundingClientRect());
+      this.doReportSize = false;
+    }
+  }
+
+  render() {
+    const { text } = this.state;
+    return (
+      <div ref={this.refCallback} style={{ border: "1px solid red" }}>
+        <button onClick={this.shuffle}>Shuffle</button>
+        <p>{text}</p>
+      </div>
+    );
+  }
+}
+```
+

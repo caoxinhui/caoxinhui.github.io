@@ -56,7 +56,7 @@ class Child extends React.Component {
 }
 ```
 
-### 使用 forwardRef 使函数式组件可以实现 将 ref 传递给它的一个自组件
+### 使用 forwardRef 使函数式组件可以实现 将 ref 传递给它的一个子组件
 
 ```js
 function App() {

@@ -2,6 +2,7 @@
 title: React 生命周期
 date: 2020-02-14 11:32:17
 tags:
+categories: 基础
 ---
 
 本文对 React 生命周期以及 setState 在各个生命周期中的使用作整理。

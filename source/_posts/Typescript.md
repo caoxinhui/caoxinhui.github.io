@@ -201,3 +201,48 @@ class StaticMem {
 组合使用 ` &= ` 和 ` ~ ` 来清理一个标志
 使用 ` | ` 来合并标志 
 
+## [官方文档](https://www.tslang.cn/docs/handbook/basic-types.html)
+
+### 基础类型
+
+* 数组
+
+定义方式有如下两种：
+
+``` js
+    let list: number[] = [1, 2, 3]
+```
+
+``` js
+let list: Array < number >= [1, 2, 3]
+```
+
+* 元组 Tuple
+
+> 元组类型允许表示一个已知元素数量和类型的数组，各元素的类型不必相同
+
+``` js
+let list: [string, number]
+```
+
+当访问一个越界的元素，会使用联合类型替代
+
+* 类型断言
+👇尖括号语法
+```js
+let someValue: any = "this is a string";
+
+let strLength: number = (<string>someValue).length;
+```
+👇as 语法
+```js
+let someValue: any = "this is a string";
+
+let strLength: number = (someValue as string).length;
+```
+👇给对象元素指定类型
+```js
+let {a, b}: {a: string, b: number} = o;
+```
+
+* 类类型

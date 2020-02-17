@@ -157,3 +157,5 @@ function areEqual(prevProps, nextProps) {
 }
 const MemoNumb = React.memo(NumberTemp, areEqual);
 ```
+
+### 为什么默认情况下，父组件渲染 会 导致子组件渲染 ？ 🤔

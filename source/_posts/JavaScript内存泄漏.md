@@ -2,6 +2,7 @@
 title: JavaScript内存泄漏
 date: 2020-01-21 10:54:39
 tags:
+categories: 基础
 ---
 
 平时工作中基本没有考虑过内存泄漏的情况，也是因为没有遇到过内存泄漏的情况。
@@ -11,10 +12,16 @@ tags:
 
 1. 什么情况会引起内存泄漏
 2. JavaScript内存泄漏机制
-
+3. **闭包在内存中是什么导致的？**
+4. 从内存来看 null 和 undefined 本质的区别是什么？null 表示一个空对象指针 ，释放内存空间可以用 a=null
+5. 为什么typeof(null) //object typeof(undefined) //undefined？
 <!-- more -->
 
+### 基础回顾
+JS中的基础数据类型，这些值都有固定的大小，往往都保存在栈内存中（闭包除外），由系统自动分配存储空间。我们可以直接操作保存在栈内存空间的值，因此基础数据类型都是按值访问 数据在栈内存中的存储与使用方式类似于数据结构中的堆栈数据结构，遵循后进先出的原则
+
 [参考文章](https://auth0.com/blog/four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/)
+[javascript内存模型](https://medium.com/@ethannam/javascripts-memory-model-7c972cd2c239)
 
 ### 什么是内存泄漏
 

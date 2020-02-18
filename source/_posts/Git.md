@@ -232,5 +232,12 @@ npm build
 
 &nbsp; &nbsp; 这是一个与npm缓存腐败的问题。尽管在较新版本的npm中他们实现了自我修复，这通常可以保证没有腐败，但似乎并不那么有效。
 
+### vscode 自带终端，每次打开都报错误
+`nvm is not compatible with the npm config "prefix" option: currently set to "/usr/local" Run "npm config delete prefix" or "nvm use --delete-prefix v10.15.1 --silent" to unset it.`
+
+👇
+`npm config delete prefix `
+`npm config set prefix $NVM_DIR/versions/node/v10.15.1`
+
 ![git.jpg](http://ww1.sinaimg.cn/large/92babc53gy1gbmq2fukejj21ai35sqm4.jpg)
 

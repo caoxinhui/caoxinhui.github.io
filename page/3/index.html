@@ -41,7 +41,7 @@
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
     localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
@@ -207,7 +207,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2019/12/29/Webpack/">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2019/12/28/Typescript/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -221,7 +221,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/12/29/Webpack/" class="post-title-link" itemprop="url">Webpack</a>
+            <a href="/2019/12/28/Typescript/" class="post-title-link" itemprop="url">Typescript</a>
         </h2>
 
         <div class="post-meta">
@@ -231,14 +231,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-12-29 16:31:58" itemprop="dateCreated datePublished" datetime="2019-12-29T16:31:58+08:00">2019-12-29</time>
+              <time title="创建时间：2019-12-28 17:52:28" itemprop="dateCreated datePublished" datetime="2019-12-28T17:52:28+08:00">2019-12-28</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 09:24:06" itemprop="dateModified" datetime="2020-02-18T09:24:06+08:00">2020-02-18</time>
+                <time title="修改时间：2020-02-18 19:56:02" itemprop="dateModified" datetime="2020-02-18T19:56:02+08:00">2020-02-18</time>
               </span>
 
           
@@ -252,9 +252,87 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <a id="more"></a>
-<p><a href="https://mp.weixin.qq.com/s/uTAJZoqFFDn5cfkwcYr11Q" target="_blank" rel="noopener">手写一个webpack mini</a><br><a href="https://github.com/YvetteLau/Blog/issues/1" target="_blank" rel="noopener">配置webpack</a><br><a href="https://webpack.wuhaolin.cn/" target="_blank" rel="noopener">webpack 教程</a></p>
+          <h2 id="Typescript-学习教程"><a href="#Typescript-学习教程" class="headerlink" title="Typescript 学习教程"></a>Typescript 学习教程</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/12/28/Typescript/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
 
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2019/12/29/Server-Side-Rendering/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="caoxinhui">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="caoxinhui">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/29/Server-Side-Rendering/" class="post-title-link" itemprop="url">Server Side Rendering</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-29 16:49:37" itemprop="dateCreated datePublished" datetime="2019-12-29T16:49:37+08:00">2019-12-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-18 19:56:02" itemprop="dateModified" datetime="2020-02-18T19:56:02+08:00">2020-02-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="实现一个简单的服务端渲染"><a href="#实现一个简单的服务端渲染" class="headerlink" title="实现一个简单的服务端渲染"></a>实现一个简单的服务端渲染</h3><p>在前后端渲染相同的component，将输出一致的dom结构。完善的component属性及生命周期与客户端的render时机是react同构的关键<br>react的虚拟dom以对象树的形式保存在内存中，并且是可以在任何支持JavaScript的环境中生成的，所以可以在浏览器和node中生成。这为前后端同构提供了先决条件。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/12/29/Server-Side-Rendering/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -304,7 +382,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 09:24:06" itemprop="dateModified" datetime="2020-02-18T09:24:06+08:00">2020-02-18</time>
+                <time title="修改时间：2020-02-18 19:56:02" itemprop="dateModified" datetime="2020-02-18T19:56:02+08:00">2020-02-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -387,7 +465,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 09:24:06" itemprop="dateModified" datetime="2020-02-18T09:24:06+08:00">2020-02-18</time>
+                <time title="修改时间：2020-02-18 19:56:02" itemprop="dateModified" datetime="2020-02-18T19:56:02+08:00">2020-02-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -416,78 +494,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/02/14/React-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2019/12/29/Server-Side-Rendering/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="caoxinhui">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="caoxinhui">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/29/Server-Side-Rendering/" class="post-title-link" itemprop="url">Server Side Rendering</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-29 16:49:37" itemprop="dateCreated datePublished" datetime="2019-12-29T16:49:37+08:00">2019-12-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 09:24:06" itemprop="dateModified" datetime="2020-02-18T09:24:06+08:00">2020-02-18</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="实现一个简单的服务端渲染"><a href="#实现一个简单的服务端渲染" class="headerlink" title="实现一个简单的服务端渲染"></a>实现一个简单的服务端渲染</h3><p>在前后端渲染相同的component，将输出一致的dom结构。完善的component属性及生命周期与客户端的render时机是react同构的关键<br>react的虚拟dom以对象树的形式保存在内存中，并且是可以在任何支持JavaScript的环境中生成的，所以可以在浏览器和node中生成。这为前后端同构提供了先决条件。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/12/29/Server-Side-Rendering/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -542,7 +548,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 09:24:06" itemprop="dateModified" datetime="2020-02-18T09:24:06+08:00">2020-02-18</time>
+                <time title="修改时间：2020-02-18 19:56:02" itemprop="dateModified" datetime="2020-02-18T19:56:02+08:00">2020-02-18</time>
               </span>
 
           
@@ -560,247 +566,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/12/28/React/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/01/13/HTTP/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="caoxinhui">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="caoxinhui">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/13/HTTP/" class="post-title-link" itemprop="url">HTTP</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-13 16:51:57" itemprop="dateCreated datePublished" datetime="2020-01-13T16:51:57+08:00">2020-01-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 09:24:06" itemprop="dateModified" datetime="2020-02-18T09:24:06+08:00">2020-02-18</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>本篇整理 《图解HTTP》 以及 《HTTP权威指南》相关知识点</p>
-<h3 id="HTTP-首部"><a href="#HTTP-首部" class="headerlink" title="HTTP 首部"></a>HTTP 首部</h3><h3 id="Access-Control-Expose-Headers"><a href="#Access-Control-Expose-Headers" class="headerlink" title="Access-Control-Expose-Headers"></a>Access-Control-Expose-Headers</h3><blockquote>
-<p>列出了哪些首部可以作为响应的一部分暴露给外部</p>
-</blockquote>
-<p>默认情况下，只有6种简单响应首部可以暴露给外部</p>
-<ul>
-<li>Cache-Control</li>
-<li>Content-Language</li>
-<li>Content-Type</li>
-<li>Expires</li>
-<li>Last-Modified</li>
-<li>Pragma</li>
-</ul>
-<h3 id="access-control-allow-credentials"><a href="#access-control-allow-credentials" class="headerlink" title="access-control-allow-credentials"></a>access-control-allow-credentials</h3><blockquote>
-<p>表示是否可以将对请求的响应暴露给页面</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/01/21/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="caoxinhui">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="caoxinhui">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/21/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/" class="post-title-link" itemprop="url">JavaScript内存泄漏</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-21 10:54:39" itemprop="dateCreated datePublished" datetime="2020-01-21T10:54:39+08:00">2020-01-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 09:24:06" itemprop="dateModified" datetime="2020-02-18T09:24:06+08:00">2020-02-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
-                    <span itemprop="name">基础</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>平时工作中基本没有考虑过内存泄漏的情况，也是因为没有遇到过内存泄漏的情况。<br>有说JavaScript有自己的垃圾回收机制</p>
-<h3 id="带着问题去学习"><a href="#带着问题去学习" class="headerlink" title="带着问题去学习"></a>带着问题去学习</h3><ol>
-<li>什么情况会引起内存泄漏</li>
-<li>JavaScript内存泄漏机制</li>
-<li><strong>闭包在内存中是什么导致的？</strong></li>
-<li>从内存来看 null 和 undefined 本质的区别是什么？null 表示一个空对象指针 ，释放内存空间可以用 a=null</li>
-<li>为什么typeof(null) //object typeof(undefined) //undefined？
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/21/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2019/12/28/Iterm-2-settings/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="caoxinhui">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="caoxinhui">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/28/Iterm-2-settings/" class="post-title-link" itemprop="url">Iterm 2 settings</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-28 17:45:06" itemprop="dateCreated datePublished" datetime="2019-12-28T17:45:06+08:00">2019-12-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 09:24:06" itemprop="dateModified" datetime="2020-02-18T09:24:06+08:00">2020-02-18</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>本文记录 oh my zsh 及其插件的安装方法。在item使用过程中常用的一些命令</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/12/28/Iterm-2-settings/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -855,7 +620,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 09:24:06" itemprop="dateModified" datetime="2020-02-18T09:24:06+08:00">2020-02-18</time>
+                <time title="修改时间：2020-02-18 19:56:02" itemprop="dateModified" datetime="2020-02-18T19:56:02+08:00">2020-02-18</time>
               </span>
 
           
@@ -906,7 +671,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/01/01/ES6/">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/01/13/HTTP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -920,7 +685,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/01/01/ES6/" class="post-title-link" itemprop="url">ES6</a>
+            <a href="/2020/01/13/HTTP/" class="post-title-link" itemprop="url">HTTP</a>
         </h2>
 
         <div class="post-meta">
@@ -930,14 +695,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-01-01 13:56:44" itemprop="dateCreated datePublished" datetime="2020-01-01T13:56:44+08:00">2020-01-01</time>
+              <time title="创建时间：2020-01-13 16:51:57" itemprop="dateCreated datePublished" datetime="2020-01-13T16:51:57+08:00">2020-01-13</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 09:24:06" itemprop="dateModified" datetime="2020-02-18T09:24:06+08:00">2020-02-18</time>
+                <time title="修改时间：2020-02-18 19:56:02" itemprop="dateModified" datetime="2020-02-18T19:56:02+08:00">2020-02-18</time>
               </span>
 
           
@@ -951,10 +716,251 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="尾递归"><a href="#尾递归" class="headerlink" title="尾递归"></a>尾递归</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;尾调用的概念非常简单，一句话就能说清楚，就是指某个函数的最后一步是调用另一个函数。尾调用不一定出现在函数尾部，只要是最后一步操作即可。<br>&nbsp;&nbsp;&nbsp;&nbsp;函数调用会在内存形成一个”调用记录”，又称”调用帧”（call frame），保存调用位置和内部变量等信息。如果在函数A的内部调用函数B，那么在A的调用记录上方，还会形成一个B的调用记录。等到B运行结束，将结果返回到A，B的调用记录才会消失。如果函数B内部还调用函数C，那就还有一个C的调用记录栈，以此类推。所有的调用记录，就形成一个”调用栈”（call stack）。<br>&nbsp;&nbsp;&nbsp;&nbsp;尾调用由于是函数的最后一步操作，所以不需要保留外层函数的调用记录，因为调用位置、内部变量等信息都不会再用到了，只要直接用内层函数的调用记录，取代外层函数的调用记录就可以了。<br>&nbsp;&nbsp;&nbsp;&nbsp;递归非常耗费内存，因为需要同时保存成千上百个调用记录，很容易发生”栈溢出”错误（stack overflow）。但对于尾递归来说，由于只存在一个调用记录，所以永远不会发生”栈溢出”错误。</p>
+          <p>本篇整理 《图解HTTP》 以及 《HTTP权威指南》相关知识点</p>
+<h3 id="HTTP-首部"><a href="#HTTP-首部" class="headerlink" title="HTTP 首部"></a>HTTP 首部</h3><h3 id="Access-Control-Expose-Headers"><a href="#Access-Control-Expose-Headers" class="headerlink" title="Access-Control-Expose-Headers"></a>Access-Control-Expose-Headers</h3><blockquote>
+<p>列出了哪些首部可以作为响应的一部分暴露给外部</p>
+</blockquote>
+<p>默认情况下，只有6种简单响应首部可以暴露给外部</p>
+<ul>
+<li>Cache-Control</li>
+<li>Content-Language</li>
+<li>Content-Type</li>
+<li>Expires</li>
+<li>Last-Modified</li>
+<li>Pragma</li>
+</ul>
+<h3 id="access-control-allow-credentials"><a href="#access-control-allow-credentials" class="headerlink" title="access-control-allow-credentials"></a>access-control-allow-credentials</h3><blockquote>
+<p>表示是否可以将对请求的响应暴露给页面</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2019/12/28/Iterm-2-settings/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="caoxinhui">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="caoxinhui">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/28/Iterm-2-settings/" class="post-title-link" itemprop="url">Iterm 2 settings</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-28 17:45:06" itemprop="dateCreated datePublished" datetime="2019-12-28T17:45:06+08:00">2019-12-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-18 19:56:02" itemprop="dateModified" datetime="2020-02-18T19:56:02+08:00">2020-02-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>本文记录 oh my zsh 及其插件的安装方法。在item使用过程中常用的一些命令</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/01/01/ES6/#more" rel="contents">
+              <a class="btn" href="/2019/12/28/Iterm-2-settings/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/01/14/Hooks%E5%8E%9F%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="caoxinhui">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="caoxinhui">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/14/Hooks%E5%8E%9F%E7%90%86/" class="post-title-link" itemprop="url">Hooks原理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-14 13:36:53" itemprop="dateCreated datePublished" datetime="2020-01-14T13:36:53+08:00">2020-01-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-18 19:56:02" itemprop="dateModified" datetime="2020-02-18T19:56:02+08:00">2020-02-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><a href="https://github.com/brickspert/blog/issues/26" target="_blank" rel="noopener">参考文章</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/14/Hooks%E5%8E%9F%E7%90%86/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/01/21/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="caoxinhui">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="caoxinhui">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/21/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/" class="post-title-link" itemprop="url">JavaScript内存泄漏</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-21 10:54:39" itemprop="dateCreated datePublished" datetime="2020-01-21T10:54:39+08:00">2020-01-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-18 19:56:02" itemprop="dateModified" datetime="2020-02-18T19:56:02+08:00">2020-02-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>平时工作中基本没有考虑过内存泄漏的情况，也是因为没有遇到过内存泄漏的情况。<br>有说JavaScript有自己的垃圾回收机制</p>
+<h3 id="带着问题去学习"><a href="#带着问题去学习" class="headerlink" title="带着问题去学习"></a>带着问题去学习</h3><ol>
+<li>什么情况会引起内存泄漏</li>
+<li>JavaScript内存泄漏机制</li>
+<li><strong>闭包在内存中是什么导致的？</strong></li>
+<li>从内存来看 null 和 undefined 本质的区别是什么？null 表示一个空对象指针 ，释放内存空间可以用 a=null</li>
+<li>为什么typeof(null) //object typeof(undefined) //undefined？
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/21/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>

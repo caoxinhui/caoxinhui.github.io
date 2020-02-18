@@ -54,7 +54,7 @@
 <meta property="og:description" content="本文记录 oh my zsh 及其插件的安装方法。在item使用过程中常用的一些命令">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-28T09:45:06.000Z">
-<meta property="article:modified_time" content="2020-01-17T02:09:14.934Z">
+<meta property="article:modified_time" content="2020-02-18T01:24:06.520Z">
 <meta property="article:author" content="caoxinhui">
 <meta name="twitter:card" content="summary">
 
@@ -241,7 +241,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-17 10:09:14" itemprop="dateModified" datetime="2020-01-17T10:09:14+08:00">2020-01-17</time>
+                <time title="修改时间：2020-02-18 09:24:06" itemprop="dateModified" datetime="2020-02-18T09:24:06+08:00">2020-02-18</time>
               </span>
 
           
@@ -265,16 +265,14 @@
         <p>本文记录 oh my zsh 及其插件的安装方法。在item使用过程中常用的一些命令</p>
 <a id="more"></a>
 
-
-<p><code>cat /etc/shells</code><br>查看系统有几个shell bash是mac中terminal自带的shell，把它换成zsh，这个的功能要多得多。拥有语法高亮，命令行tab补全，自动提示符，显示Git仓库状态等功能<br><code>chsh -s /bin/zsh</code> 设置默认shell<br><code>cd ~/.ssh</code> 进入ssh文件夹<br><code>open ~/.ssh</code> 打开ssh文件夹<br><code>cmd + w</code> 关闭当前页<br><code>history</code> 查看命令<br><code>cd ~</code>  访问用户目录<br><code>cd /</code> 访问根目录<br><code>clear</code> 清空<br><code>pwd</code> 显示当前目录</p>
-<h3 id="安装-oh-my-zsh"><a href="#安装-oh-my-zsh" class="headerlink" title="安装 oh my zsh"></a>安装 oh my zsh</h3><p><code>sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</code></p>
+<p><code>cat /etc/shells</code><br>查看系统有几个shell bash是mac中terminal自带的shell，把它换成zsh，这个的功能要多得多。拥有语法高亮，命令行tab补全，自动提示符，显示Git仓库状态等功能<br><code>chsh -s /bin/zsh</code> 设置默认shell<br><code>cd ~/.ssh</code> 进入ssh文件夹<br><code>open ~/.ssh</code> 打开ssh文件夹<br><code>cmd + w</code> 关闭当前页<br><code>history</code> 查看命令<br><code>cd ~</code> 访问用户目录<br><code>cd /</code> 访问根目录<br><code>clear</code> 清空<br><code>pwd</code> 显示当前目录</p>
+<h3 id="安装-oh-my-zsh"><a href="#安装-oh-my-zsh" class="headerlink" title="安装 oh my zsh"></a>安装 oh my zsh</h3><p><code>sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</code> </p>
 <h3 id="oh-my-zsh语法高亮插件"><a href="#oh-my-zsh语法高亮插件" class="headerlink" title="oh-my-zsh语法高亮插件"></a>oh-my-zsh语法高亮插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd ~&#x2F;.oh-my-zsh&#x2F;custom&#x2F;plugins&#x2F;</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-syntax-highlighting.git</span><br><span class="line">vi ~&#x2F;.zshrc</span><br><span class="line">plugins&#x3D;(</span><br><span class="line">  zsh-syntax-highlighting</span><br><span class="line">  git </span><br><span class="line">  z</span><br><span class="line">  )</span><br><span class="line">source ~&#x2F;.zshrc</span><br><span class="line">运行 source ~&#x2F;.zshrc 更新配置后重启item2</span><br></pre></td></tr></table></figure>
 
 <h3 id="快捷命令"><a href="#快捷命令" class="headerlink" title="快捷命令"></a>快捷命令</h3><p><code>z</code> 快速进入常用文件<br><code>trash</code> 相当于 <code>rm -rf</code> 删除某个文件，但是会放到垃圾箱里面</p>
 <h3 id="oh-my-zsh命令自动补全插件"><a href="#oh-my-zsh命令自动补全插件" class="headerlink" title="oh-my-zsh命令自动补全插件"></a>oh-my-zsh命令自动补全插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cd ~&#x2F;.oh-my-zsh&#x2F;custom&#x2F;plugins&#x2F;</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-autosuggestions</span><br><span class="line">vi ~&#x2F;.zshrc</span><br><span class="line">plugins&#x3D;(</span><br><span class="line">  git </span><br><span class="line">  z</span><br><span class="line">  zsh-autosuggestions</span><br><span class="line">  )</span><br><span class="line">source ~&#x2F;.zshrc</span><br></pre></td></tr></table></figure>
 
-
-<h3 id="code-自动在新窗口中打开项目"><a href="#code-自动在新窗口中打开项目" class="headerlink" title="code . 自动在新窗口中打开项目"></a>code . 自动在新窗口中打开项目</h3><p><code>shift + command + p</code>  -&gt; shell command  -&gt; install ‘code’ command in PATH</p>
+<h3 id="code-自动在新窗口中打开项目"><a href="#code-自动在新窗口中打开项目" class="headerlink" title="code . 自动在新窗口中打开项目"></a>code . 自动在新窗口中打开项目</h3><p><code>shift + command + p</code> -&gt; shell command  -&gt; install ‘code’ command in PATH</p>
 
     </div>
 
@@ -372,14 +370,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

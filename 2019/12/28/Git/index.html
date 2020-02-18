@@ -53,13 +53,13 @@
 <meta property="og:site_name" content="caoxinhui">
 <meta property="og:description" content="Git代码自动格式化123456789101112&#x2F;&#x2F; 安装husky，prettier,lint-staged&quot;husky&quot;: &amp;#123;    &quot;hooks&quot;: &amp;#123;      &quot;pre-commit&quot;: &quot;lint-staged&quot;    &amp;#125;  &amp;#125;,  &quot;lint-staged&quot;: &amp;#123;    &quot;*.&amp;#123;js,jsx&amp;#125;&quot;: [">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://caoxinhui.github.io/2019/12/images/git.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/92babc53gy1gbmq2fukejj21ai35sqm4.jpg">
 <meta property="article:published_time" content="2019-12-28T09:24:28.000Z">
-<meta property="article:modified_time" content="2020-01-20T02:23:52.640Z">
+<meta property="article:modified_time" content="2020-02-18T09:10:53.348Z">
 <meta property="article:author" content="caoxinhui">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://caoxinhui.github.io/2019/12/images/git.jpg">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/92babc53gy1gbmq2fukejj21ai35sqm4.jpg">
 
 <link rel="canonical" href="https://caoxinhui.github.io/2019/12/28/Git/">
 
@@ -244,7 +244,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-20 10:23:52" itemprop="dateModified" datetime="2020-01-20T10:23:52+08:00">2020-01-20</time>
+                <time title="修改时间：2020-02-18 17:10:53" itemprop="dateModified" datetime="2020-02-18T17:10:53+08:00">2020-02-18</time>
               </span>
 
           
@@ -266,92 +266,115 @@
 
       
         <h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="代码自动格式化"><a href="#代码自动格式化" class="headerlink" title="代码自动格式化"></a>代码自动格式化</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 安装husky，prettier,lint-staged</span></span><br><span class="line">"husky": &#123;</span><br><span class="line">    "hooks": &#123;</span><br><span class="line">      "pre-commit": "lint-staged"</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  "lint-staged": &#123;</span><br><span class="line">    "*.&#123;js,jsx&#125;": [</span><br><span class="line">      "prettier --write \"src/**/*.&#123;js,jsx&#125;\"",</span><br><span class="line">      <span class="string">"git add"</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
 
-<h3 id="本机权限问题"><a href="#本机权限问题" class="headerlink" title="本机权限问题"></a>本机权限问题</h3><p><code>git pull</code> 的时候 <code>error: cannot open .git/FETCH_HEAD: Permission denied</code> ,因为没有当前目录的修改权限<br><code>sudo chmod -R g+w .git</code> 修改目录权限。即可正常 <code>git pull</code></p>
-<h3 id="git表情提示符"><a href="#git表情提示符" class="headerlink" title="git表情提示符"></a>git表情提示符</h3><p>全局安装<code>git-cz</code> 或者 <code>gitmoji</code><br><code>npm install -g git-cz</code><br><code>npm i -g gitmoji-cli</code></p>
-<h3 id="撤销错误的提交"><a href="#撤销错误的提交" class="headerlink" title="撤销错误的提交"></a>撤销错误的提交</h3><p><code>git reset --soft HEAD^</code> 撤销commit，并保留更改<br><code>git push origin &lt;分支名&gt; --force</code></p>
-<h3 id="清理分支"><a href="#清理分支" class="headerlink" title="清理分支"></a>清理分支</h3><p><code>git remote prune origin</code> 清理远程分支，把本地不存在的远程分支删除，同时<code>git branch -a</code> 拉到的也是远程最新的分支，不会保留已删除的远程的分支<br><code>git remote show origin</code>，可以查看<code>remote</code>地址，远程分支，还有本地分支与之相对应关系等信息。</p>
+<h3 id="本机权限问题"><a href="#本机权限问题" class="headerlink" title="本机权限问题"></a>本机权限问题</h3><p><code>git pull</code> 的时候 <code>error: cannot open .git/FETCH_HEAD: Permission denied</code> , 因为没有当前目录的修改权限<br><code>sudo chmod -R g+w .git</code> 修改目录权限。即可正常 <code>git pull</code> </p>
+<h3 id="git表情提示符"><a href="#git表情提示符" class="headerlink" title="git表情提示符"></a>git表情提示符</h3><p>全局安装 <code>git-cz</code> 或者 <code>gitmoji</code><br><code>npm install -g git-cz</code><br><code>npm i -g gitmoji-cli</code> </p>
+<h3 id="撤销错误的提交"><a href="#撤销错误的提交" class="headerlink" title="撤销错误的提交"></a>撤销错误的提交</h3><p><code>git reset --soft HEAD^</code> 撤销commit，并保留更改<br><code>git push origin &lt;分支名&gt; --force</code> </p>
+<h3 id="清理分支"><a href="#清理分支" class="headerlink" title="清理分支"></a>清理分支</h3><p><code>git remote prune origin</code> 清理远程分支，把本地不存在的远程分支删除，同时 <code>git branch -a</code> 拉到的也是远程最新的分支，不会保留已删除的远程的分支<br><code>git remote show origin</code> ，可以查看 <code>remote</code> 地址，远程分支，还有本地分支与之相对应关系等信息。</p>
 <h3 id="修改git的用户名和密码"><a href="#修改git的用户名和密码" class="headerlink" title="修改git的用户名和密码"></a>修改git的用户名和密码</h3><p><code>Git config –global user.name</code> 用户名<br><code>Git config –global user.email</code> 邮箱名</p>
 <h3 id="回退到之前的版本号"><a href="#回退到之前的版本号" class="headerlink" title="回退到之前的版本号"></a>回退到之前的版本号</h3><p><code>Git reset –hard</code> 提交版本号</p>
 <h3 id="删除远程分支-不需要先切换到其他分支"><a href="#删除远程分支-不需要先切换到其他分支" class="headerlink" title="删除远程分支(不需要先切换到其他分支)"></a>删除远程分支(不需要先切换到其他分支)</h3><ol>
 <li><code>git push origin --delete 要删除的分支名</code> </li>
-<li><code>git push origin -d 分支名</code></li>
-<li><code>git push &lt;远程分支名&gt; -d 分支名</code></li>
+<li><code>git push origin -d 分支名</code> </li>
+<li><code>git push &lt;远程分支名&gt; -d 分支名</code> </li>
 </ol>
-<h3 id="删除本地分支"><a href="#删除本地分支" class="headerlink" title="删除本地分支"></a>删除本地分支</h3><p><code>git branch -d 本地分支名</code><br><code>git branch -D 本地分支名(分支没有完全merge会报错提示，改为强制删除即可)</code></p>
+<h3 id="删除本地分支"><a href="#删除本地分支" class="headerlink" title="删除本地分支"></a>删除本地分支</h3><p><code>git branch -d 本地分支名</code><br><code>git branch -D 本地分支名(分支没有完全merge会报错提示，改为强制删除即可)</code> </p>
 <h3 id="暂存修改"><a href="#暂存修改" class="headerlink" title="暂存修改"></a>暂存修改</h3><ol>
-<li>暂存<code>git stash</code></li>
-<li>恢复<code>git stash apply</code></li>
-<li>删除<code>git stash drop</code></li>
-<li>恢复 + 删除<code>git stash pop</code> </li>
+<li>暂存 <code>git stash</code> </li>
+<li>恢复 <code>git stash apply</code> </li>
+<li>删除 <code>git stash drop</code> </li>
+<li>恢复 + 删除 <code>git stash pop</code> </li>
 </ol>
 <h3 id="查看远程仓库信息"><a href="#查看远程仓库信息" class="headerlink" title="查看远程仓库信息"></a>查看远程仓库信息</h3><ol>
-<li><code>git remote -v</code></li>
+<li><code>git remote -v</code> </li>
 </ol>
-<h3 id="git撤销操作"><a href="#git撤销操作" class="headerlink" title="git撤销操作"></a>git撤销操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 只会产生一次提交，第二次提交修正了第一次的提交内容 --&gt;</span><br><span class="line">&#96;git commit -m &#39;initial commit&#39;&#96;</span><br><span class="line">&#96;git add forgotten_file&#96;</span><br><span class="line">&#96;git commit --amend&#96;</span><br></pre></td></tr></table></figure>
+<h3 id="git撤销操作"><a href="#git撤销操作" class="headerlink" title="git撤销操作"></a>git撤销操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 只会产生一次提交，第二次提交修正了第一次的提交内容 --&gt;</span><br><span class="line">&#96;git commit -m &#39;initial commit&#39;&#96; </span><br><span class="line">&#96;git add forgotten_file&#96; </span><br><span class="line">&#96;git commit --amend&#96;</span><br></pre></td></tr></table></figure>
 
-
-<h3 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h3><p><code>git branch testing 新建testing分支 在当前commit对象上新建一个分支指针，不会自动切换到该分支中去</code><br><code>git checkout -b iss53 新建分支并切换到该分支</code><br><code>git push -u origin 分支名</code> 提交新建的分支到远程<br><code>git push origin 分支名:分支名</code> 推送新分支到远程<br><code>git fetch origin 同步远程服务器上的数据到本地。</code></p>
+<h3 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h3><p><code>git branch testing 新建testing分支 在当前commit对象上新建一个分支指针，不会自动切换到该分支中去</code><br><code>git checkout -b iss53 新建分支并切换到该分支</code><br><code>git push -u origin 分支名</code> 提交新建的分支到远程<br><code>git push origin 分支名:分支名</code> 推送新分支到远程<br><code>git fetch origin 同步远程服务器上的数据到本地。</code> </p>
 <blockquote>
 <p>如果没有推送的远程的话，commit之后只会显示 working tree clean</p>
 </blockquote>
 <h3 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h3><p><code>git push origin :[分支名]</code> 删除远程分支</p>
 <!--SSH公钥默认存储在账户的主目录下的~/.ssh目录 -->
-<h3 id="ssh-key"><a href="#ssh-key" class="headerlink" title="ssh key"></a>ssh key</h3><p><code>cd ~/.ssh</code><br>查找有没有<code>something</code>和<code>something.pub</code>来命名的一对文件，这个<code>something</code>通常是<code>id_dsa</code> 或 <code>id_rsa</code>。<br>有<code>.pub</code>后缀的文件就是公钥，另一个文件是私钥。若<code>.ssh</code>目录没有，可以用<code>ssh-keygen</code>来创建。</p>
+
+<h3 id="ssh-key"><a href="#ssh-key" class="headerlink" title="ssh key"></a>ssh key</h3><p><code>cd ~/.ssh</code><br>查找有没有 <code>something</code> 和 <code>something.pub</code> 来命名的一对文件，这个 <code>something</code> 通常是 <code>id_dsa</code> 或 <code>id_rsa</code> 。<br>有 <code>.pub</code> 后缀的文件就是公钥，另一个文件是私钥。若 <code>.ssh</code> 目录没有，可以用 <code>ssh-keygen</code> 来创建。</p>
 <h3 id="设置git用户名和密码"><a href="#设置git用户名和密码" class="headerlink" title="设置git用户名和密码"></a>设置git用户名和密码</h3><p>git config –global user.name “your name”<br>git config –global user.email “<a href="mailto:johnode@example.com">johnode@example.com</a>“</p>
-<h3 id="合并commit"><a href="#合并commit" class="headerlink" title="合并commit"></a>合并commit</h3><p><code>git</code> 修改多个<code>commit</code>为一个<code>commit</code></p>
+<h3 id="合并commit"><a href="#合并commit" class="headerlink" title="合并commit"></a>合并commit</h3><p><code>git</code> 修改多个 <code>commit</code> 为一个 <code>commit</code> </p>
 <ol>
-<li>从HEAD版本开始往过去数3个版本 <code>git rebase -i HEAD~3</code><br>或者，指明要合并的版本之前的版本号 <code>git rebase -i commitId（不参与合并）</code></li>
-<li>除了第一个以外，后面的多个<code>commit pick</code>改为<code>s</code></li>
-<li><code>esc</code>键退出编辑</li>
-<li><code>:wq</code>退出</li>
-<li><code>git add .</code></li>
+<li>从HEAD版本开始往过去数3个版本 <code>git rebase -i HEAD~3</code> </li>
+</ol>
+<p>或者，指明要合并的版本之前的版本号 <code>git rebase -i commitId（不参与合并）</code> </p>
+<ol start="2">
+<li>除了第一个以外，后面的多个 <code>commit pick</code> 改为 <code>s</code> </li>
+<li><code>esc</code> 键退出编辑</li>
+<li><code>:wq</code> 退出</li>
+<li><code>git add .</code> </li>
 <li><code>git rebase --continue</code> </li>
 <li><code>git rebase --abort</code> 放弃压缩</li>
 </ol>
-<h3 id="撤销改动"><a href="#撤销改动" class="headerlink" title="撤销改动"></a>撤销改动</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout ./publish</span><br><span class="line">git clean -f ./publish</span><br></pre></td></tr></table></figure>
+<h3 id="撤销改动"><a href="#撤销改动" class="headerlink" title="撤销改动"></a>撤销改动</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout. / publish</span><br><span class="line">git clean - f. / publish</span><br></pre></td></tr></table></figure>
 
-<h3 id="merge-分支"><a href="#merge-分支" class="headerlink" title="merge 分支"></a>merge 分支</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// merge 代码用</span></span><br><span class="line">git merge 分支名 --squash</span><br><span class="line">git merge abort 取消合并</span><br></pre></td></tr></table></figure>
-
+<h3 id="merge-分支"><a href="#merge-分支" class="headerlink" title="merge 分支"></a>merge 分支</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// merge 代码用</span></span><br><span class="line">git merge 分支名--squash</span><br><span class="line">git merge abort 取消合并</span><br></pre></td></tr></table></figure>
 
 <h3 id="撤销已经提交的commit"><a href="#撤销已经提交的commit" class="headerlink" title="撤销已经提交的commit"></a>撤销已经提交的commit</h3><p><code>git reset --hand HEAD~1</code> 撤销上次的commit，保留之前的更改<br><code>git reset --hard &lt;需要回退到的版本号（只需输入前几位）&gt;</code><br><code>git push origin &lt;分支名&gt; --force</code> 或者 <code>git push --force</code> 强制提交</p>
+<h3 id="删除中间某次提交"><a href="#删除中间某次提交" class="headerlink" title="删除中间某次提交"></a>删除中间某次提交</h3><ol>
+<li>首先 <code>git log</code> 查看提交记录，找到出错的前一笔提交的 <code>commit_id</code> </li>
+<li>用命令 <code>git rebase -i commit_id</code> , 查找提交记录</li>
+<li>将出错那次提交的 <code>pick</code> 改为 <code>drop</code> </li>
+<li><code>Esc，:wq</code> </li>
+<li>完成！</li>
+</ol>
 <h3 id="git-reset分为三种模式"><a href="#git-reset分为三种模式" class="headerlink" title="git reset分为三种模式"></a>git reset分为三种模式</h3><ul>
 <li>soft </li>
 <li>mixed </li>
 <li>hard</li>
 </ul>
 <p><strong>git reset –hard commitId</strong><br>重置暂存区和工作区，完全重置为指定的commitId，当前分支没有commit的代码会被清除<br><strong>git reset –soft commitId</strong><br>保留工作目录，把指定的commit节点与当前分支的差异都存入暂存区。没有被commit的代码也能够保留下来<br><strong>git reset commitId</strong><br>不带参数，就是mixed模式。将会保留工作目录，并把工作区、暂存区、以及与reset的差异都放到工作区，然后清空暂存区。</p>
-<h3 id="rn-项目操作命令"><a href="#rn-项目操作命令" class="headerlink" title="rn 项目操作命令"></a>rn 项目操作命令</h3><p><code>xcrun simctl list devices</code>  获取所有设备名称<br><code>crn-cli run-ios --port=5390 --simulator=&quot;iPad Air (3rd generation)&quot; --reset</code>  指定打开设备</p>
+<h3 id="rn-项目操作命令"><a href="#rn-项目操作命令" class="headerlink" title="rn 项目操作命令"></a>rn 项目操作命令</h3><p><code>xcrun simctl list devices</code> 获取所有设备名称<br><code>crn-cli run-ios --port=5390 --simulator=&quot;iPad Air (3rd generation)&quot; --reset</code> 指定打开设备</p>
 <h3 id="关联本地项目与GitHub"><a href="#关联本地项目与GitHub" class="headerlink" title="关联本地项目与GitHub"></a>关联本地项目与GitHub</h3><ol>
-<li>在本地项目<code>git init</code></li>
-<li><code>git add .</code></li>
-<li><code>git commit -m &quot; message&quot;</code></li>
-<li>在<code>GitHub</code>建立一个项目</li>
-<li>复制项目<code>HTTPS</code>地址</li>
-<li><code>git remote add origin https 地址</code></li>
-<li><code>git push -u origin master</code></li>
+<li>在本地项目 <code>git init</code> </li>
+<li><code>git add .</code> </li>
+<li><code>git commit -m &quot; message&quot;</code> </li>
+<li>在 <code>GitHub</code> 建立一个项目</li>
+<li>复制项目 <code>HTTPS</code> 地址</li>
+<li><code>git remote add origin https 地址</code> </li>
+<li><code>git push -u origin master</code> </li>
 </ol>
 <h3 id="代码版本"><a href="#代码版本" class="headerlink" title="代码版本"></a>代码版本</h3><ol>
-<li>查看过去版本 <code>git log --pretty=oneline</code></li>
+<li>查看过去版本 <code>git log --pretty=oneline</code> </li>
 </ol>
 <h3 id="暂存区文件撤销"><a href="#暂存区文件撤销" class="headerlink" title="暂存区文件撤销"></a>暂存区文件撤销</h3><ol>
-<li><code>git reset HEAD 文件</code></li>
+<li><code>git reset HEAD 文件</code> </li>
 </ol>
 <h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><ol>
-<li>从版本库中删除文件 <code>git rm 文件名</code></li>
-<li>从版本库中删除文件，但是本地不删除该文件 <code>git rm --cached 文件名</code></li>
+<li>从版本库中删除文件 <code>git rm 文件名</code> </li>
+<li>从版本库中删除文件，但是本地不删除该文件 <code>git rm --cached 文件名</code> </li>
 </ol>
 <h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><ol>
-<li>仅创建 <code>git branch 分支名</code></li>
-<li>创建并切换 <code>git checkout -b 分支名</code></li>
+<li>仅创建 <code>git branch 分支名</code> </li>
+<li>创建并切换 <code>git checkout -b 分支名</code> </li>
 </ol>
 <h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><p>npm rebuild  重建软件包<br>npm build</p>
 <h3 id="与-的区别"><a href="#与-的区别" class="headerlink" title="^ 与 ~ 的区别"></a>^ 与 ~ 的区别</h3><ul>
 <li>~ 会匹配最近的小版本依赖包，~1.2.3 会匹配 1.2.x </li>
 <li>^ 会匹配最新的大版本依赖包，^1.2.3 会匹配 1.x.x</li>
 </ul>
-<p><img src="../../images/git.jpg" alt="git 命令"></p>
+<h2 id="Unexpected-end-of-JSON-input-while-parsing-near-‘…-“http-registry-npm-39"><a href="#Unexpected-end-of-JSON-input-while-parsing-near-‘…-“http-registry-npm-39" class="headerlink" title="Unexpected end of JSON input while parsing near ‘… “http://registry.npm.&#39;"></a>Unexpected end of JSON input while parsing near ‘… “<a href="http://registry.npm.&#39;" target="_blank" rel="noopener">http://registry.npm.&#39;</a></h2><p>第一步<br><code>npm cache clean --force</code><br>第二步<br><code>npm install --registry=https://registry.npm（镜像）</code> </p>
+<p>原因：可以先看下npm install的执行过程：</p>
+<ul>
+<li>发出npm install命令</li>
+<li>npm 向 registry 查询模块压缩包的网址</li>
+<li>下载压缩包，存放在~/.npm(本地NPM缓存路径)目录</li>
+<li>解压压缩包到当前项目的node_modules目录</li>
+</ul>
+<p>&nbsp; &nbsp; 实际上说一个模块安装以后，本地其实保存了两份。一份是 ~/.npm 目录下的压缩包，另一份是 node_modules 目录下解压后的代码。但是，运行 npm install 的时候，只会检查 node_modules 目录，而不会检查 ~/.npm 目录。如果一个模块在 ~./npm 下有压缩包，但是没有安装在 node_modules 目录中，npm 依然会从远程仓库下载一次新的压缩包。</p>
+<p>&nbsp; &nbsp; 我们想利用已经在缓存中之前已经备份的模块实现离线模块安装的的 cache 机制已经在V5的时候重写了，缓存将由 npm 来全局维护不再需要开发人员操心，离线安装时将不再尝试连接网络，而是降级尝试从缓存中读取，或直接失败。就是如果你 offline ，npm将无缝地使用您的缓存。</p>
+<p>&nbsp; &nbsp; 这是一个与npm缓存腐败的问题。尽管在较新版本的npm中他们实现了自我修复，这通常可以保证没有腐败，但似乎并不那么有效。</p>
+<h3 id="vscode-自带终端，每次打开都报错误"><a href="#vscode-自带终端，每次打开都报错误" class="headerlink" title="vscode 自带终端，每次打开都报错误"></a>vscode 自带终端，每次打开都报错误</h3><p><code>nvm is not compatible with the npm config &quot;prefix&quot; option: currently set to &quot;/usr/local&quot; Run &quot;npm config delete prefix&quot; or &quot;nvm use --delete-prefix v10.15.1 --silent&quot; to unset it.</code></p>
+<p>👇<br><code>npm config delete prefix</code><br><code>npm config set prefix $NVM_DIR/versions/node/v10.15.1</code></p>
+<p><img src="http://ww1.sinaimg.cn/large/92babc53gy1gbmq2fukejj21ai35sqm4.jpg" alt="git.jpg"></p>
 
     </div>
 
@@ -433,7 +456,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">1.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码自动格式化"><span class="nav-number">1.1.</span> <span class="nav-text">代码自动格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本机权限问题"><span class="nav-number">1.2.</span> <span class="nav-text">本机权限问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git表情提示符"><span class="nav-number">1.3.</span> <span class="nav-text">git表情提示符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销错误的提交"><span class="nav-number">1.4.</span> <span class="nav-text">撤销错误的提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清理分支"><span class="nav-number">1.5.</span> <span class="nav-text">清理分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改git的用户名和密码"><span class="nav-number">1.6.</span> <span class="nav-text">修改git的用户名和密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回退到之前的版本号"><span class="nav-number">1.7.</span> <span class="nav-text">回退到之前的版本号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除远程分支-不需要先切换到其他分支"><span class="nav-number">1.8.</span> <span class="nav-text">删除远程分支(不需要先切换到其他分支)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除本地分支"><span class="nav-number">1.9.</span> <span class="nav-text">删除本地分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#暂存修改"><span class="nav-number">1.10.</span> <span class="nav-text">暂存修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看远程仓库信息"><span class="nav-number">1.11.</span> <span class="nav-text">查看远程仓库信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git撤销操作"><span class="nav-number">1.12.</span> <span class="nav-text">git撤销操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建分支"><span class="nav-number">1.13.</span> <span class="nav-text">新建分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除远程分支"><span class="nav-number">1.14.</span> <span class="nav-text">删除远程分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh-key"><span class="nav-number">1.15.</span> <span class="nav-text">ssh key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置git用户名和密码"><span class="nav-number">1.16.</span> <span class="nav-text">设置git用户名和密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并commit"><span class="nav-number">1.17.</span> <span class="nav-text">合并commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销改动"><span class="nav-number">1.18.</span> <span class="nav-text">撤销改动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#merge-分支"><span class="nav-number">1.19.</span> <span class="nav-text">merge 分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销已经提交的commit"><span class="nav-number">1.20.</span> <span class="nav-text">撤销已经提交的commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-reset分为三种模式"><span class="nav-number">1.21.</span> <span class="nav-text">git reset分为三种模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rn-项目操作命令"><span class="nav-number">1.22.</span> <span class="nav-text">rn 项目操作命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关联本地项目与GitHub"><span class="nav-number">1.23.</span> <span class="nav-text">关联本地项目与GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码版本"><span class="nav-number">1.24.</span> <span class="nav-text">代码版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#暂存区文件撤销"><span class="nav-number">1.25.</span> <span class="nav-text">暂存区文件撤销</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除文件"><span class="nav-number">1.26.</span> <span class="nav-text">删除文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建分支"><span class="nav-number">1.27.</span> <span class="nav-text">创建分支</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm"><span class="nav-number">2.</span> <span class="nav-text">npm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#与-的区别"><span class="nav-number">2.1.</span> <span class="nav-text">^ 与 ~ 的区别</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">1.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码自动格式化"><span class="nav-number">1.1.</span> <span class="nav-text">代码自动格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本机权限问题"><span class="nav-number">1.2.</span> <span class="nav-text">本机权限问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git表情提示符"><span class="nav-number">1.3.</span> <span class="nav-text">git表情提示符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销错误的提交"><span class="nav-number">1.4.</span> <span class="nav-text">撤销错误的提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清理分支"><span class="nav-number">1.5.</span> <span class="nav-text">清理分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改git的用户名和密码"><span class="nav-number">1.6.</span> <span class="nav-text">修改git的用户名和密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回退到之前的版本号"><span class="nav-number">1.7.</span> <span class="nav-text">回退到之前的版本号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除远程分支-不需要先切换到其他分支"><span class="nav-number">1.8.</span> <span class="nav-text">删除远程分支(不需要先切换到其他分支)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除本地分支"><span class="nav-number">1.9.</span> <span class="nav-text">删除本地分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#暂存修改"><span class="nav-number">1.10.</span> <span class="nav-text">暂存修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看远程仓库信息"><span class="nav-number">1.11.</span> <span class="nav-text">查看远程仓库信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git撤销操作"><span class="nav-number">1.12.</span> <span class="nav-text">git撤销操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建分支"><span class="nav-number">1.13.</span> <span class="nav-text">新建分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除远程分支"><span class="nav-number">1.14.</span> <span class="nav-text">删除远程分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh-key"><span class="nav-number">1.15.</span> <span class="nav-text">ssh key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置git用户名和密码"><span class="nav-number">1.16.</span> <span class="nav-text">设置git用户名和密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并commit"><span class="nav-number">1.17.</span> <span class="nav-text">合并commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销改动"><span class="nav-number">1.18.</span> <span class="nav-text">撤销改动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#merge-分支"><span class="nav-number">1.19.</span> <span class="nav-text">merge 分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销已经提交的commit"><span class="nav-number">1.20.</span> <span class="nav-text">撤销已经提交的commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除中间某次提交"><span class="nav-number">1.21.</span> <span class="nav-text">删除中间某次提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-reset分为三种模式"><span class="nav-number">1.22.</span> <span class="nav-text">git reset分为三种模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rn-项目操作命令"><span class="nav-number">1.23.</span> <span class="nav-text">rn 项目操作命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关联本地项目与GitHub"><span class="nav-number">1.24.</span> <span class="nav-text">关联本地项目与GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码版本"><span class="nav-number">1.25.</span> <span class="nav-text">代码版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#暂存区文件撤销"><span class="nav-number">1.26.</span> <span class="nav-text">暂存区文件撤销</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除文件"><span class="nav-number">1.27.</span> <span class="nav-text">删除文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建分支"><span class="nav-number">1.28.</span> <span class="nav-text">创建分支</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm"><span class="nav-number">2.</span> <span class="nav-text">npm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#与-的区别"><span class="nav-number">2.1.</span> <span class="nav-text">^ 与 ~ 的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unexpected-end-of-JSON-input-while-parsing-near-‘…-“http-registry-npm-39"><span class="nav-number">3.</span> <span class="nav-text">Unexpected end of JSON input while parsing near ‘… “http:&#x2F;&#x2F;registry.npm.&#39;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-自带终端，每次打开都报错误"><span class="nav-number">3.1.</span> <span class="nav-text">vscode 自带终端，每次打开都报错误</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -449,14 +472,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

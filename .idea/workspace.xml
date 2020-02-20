@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fc1a0b3c-0c08-45ae-862d-0610626201f2" name="Default Changelist" comment="" />
+    <list default="true" id="fc1a0b3c-0c08-45ae-862d-0610626201f2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/Typescript.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Typescript.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,13 +13,42 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectId" id="1Y4fieSVN0vLM5a7JBxUhKz3F9K" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fc1a0b3c-0c08-45ae-862d-0610626201f2" name="Default Changelist" comment="" />
+      <created>1582206915852</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582206915852</updated>
+      <workItem from="1582206918884" duration="260000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="570" y="275" width="540" height="524" key="StructurePopup" timestamp="1582207201458">
+      <screen x="80" y="23" width="1600" height="1027" />
+    </state>
+    <state x="570" y="275" width="540" height="524" key="StructurePopup/80.23.1600.1027@80.23.1600.1027" timestamp="1582207201458" />
+    <state x="100" y="100" width="1480" height="850" key="com.intellij.history.integration.ui.views.RecentChangeDialog" timestamp="1582207178780">
+      <screen x="80" y="23" width="1600" height="1027" />
+    </state>
+    <state x="100" y="100" width="1480" height="850" key="com.intellij.history.integration.ui.views.RecentChangeDialog/80.23.1600.1027@80.23.1600.1027" timestamp="1582207178780" />
   </component>
 </project>

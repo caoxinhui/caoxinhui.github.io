@@ -5,19 +5,13 @@ tags: Git
 ---
 
 ## Git 
-
+<!-- more -->
 ### HEAD^ 与 HEAD~ 区别
-
-A =      = A^0
-B = A^   = A^1     = A~1
-C = A^2
-D = A^^  = A^1^1   = A~2
-E = B^2  = A^^2
-F = B^3  = A^^3
-G = A^^^ = A^1^1^1 = A~3
-H = D^2  = B^^2    = A^^^2  = A~2^2
-I = F^   = B^3^    = A^^3^
-J = F^2  = B^3^2   = A^^3^2
+```js
+A = A^0
+A^ = A^1= A~1
+^^= A^1^1= A~2
+```
 
 ### reset, hard, soft 区别
 
@@ -178,11 +172,11 @@ git merge abort 取消合并
 
 ### 撤销已经提交的commit
 
-`git reset --hand HEAD~1` 撤销上次的commit，保留之前的更改
+`git reset --hard HEAD~1` 撤销上次的commit，保留之前的更改
 `git reset --hard <需要回退到的版本号（只需输入前几位）>` 
 `git push origin <分支名> --force` 或者 `git push --force` 强制提交
 
-### 删除中间某次提交
+### 删除中间某次提交(待补充)
 
 1. 首先 `git log` 查看提交记录，找到出错的前一笔提交的 `commit_id` 
 2. 用命令 `git rebase -i commit_id` , 查找提交记录

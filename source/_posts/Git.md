@@ -5,7 +5,26 @@ tags: Git
 ---
 
 ## Git 
+
 <!-- more -->
+
+### git clone
+该命令会在本地主机生成一个目录，与远程主机的版本库同名。若要指定不同的目录名，将目录名作为git clone 命令的第二个参数
+`git clone <版本库的网址> <本地目录名>`
+
+### git remote
+每个远程主机都有一个主机名，git remote 用于管理主机名
+
+`git remote` 列出所有远程主机
+`git remote -v`参看远程主机网址
+`git remote show <主机名>`查看主机详细信息
+`git remote add <主机名> <网址>`添加远程主机
+`git remote rm <主机名>`删除远程主机
+`git remote rename <原主机名> <新主机名>`修改远程主机
+
+克隆版本库的时候，所使用的远程主机，自动被git命名为origin，若想使用其他主机名，使用 -o
+`git clone -o jQuery https://github.com/jquery/jquery.git`
+
 ### HEAD^ 与 HEAD~ 区别
 ```js
 A = A^0
@@ -51,6 +70,9 @@ A^ = A^1= A~1
 `git pull` 的时候 ` error: cannot open .git/FETCH_HEAD: Permission denied ` , 因为没有当前目录的修改权限
 `sudo chmod -R g+w .git ` 修改目录权限。即可正常 `git pull` 
 
+### git pull
+`git pull <远程主机名> <远程分支名>:<本地分支名>`
+
 ### git表情提示符
 
 全局安装 `git-cz` 或者 `gitmoji` 
@@ -61,6 +83,10 @@ A^ = A^1= A~1
 
 `git reset --soft HEAD^` 撤销commit，并保留更改
 `git push origin <分支名> --force` 
+
+### force
+如果远程主机的版本比本地版本更新，推送时 git 会报错，要求先在本地做 git pull 合并差异，再推送到远程主机。这时，如果一定要推送，可以使用 force
+`git push --force origin`
 
 ### 清理分支
 
@@ -116,7 +142,9 @@ A^ = A^1= A~1
 `git checkout -b iss53 新建分支并切换到该分支` 
 `git push -u origin 分支名` 提交新建的分支到远程
 `git push origin 分支名:分支名` 推送新分支到远程
-`git fetch origin 同步远程服务器上的数据到本地。` 
+`git fetch <远程主机名> 同步远程服务器上的数据到本地。` 
+`git fetch <远程主机名> <分支名>`取回特定分支的更新
+`git checkout -b newBranch origin/master` 在origin/master分支的基础上，新建一个分支
 
 > 如果没有推送的远程的话，commit之后只会显示 working tree clean
 
@@ -229,6 +257,8 @@ git merge abort 取消合并
 
 1. 仅创建 `git branch 分支名` 
 2. 创建并切换 `git checkout -b 分支名` 
+
+`git branch -r`查看远程分支
 
 ## npm
 

@@ -228,21 +228,71 @@ let list: [string, number]
 当访问一个越界的元素，会使用联合类型替代
 
 * 类型断言
+
 👇尖括号语法
-```js
+
+``` js
 let someValue: any = "this is a string";
 
-let strLength: number = (<string>someValue).length;
+let strLength: number = ( < string > someValue).length;
 ```
+
 👇as 语法
-```js
+
+``` js
 let someValue: any = "this is a string";
 
 let strLength: number = (someValue as string).length;
 ```
+
 👇给对象元素指定类型
-```js
-let {a, b}: {a: string, b: number} = o;
+
+``` js
+let {
+    a,
+    b
+}: {
+    a: string,
+    b: number
+} = o;
 ```
 
-* 类类型
+
+### Symbol 用法
+```js
+let sym = Symbol();
+
+let obj = {
+    [sym]: "value"
+};
+
+console.log(obj[sym]); // "value"
+```
+
+### for...in for...of
+for..of和for..in均可迭代一个列表；但是用于迭代的值却不同，for..in迭代的是对象的 键 的列表，而for..of则迭代对象的键对应的值。
+```js
+let list = [4, 5, 6];
+
+for (let i in list) {
+    console.log(i); // "0", "1", "2",
+}
+
+for (let i of list) {
+    console.log(i); // "4", "5", "6"
+}
+```
+
+另一个区别是for..in可以操作任何对象；它提供了查看对象属性的一种方法。 但是 for..of关注于迭代对象的值。内置对象Map和Set已经实现了Symbol.iterator方法，让我们可以访问它们保存的值。
+```js
+let pets = new Set(["Cat", "Dog", "Hamster"]);
+pets["species"] = "mammals";
+
+for (let pet in pets) {
+    console.log(pet); // "species"
+}
+
+for (let pet of pets) {
+    console.log(pet); // "Cat", "Dog", "Hamster"
+}
+```

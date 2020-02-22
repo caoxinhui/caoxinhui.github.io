@@ -5,6 +5,27 @@ tags: Git
 ---
 
 ## Git 
+<!-- more -->
+### HEAD^ 与 HEAD~ 区别
+```js
+A = A^0
+A^ = A^1= A~1
+^^= A^1^1= A~2
+```
+
+### reset, hard, soft 区别
+
+- HEAD:当前分支当前版本的游标
+- index：暂存区
+
+
+`git reset --soft HEAD~` 本地的内容没有发生变化，index中有最近一次修改的内容，提交变成staged状态。
+
+`--mixed` 修改了index，使得提交变成了unstaged状态
+
+`--hard` 彻底回到上一次提交的状态，无法找回
+
+`git revert commitid` ,`git revert HEAD~3`会回到最近的第四个提交状态，并且生成一个新的commitid
 
 ### 代码自动格式化
 
@@ -68,10 +89,13 @@ tags: Git
 
 ### 暂存修改
 
-1. 暂存 `git stash` 
+1. 暂存 `git stash save "message"` 
 2. 恢复 `git stash apply` 
-3. 删除 `git stash drop` 
-4. 恢复 + 删除 `git stash pop` 
+3. 恢复之前一个 `git stash apply stash@{2}` 
+4. 删除 `git stash drop` 
+5. 恢复 + 删除 `git stash pop` 
+6. 列表 `git stash list` 
+7. 从储藏创建一个文件 `git stash branch branchname` 
 
 ### 查看远程仓库信息
 
@@ -130,6 +154,9 @@ git config --global user.email "johnode@example.com"
 
 ### 撤销改动
 
+`git clean -f -d` 移除工作目录中所有未追踪的文件以及空的子目录
+如果只是想要看看它会做什么，可以使用 -n 选项来运行命令，这意味着 “做一次演习然后告诉你 将要 移除什么”。
+`git clean -d -n`
 ``` js
 git checkout. / publish
 git clean - f. / publish
@@ -145,11 +172,11 @@ git merge abort 取消合并
 
 ### 撤销已经提交的commit
 
-`git reset --hand HEAD~1` 撤销上次的commit，保留之前的更改
+`git reset --hard HEAD~1` 撤销上次的commit，保留之前的更改
 `git reset --hard <需要回退到的版本号（只需输入前几位）>` 
 `git push origin <分支名> --force` 或者 `git push --force` 强制提交
 
-### 删除中间某次提交
+### 删除中间某次提交(待补充)
 
 1. 首先 `git log` 查看提交记录，找到出错的前一笔提交的 `commit_id` 
 2. 用命令 `git rebase -i commit_id` , 查找提交记录
@@ -233,11 +260,12 @@ npm build
 &nbsp; &nbsp; 这是一个与npm缓存腐败的问题。尽管在较新版本的npm中他们实现了自我修复，这通常可以保证没有腐败，但似乎并不那么有效。
 
 ### vscode 自带终端，每次打开都报错误
-`nvm is not compatible with the npm config "prefix" option: currently set to "/usr/local" Run "npm config delete prefix" or "nvm use --delete-prefix v10.15.1 --silent" to unset it.`
+
+`nvm is not compatible with the npm config "prefix" option: currently set to "/usr/local" Run "npm config delete prefix" or "nvm use --delete-prefix v10.15.1 --silent" to unset it.` 
 
 👇
-`npm config delete prefix `
-`npm config set prefix $NVM_DIR/versions/node/v10.15.1`
+`npm config delete prefix ` 
+`npm config set prefix $NVM_DIR/versions/node/v10.15.1` 
 
 ![git.jpg](http://ww1.sinaimg.cn/large/92babc53gy1gbmq2fukejj21ai35sqm4.jpg)
 

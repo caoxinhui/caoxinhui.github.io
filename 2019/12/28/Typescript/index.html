@@ -54,7 +54,7 @@
 <meta property="og:description" content="Typescript 学习教程">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-28T09:52:28.000Z">
-<meta property="article:modified_time" content="2020-02-18T11:56:02.038Z">
+<meta property="article:modified_time" content="2020-02-22T04:02:25.665Z">
 <meta property="article:author" content="caoxinhui">
 <meta property="article:tag" content="Typescript">
 <meta name="twitter:card" content="summary">
@@ -242,7 +242,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 19:56:02" itemprop="dateModified" datetime="2020-02-18T19:56:02+08:00">2020-02-18</time>
+                <time title="修改时间：2020-02-22 12:02:25" itemprop="dateModified" datetime="2020-02-22T12:02:25+08:00">2020-02-22</time>
               </span>
 
           
@@ -309,17 +309,25 @@
 
 <p>当访问一个越界的元素，会使用联合类型替代</p>
 <ul>
-<li><p>类型断言<br>👇尖括号语法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> someValue: any = <span class="string">"this is a string"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> strLength: number = (<span class="xml"><span class="tag">&lt;<span class="name">string</span>&gt;</span>someValue).length;</span></span><br></pre></td></tr></table></figure>
+<li>类型断言</li>
+</ul>
+<p>👇尖括号语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> someValue: any = <span class="string">"this is a string"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> strLength: number = ( <span class="xml"><span class="tag">&lt; <span class="attr">string</span> &gt;</span> someValue).length;</span></span><br></pre></td></tr></table></figure>
+
 <p>👇as 语法</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> someValue: any = <span class="string">"this is a string"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> strLength: number = (someValue <span class="keyword">as</span> string).length;</span><br></pre></td></tr></table></figure>
-<p>👇给对象元素指定类型</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;a, b&#125;: &#123;<span class="attr">a</span>: string, <span class="attr">b</span>: number&#125; = o;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>类类型</p>
-</li>
-</ul>
 
+<p>👇给对象元素指定类型</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;</span><br><span class="line">    a,</span><br><span class="line">    b</span><br><span class="line">&#125;: &#123;</span><br><span class="line">    a: string,</span><br><span class="line">    b: number</span><br><span class="line">&#125; = o;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Symbol-用法"><a href="#Symbol-用法" class="headerlink" title="Symbol 用法"></a>Symbol 用法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sym = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    [sym]: <span class="string">"value"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj[sym]); <span class="comment">// "value"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="for…in-for…of"><a href="#for…in-for…of" class="headerlink" title="for…in for…of"></a>for…in for…of</h3><p>for..of和for..in均可迭代一个列表；但是用于迭代的值却不同，for..in迭代的是对象的 键 的列表，而for..of则迭代对象的键对应的值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> list = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> list) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i); <span class="comment">// "0", "1", "2",</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">of</span> list) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i); <span class="comment">// "4", "5", "6"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>另一个区别是for..in可以操作任何对象；它提供了查看对象属性的一种方法。 但是 for..of关注于迭代对象的值。内置对象Map和Set已经实现了Symbol.iterator方法，让我们可以访问它们保存的值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> pets = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">"Cat"</span>, <span class="string">"Dog"</span>, <span class="string">"Hamster"</span>]);</span><br><span class="line">pets[<span class="string">"species"</span>] = <span class="string">"mammals"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> pet <span class="keyword">in</span> pets) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(pet); <span class="comment">// "species"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> pet <span class="keyword">of</span> pets) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(pet); <span class="comment">// "Cat", "Dog", "Hamster"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -403,7 +411,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Typescript-学习教程"><span class="nav-number">1.</span> <span class="nav-text">Typescript 学习教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#typescript-通过类型注解提供编译时的静态类型检查"><span class="nav-number">1.1.</span> <span class="nav-text">typescript 通过类型注解提供编译时的静态类型检查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#typescript-变量声明"><span class="nav-number">1.2.</span> <span class="nav-text">typescript 变量声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型断言-（Type-Assertion）"><span class="nav-number">1.3.</span> <span class="nav-text">类型断言 （Type Assertion）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#带参数函数"><span class="nav-number">1.4.</span> <span class="nav-text">带参数函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#联合类型-通过管道将变量设置成多种类型，赋值时可以根据设置的类型来赋值"><span class="nav-number">1.5.</span> <span class="nav-text">联合类型(通过管道将变量设置成多种类型，赋值时可以根据设置的类型来赋值)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口-一系列抽象方法的声明，一些方法特征的集合"><span class="nav-number">1.6.</span> <span class="nav-text">接口(一系列抽象方法的声明，一些方法特征的集合)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#联合类型和接口"><span class="nav-number">1.7.</span> <span class="nav-text">联合类型和接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口和数组"><span class="nav-number">1.8.</span> <span class="nav-text">接口和数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口继承（接口可以通过其他接口来扩展自己）"><span class="nav-number">1.9.</span> <span class="nav-text">接口继承（接口可以通过其他接口来扩展自己）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问控制修饰符"><span class="nav-number">1.10.</span> <span class="nav-text">访问控制修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#typescript-模块"><span class="nav-number">1.11.</span> <span class="nav-text">typescript 模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#官方文档"><span class="nav-number">2.</span> <span class="nav-text">官方文档</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础类型"><span class="nav-number">2.1.</span> <span class="nav-text">基础类型</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Typescript-学习教程"><span class="nav-number">1.</span> <span class="nav-text">Typescript 学习教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#typescript-通过类型注解提供编译时的静态类型检查"><span class="nav-number">1.1.</span> <span class="nav-text">typescript 通过类型注解提供编译时的静态类型检查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#typescript-变量声明"><span class="nav-number">1.2.</span> <span class="nav-text">typescript 变量声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型断言-（Type-Assertion）"><span class="nav-number">1.3.</span> <span class="nav-text">类型断言 （Type Assertion）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#带参数函数"><span class="nav-number">1.4.</span> <span class="nav-text">带参数函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#联合类型-通过管道将变量设置成多种类型，赋值时可以根据设置的类型来赋值"><span class="nav-number">1.5.</span> <span class="nav-text">联合类型(通过管道将变量设置成多种类型，赋值时可以根据设置的类型来赋值)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口-一系列抽象方法的声明，一些方法特征的集合"><span class="nav-number">1.6.</span> <span class="nav-text">接口(一系列抽象方法的声明，一些方法特征的集合)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#联合类型和接口"><span class="nav-number">1.7.</span> <span class="nav-text">联合类型和接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口和数组"><span class="nav-number">1.8.</span> <span class="nav-text">接口和数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口继承（接口可以通过其他接口来扩展自己）"><span class="nav-number">1.9.</span> <span class="nav-text">接口继承（接口可以通过其他接口来扩展自己）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问控制修饰符"><span class="nav-number">1.10.</span> <span class="nav-text">访问控制修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#typescript-模块"><span class="nav-number">1.11.</span> <span class="nav-text">typescript 模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#官方文档"><span class="nav-number">2.</span> <span class="nav-text">官方文档</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础类型"><span class="nav-number">2.1.</span> <span class="nav-text">基础类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Symbol-用法"><span class="nav-number">2.2.</span> <span class="nav-text">Symbol 用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for…in-for…of"><span class="nav-number">2.3.</span> <span class="nav-text">for…in for…of</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -419,14 +427,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

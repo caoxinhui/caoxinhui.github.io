@@ -4,14 +4,271 @@ date: 2020-01-01 13:56:44
 tags: 读书笔记
 ---
 
-### 尾递归
+<!-- more -->
+
+### 第二章
+
+#### let 
+
+> let 所声明的变量只在 let 命令所在的代码块中有效。
+
+🤔如下代码块，最终输出10。如果 var 改成 let，输出6。
+原因：var 声明的，在全局范围内都有效，所以，每循环一次，新的i值都会覆盖旧的i值，导致，最后输出的是旧的i值。
+而 let 声明的，当前的 i 值只在本轮循环内有效，所以每一次循环的 i 其实都是一个新的变量。
+🤔而且，当运行结束之后, var 声明的 i 会泄漏为全局变量
+
+``` js
+var a = []
+for (var i = 0; i < 10; i++) {
+    a[i] = function() {
+        console.log(i)
+    }
+}
+a[6]()
+```
+
+特性：
+
+* **let 不存在变量提升**
+* **暂时性死区**
+* **不允许重复声明**
+
+#### const 
+
+> const 变量只是保证变量名指向的地址不变，并不保证该地址的数据不变
+
+``` js
+const a = []
+a.c = 3
+```
+
+🧐如果真的想冻结对象，可以使用 Object.freeze
+
+``` js
+const b = Object.freeze({})
+```
+
+### 第三章 解构赋值
+
+对于 Set 结构，也可以使用数组的解构赋值
+
+``` js
+let [a, b, c] = new Set(["a", "b", "c"])
+```
+
+只要某种数据结构具有 Iterator 接口，都可以采用数组形式的解构赋值。
+
+``` js
+function* fibs() {
+    let a = 0;
+    let b = 1
+    while (true) {
+        yield a;
+        [a, b] = [b, a + b]
+    }
+}
+var [one, two, three, four, five, six] = fibs()
+```
+
+#### 默认值
+
+> 解构函数允许指定默认值
+
+``` js
+var [a = 3] = []
+// a = 3
+```
+
+如果默认值是一个表达式，那么这个表达式是惰性求值的。只有当值是 undefined 的时候，才会去求值。
+
+#### 对象的解构赋值
+
+> 对象解构赋值的内部机制，是先找到同名属性，然后再赋值给对应变量
+
+``` js
+var {
+    foo: baz,
+    bar
+} = {
+    foo: "aaa",
+    bar: "bbb"
+}
+```
+
+对象的解构赋值可以指定默认值。如果解构失败，变量的值等于 undefined
+
+``` js
+let {
+    x = 3
+} = {}
+```
+
+#### 字符串的解构赋值
+
+``` js
+const [a, b, c, d, e] = 'hello'
+```
+
+🧐类似数组的对象都有 length 属性，因此可以对这个属性解构赋值
+
+``` js
+const {
+    length: len
+} = 'hello'
+len // 5
+```
+
+#### 数值和布尔值的解构赋值
+> 解构赋值时，如果等号右边是数值或者布尔值，则会先转为对象。由于 undefined 和 null 都无法转为对象，所以对他们进行解构赋值会报错。
+
+
+👇数值和布尔值的包装对象都有toString属性
+``` js
+let { toString: s } = 123
+s === Number.prototype.toString
+let { toString: s } = true
+s === Boolean.prototype.toString
+```
+
+#### 遍历 map 结构
+``` js
+let map = new Map()
+map.set("first", "hello")
+map.set("second", "world")
+for (let [key, value] of map) {
+  console.log(key + " , " + value)
+}
+
+for (let [key] of map) {
+  console.log(key)
+}
+
+for (let [, value] of map) {
+  console.log(value)
+}
+```
+
+### 第四章 字符串的扩展
+
+- includes  
+- startsWith
+- endsWith
+- repeat
+- padStart
+- padEnd
+
+### 第六章 数值的扩展
+- Number.isFinite
+- Number.isNaN
+- Number.parseInt
+- Number.parseFloat
+- Number.isInteger
+- Number.EPSILON
+- Number.isSafeInteger JavaScript能准确表示的整数范围在 -2^53 ~ 2^53 之间
+- Number.MAX_SAFE_INTEGER
+- Number.MIN_SAFE_INTEGER
+- Math.trunc 返回整数部分
+- Math.sign  判断正负
+- ** 指数运算符 a ** b = a^b
+
+### 第七章 数组的扩展
+
+#### Array.from 将两类对象转换成数组👇
+- 类似数组对象 (本质上：必须有 length 属性)
+- 可遍历对象
+
+```js
+let arrayLike = {
+  0: "a",
+  1: "b",
+  2: "c",
+  length: 3
+}
+
+let arr1 = [].slice.call(arrayLike) // ES5
+let arr2 = Array.from(arrayLike)  // ES6
+console.log(arr1, arr2)
+```
+
+👉扩展运算符也可将某些数据结构转为数组
+> 扩展运算符调用的是遍历器接口 Symbol.iterator
+```js
+function foo() {
+  const args = [...arguments]
+}
+
+[...document.querySelectorAll('div')]
+```
+
+Array.from 接收第二个参数
+```js
+Array.from(arr, (x) => x * x)
+```
+#### Array.of
+> 将一组值转为数组
+
+**Array** 只有当参数个数不少于2个，Array才返回由参数组成的新数组。参数只有一个时，代表的是数组的长度。 
+
+
+#### copyWithin(target必须,start可选,end可选)
+
+
+#### Object.is 
+
+判断俩数是否相等
+```js
+Object.is(isNaN, isNaN) === true
+Object.is(-0, +0) === false
+```
+
+**indexOf 内部使用 ==== 进行判断**
+
+#### entries, keys, values
+
+#### includes
+```js
+[NaN].includes(NaN) //true
+```
+
+#### has
+Map 的 has 是用来查找键名的
+Set 的 has 是用来查找键值的
+
+
+#### 数组的空位
+> 空位表示不含任何值 Array(3) 
+
+Array.from，扩展运算符，entries，keys，values 会将空位转为 undefined
+
+
+### 第八章 函数的扩展
+#### 箭头函数
+
+👇undefined，如果把匿名函数改成箭头函数，返回42 
+```js
+
+function foo() {
+  setTimeout(function() {
+    console.log(this.id)
+  }, 100)
+}
+foo.call({ id: 42 })
+```
+
+#### 尾递归
 
 尾调用就是指某个函数的最后一步是调用另一个函数。尾调用不一定出现在函数尾部，只要是最后一步操作即可。
 函数调用会在内存形成一个“调用记录”，又称“调用帧”（call frame），保存调用位置和内部变量等信息。如果在函数A的内部调用函数B，那么在A的调用记录上方，还会形成一个B的调用记录。等到B运行结束，将结果返回到A，B的调用记录才会消失。如果函数B内部还调用函数C，那就还有一个C的调用记录栈，以此类推。所有的调用记录，就形成一个“调用栈”（call stack）。
 尾调用由于是函数的最后一步操作，所以不需要保留外层函数的调用记录，因为调用位置、内部变量等信息都不会再用到了，只要直接用内层函数的调用记录，取代外层函数的调用记录就可以了。
 递归非常耗费内存，因为需要同时保存成千上百个调用记录，很容易发生"栈溢出"错误（stack overflow）。但对于尾递归来说，由于只存在一个调用记录，所以永远不会发生"栈溢出"错误。
 
-<!-- more -->
+### 第九章 
+
+#### Object.assign 
+> 将源对象的所有可枚举属性赋值到目标对象。
+
+
+
 
 ### 第14章 Iterator 和 for... of 循环
 
@@ -26,7 +283,6 @@ tags: 读书笔记
 每一次调用next方法，都会返回数据结构的当前成员的信息（返回一个包含value和done两个属性的对象）
 
 一个数据结构，只要具有Symbol.iterator属性，就可以认为是可遍历的，调用Symbol.iterator方法，就会得到当前数据接口默认的遍历器生成函数
-
 
 ``` js
 let arr = ['a', 'b', 'c']

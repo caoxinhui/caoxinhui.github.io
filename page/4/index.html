@@ -207,7 +207,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2019/12/28/React/">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/02/14/React-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -221,7 +221,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/12/28/React/" class="post-title-link" itemprop="url">React</a>
+            <a href="/2020/02/14/React-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="post-title-link" itemprop="url">React 生命周期</a>
         </h2>
 
         <div class="post-meta">
@@ -231,7 +231,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-12-28 17:31:24" itemprop="dateCreated datePublished" datetime="2019-12-28T17:31:24+08:00">2019-12-28</time>
+              <time title="创建时间：2020-02-14 11:32:17" itemprop="dateCreated datePublished" datetime="2020-02-14T11:32:17+08:00">2020-02-14</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -240,6 +240,17 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2020-02-18 19:56:02" itemprop="dateModified" datetime="2020-02-18T19:56:02+08:00">2020-02-18</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
+                  </a>
+                </span>
+            </span>
 
           
 
@@ -252,10 +263,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="React-如何区分-class-和-functions"><a href="#React-如何区分-class-和-functions" class="headerlink" title="React 如何区分 class 和 functions"></a><a href="https://overreacted.io/zh-hans/how-does-react-tell-a-class-from-a-function/" target="_blank" rel="noopener">React 如何区分 class 和 functions</a></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Greeting</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span> &gt;</span> Hello <span class="tag">&lt; /<span class="attr">p</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Greeting</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span> &gt;</span> hello <span class="tag">&lt; /<span class="attr">p</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <p>本文对 React 生命周期以及 setState 在各个生命周期中的使用作整理。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/12/28/React/#more" rel="contents">
+              <a class="btn" href="/2020/02/14/React-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -489,6 +500,78 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2019/12/28/React/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="caoxinhui">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="caoxinhui">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/28/React/" class="post-title-link" itemprop="url">React</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-28 17:31:24" itemprop="dateCreated datePublished" datetime="2019-12-28T17:31:24+08:00">2019-12-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-18 19:56:02" itemprop="dateModified" datetime="2020-02-18T19:56:02+08:00">2020-02-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="React-如何区分-class-和-functions"><a href="#React-如何区分-class-和-functions" class="headerlink" title="React 如何区分 class 和 functions"></a><a href="https://overreacted.io/zh-hans/how-does-react-tell-a-class-from-a-function/" target="_blank" rel="noopener">React 如何区分 class 和 functions</a></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Greeting</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span> &gt;</span> Hello <span class="tag">&lt; /<span class="attr">p</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Greeting</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span> &gt;</span> hello <span class="tag">&lt; /<span class="attr">p</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/12/28/React/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2019/12/28/React-IMVC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -571,178 +654,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/02/14/React-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="caoxinhui">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="caoxinhui">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/14/React-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="post-title-link" itemprop="url">React 生命周期</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-14 11:32:17" itemprop="dateCreated datePublished" datetime="2020-02-14T11:32:17+08:00">2020-02-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 19:56:02" itemprop="dateModified" datetime="2020-02-18T19:56:02+08:00">2020-02-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
-                    <span itemprop="name">基础</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>本文对 React 生命周期以及 setState 在各个生命周期中的使用作整理。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/14/React-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/01/21/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="caoxinhui">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="caoxinhui">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/21/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/" class="post-title-link" itemprop="url">JavaScript内存泄漏</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-21 10:54:39" itemprop="dateCreated datePublished" datetime="2020-01-21T10:54:39+08:00">2020-01-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 19:56:02" itemprop="dateModified" datetime="2020-02-18T19:56:02+08:00">2020-02-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
-                    <span itemprop="name">基础</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>平时工作中基本没有考虑过内存泄漏的情况，也是因为没有遇到过内存泄漏的情况。<br>有说JavaScript有自己的垃圾回收机制</p>
-<h3 id="带着问题去学习"><a href="#带着问题去学习" class="headerlink" title="带着问题去学习"></a>带着问题去学习</h3><ol>
-<li>什么情况会引起内存泄漏</li>
-<li>JavaScript内存泄漏机制</li>
-<li><strong>闭包在内存中是什么导致的？</strong></li>
-<li>从内存来看 null 和 undefined 本质的区别是什么？null 表示一个空对象指针 ，释放内存空间可以用 a=null</li>
-<li>为什么typeof(null) //object typeof(undefined) //undefined？
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/21/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2019/12/28/Iterm-2-settings/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -792,6 +703,78 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/12/28/Iterm-2-settings/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/01/14/Hooks%E5%8E%9F%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="caoxinhui">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="caoxinhui">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/14/Hooks%E5%8E%9F%E7%90%86/" class="post-title-link" itemprop="url">Hooks原理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-14 13:36:53" itemprop="dateCreated datePublished" datetime="2020-01-14T13:36:53+08:00">2020-01-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-18 19:56:02" itemprop="dateModified" datetime="2020-02-18T19:56:02+08:00">2020-02-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><a href="https://github.com/brickspert/blog/issues/26" target="_blank" rel="noopener">参考文章</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/14/Hooks%E5%8E%9F%E7%90%86/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -895,7 +878,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/01/14/Hooks%E5%8E%9F%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/01/21/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -909,7 +892,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/01/14/Hooks%E5%8E%9F%E7%90%86/" class="post-title-link" itemprop="url">Hooks原理</a>
+            <a href="/2020/01/21/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/" class="post-title-link" itemprop="url">JavaScript内存泄漏</a>
         </h2>
 
         <div class="post-meta">
@@ -919,7 +902,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-01-14 13:36:53" itemprop="dateCreated datePublished" datetime="2020-01-14T13:36:53+08:00">2020-01-14</time>
+              <time title="创建时间：2020-01-21 10:54:39" itemprop="dateCreated datePublished" datetime="2020-01-21T10:54:39+08:00">2020-01-21</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -928,6 +911,17 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2020-02-18 19:56:02" itemprop="dateModified" datetime="2020-02-18T19:56:02+08:00">2020-02-18</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
+                  </a>
+                </span>
+            </span>
 
           
 
@@ -940,10 +934,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><a href="https://github.com/brickspert/blog/issues/26" target="_blank" rel="noopener">参考文章</a></p>
+          <p>平时工作中基本没有考虑过内存泄漏的情况，也是因为没有遇到过内存泄漏的情况。<br>有说JavaScript有自己的垃圾回收机制</p>
+<h3 id="带着问题去学习"><a href="#带着问题去学习" class="headerlink" title="带着问题去学习"></a>带着问题去学习</h3><ol>
+<li>什么情况会引起内存泄漏</li>
+<li>JavaScript内存泄漏机制</li>
+<li><strong>闭包在内存中是什么导致的？</strong></li>
+<li>从内存来看 null 和 undefined 本质的区别是什么？null 表示一个空对象指针 ，释放内存空间可以用 a=null</li>
+<li>为什么typeof(null) //object typeof(undefined) //undefined？
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/01/14/Hooks%E5%8E%9F%E7%90%86/#more" rel="contents">
+              <a class="btn" href="/2020/01/21/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>

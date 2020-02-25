@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fc1a0b3c-0c08-45ae-862d-0610626201f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Typescript.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Typescript.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/项目踩坑.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/项目踩坑.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +24,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
+  <component name="RunManager">
+    <configuration name="Untitled-1.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$USER_HOME$/Desktop/Untitled-1.js" working-dir="$USER_HOME$/Desktop">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.Untitled-1.js" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -35,6 +45,9 @@
       <option name="presentableId" value="Default" />
       <updated>1582206915852</updated>
       <workItem from="1582206918884" duration="260000" />
+      <workItem from="1582607360648" duration="23000" />
+      <workItem from="1582636021831" duration="152000" />
+      <workItem from="1582641873068" duration="462000" />
     </task>
     <servers />
   </component>
@@ -42,6 +55,22 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="1659" height="295" key="GridCell.Tab.0.bottom" timestamp="1582642301239">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1659" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1582642301239" />
+    <state width="1659" height="295" key="GridCell.Tab.0.center" timestamp="1582642301237">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1659" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1582642301237" />
+    <state width="1659" height="295" key="GridCell.Tab.0.left" timestamp="1582642301237">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1659" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1582642301237" />
+    <state width="1659" height="295" key="GridCell.Tab.0.right" timestamp="1582642301238">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1659" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1582642301238" />
     <state x="570" y="275" width="540" height="524" key="StructurePopup" timestamp="1582207201458">
       <screen x="80" y="23" width="1600" height="1027" />
     </state>
@@ -50,5 +79,9 @@
       <screen x="80" y="23" width="1600" height="1027" />
     </state>
     <state x="100" y="100" width="1480" height="850" key="com.intellij.history.integration.ui.views.RecentChangeDialog/80.23.1600.1027@80.23.1600.1027" timestamp="1582207178780" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1582636167229">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1582636167229" />
   </component>
 </project>

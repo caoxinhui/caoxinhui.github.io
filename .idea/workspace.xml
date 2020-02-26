@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fc1a0b3c-0c08-45ae-862d-0610626201f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/项目踩坑.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/项目踩坑.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/WebStorm快捷键.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/WebStorm快捷键.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/Webpack.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Webpack.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +23,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
@@ -48,6 +50,7 @@
       <workItem from="1582607360648" duration="23000" />
       <workItem from="1582636021831" duration="152000" />
       <workItem from="1582641873068" duration="462000" />
+      <workItem from="1582696013845" duration="8083000" />
     </task>
     <servers />
   </component>
@@ -75,13 +78,18 @@
       <screen x="80" y="23" width="1600" height="1027" />
     </state>
     <state x="570" y="275" width="540" height="524" key="StructurePopup/80.23.1600.1027@80.23.1600.1027" timestamp="1582207201458" />
+    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1582711935561">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.877/1440.-157.1920.1057/-1920.-157.1920.1057@0.23.1440.877" timestamp="1582711935561" />
     <state x="100" y="100" width="1480" height="850" key="com.intellij.history.integration.ui.views.RecentChangeDialog" timestamp="1582207178780">
       <screen x="80" y="23" width="1600" height="1027" />
     </state>
     <state x="100" y="100" width="1480" height="850" key="com.intellij.history.integration.ui.views.RecentChangeDialog/80.23.1600.1027@80.23.1600.1027" timestamp="1582207178780" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1582636167229">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="433" y="200" width="670" height="580" key="search.everywhere.popup" timestamp="1582696286484">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="433" y="200" width="670" height="580" key="search.everywhere.popup/0.0.1440.900/1440.-180.1920.1080/-1920.-180.1920.1080@0.0.1440.900" timestamp="1582696286484" />
     <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1582636167229" />
   </component>
 </project>

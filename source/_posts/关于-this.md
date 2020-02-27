@@ -104,3 +104,5 @@ foo.apply(obj)
 ```
 
 setTimeout中的function是个回调函数，本质上与包裹她的foo函数没有关系。
+
+this 是在运行时，基于函数的执行环境绑定的

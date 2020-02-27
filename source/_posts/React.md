@@ -591,3 +591,15 @@ const HOC = (WrappedComponent) =>
 
 ### render 方法原理
 
+
+
+useEffect 第二个参数的比较规则是 Object.is
+
+如果 props 改变， props 的变量是 改变的值 和 应用吗？React中的值是怎么存储在内存中的？？？？❓❓❓
+
+
+Hooks规则
+
+- 仅顶层使用 hooks
+
+不要在循环语句，条件语句，嵌套函数中使用 hooks。这样可以确保每次组件渲染的时候，hooks以相同的次序被调用。这就使得 react 可以在多次 useState 和 useEffect 的调用中保存状态。

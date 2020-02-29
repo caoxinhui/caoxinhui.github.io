@@ -19,6 +19,9 @@ class Greeting extends React.Component{
 }
 ```
 
+<!-- more -->
+
+
 如果 Greeting 是一个函数，React 需要调用它
 
 ```js

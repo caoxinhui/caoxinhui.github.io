@@ -289,6 +289,14 @@ npm build
 
 &nbsp; &nbsp; 这是一个与npm缓存腐败的问题。尽管在较新版本的npm中他们实现了自我修复，这通常可以保证没有腐败，但似乎并不那么有效。
 
+### 钩子
+npm 脚本有pre和post两个钩子。举例来说，build脚本命令的钩子就是prebuild和postbuild
+用户执行npm run build的时候，会自动按照 `npm run prebuild && npm run build && npm run postbuild` 的顺序执行
+
+### 更新 npm 插件
+`npm update <name> [-g] [--save-dev] `
+
+
 ### vscode 自带终端，每次打开都报错误
 
 `nvm is not compatible with the npm config "prefix" option: currently set to "/usr/local" Run "npm config delete prefix" or "nvm use --delete-prefix v10.15.1 --silent" to unset it.` 

@@ -62,3 +62,4 @@ renderToString，会为组件增加checksum，react在客户端通过checksum判
 
 ### 静态资源处理方案
 
+静态资源：js、css、img 等非服务器动态运行生成的文件、静态资源被定义为一切可以在客户端或代理端缓存的资源

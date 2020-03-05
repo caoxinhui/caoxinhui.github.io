@@ -198,6 +198,23 @@ git merge 分支名--squash
 git merge abort 取消合并
 ```
 
+### 比较两次 commit 的差异
+1. 比较两次commit提交之后的差异：
+`git diff hash1 hash2 --stat`能够查看出两次提交之后，文件发生的变化。
+
+2. 具体查看两次commit提交之后某文件的差异：
+`git diff hash1 hash2 --文件名`
+
+3. 比较两个分支的所有有差异的文件的详细差异：
+`git diff branch1 branch2`
+
+4. 比较两个分支的指定文件的详细差异
+`git diff branch1 branch2 文件名(带路径)`
+
+5. 比较两个分支的所有有差异的文件列表
+`git diff branch1 branch2 --stat`
+
+
 ### 撤销已经提交的commit
 
 `git reset --hard HEAD~1` 撤销上次的commit，保留之前的更改

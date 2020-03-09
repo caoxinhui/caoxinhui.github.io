@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc1a0b3c-0c08-45ae-862d-0610626201f2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/source/_posts/Server-Side-Rendering.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Server-Side-Rendering.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/项目踩坑.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/项目踩坑.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/Git.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Git.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,26 +67,30 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1419" height="245" key="GridCell.Tab.0.bottom" timestamp="1582969009141">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1659" height="295" key="GridCell.Tab.0.bottom" timestamp="1583680239912">
+      <screen x="72" y="23" width="1608" height="1027" />
     </state>
     <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.-180.1920.1080/-1920.-180.1920.1080@0.0.1440.900" timestamp="1582969009141" />
     <state width="1659" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1582812106042" />
-    <state width="1419" height="245" key="GridCell.Tab.0.center" timestamp="1582969009140">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1659" height="295" key="GridCell.Tab.0.bottom/72.23.1608.1027@72.23.1608.1027" timestamp="1583680239912" />
+    <state width="1659" height="295" key="GridCell.Tab.0.center" timestamp="1583680239910">
+      <screen x="72" y="23" width="1608" height="1027" />
     </state>
     <state width="1419" height="245" key="GridCell.Tab.0.center/0.0.1440.900/1440.-180.1920.1080/-1920.-180.1920.1080@0.0.1440.900" timestamp="1582969009140" />
     <state width="1659" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1582812106041" />
-    <state width="1419" height="245" key="GridCell.Tab.0.left" timestamp="1582969009139">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1659" height="295" key="GridCell.Tab.0.center/72.23.1608.1027@72.23.1608.1027" timestamp="1583680239910" />
+    <state width="1659" height="295" key="GridCell.Tab.0.left" timestamp="1583680239910">
+      <screen x="72" y="23" width="1608" height="1027" />
     </state>
     <state width="1419" height="245" key="GridCell.Tab.0.left/0.0.1440.900/1440.-180.1920.1080/-1920.-180.1920.1080@0.0.1440.900" timestamp="1582969009139" />
     <state width="1659" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1582812106040" />
-    <state width="1419" height="245" key="GridCell.Tab.0.right" timestamp="1582969009140">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1659" height="295" key="GridCell.Tab.0.left/72.23.1608.1027@72.23.1608.1027" timestamp="1583680239910" />
+    <state width="1659" height="295" key="GridCell.Tab.0.right" timestamp="1583680239911">
+      <screen x="72" y="23" width="1608" height="1027" />
     </state>
     <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900/1440.-180.1920.1080/-1920.-180.1920.1080@0.0.1440.900" timestamp="1582969009140" />
     <state width="1659" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1582812106042" />
+    <state width="1659" height="295" key="GridCell.Tab.0.right/72.23.1608.1027@72.23.1608.1027" timestamp="1583680239911" />
     <state x="570" y="275" width="540" height="524" key="StructurePopup" timestamp="1582207201458">
       <screen x="80" y="23" width="1600" height="1027" />
     </state>

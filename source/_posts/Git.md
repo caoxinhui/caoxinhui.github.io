@@ -160,16 +160,17 @@ A^ = A^1= A~1
 查找有没有 `something` 和 `something.pub` 来命名的一对文件，这个 `something` 通常是 `id_dsa` 或 `id_rsa` 。
 有 `.pub` 后缀的文件就是公钥，另一个文件是私钥。若 `.ssh` 目录没有，可以用 `ssh-keygen` 来创建。
 
-### 设置git用户名和密码
+### rebase
+- 合并多个commit为1个
+- 合并分支 `git rebase master` 在master分支上的最先提交上补上开发分支的代码
 
-git config --global user.name "your name"
-git config --global user.email "johnode@example.com"
 
 ### 合并commit
 
 `git` 修改多个 `commit` 为一个 `commit` 
 
 1. 从HEAD版本开始往过去数3个版本 `git rebase -i HEAD~3` 
+将后面的2个commit之前的pick改成s，表示，要把后面的两个commit合并到前一个commit
 
 或者，指明要合并的版本之前的版本号 `git rebase -i commitId（不参与合并）` 
 

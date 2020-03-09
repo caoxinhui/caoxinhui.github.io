@@ -16,6 +16,7 @@ function shallowCopy(obj) {
     return copy
 }
 ```
+<!-- more -->
 - for...in
   - Enumerable
   - 遍历对象属性

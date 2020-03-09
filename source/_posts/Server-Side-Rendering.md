@@ -44,6 +44,11 @@ react的虚拟dom以对象树的形式保存在内存中，并且是可以在任
 
 > 一套代码在服务端运行一遍，在客户端又运行一遍，服务端完成页面构建，客户端完成事件绑定
 
+同构并没有想象中那么美👻
+- 不容忽视的服务器端和浏览器环境差异，window、document、DOM以及 客户端与服务端渲染不一致。不一致可能会造成页面的闪动
+- 内存溢出 指程序在为自身申请内存时，没有足够的内存空间供自己使用，出现out of memory
+  - 注册事件必须放在 `componentDidMount` 。 在 componentWillMount 里做绑定事件就会发生内存溢出，因为 React 的设计是后端渲染只会运行 componentDidMount 之前的操作，而不会运行 componentWillUnmount 方法（一般解绑事件在这里）。
+
 ### React 服务端渲染原理
 
 > React 的虚拟 DOM 以对象树的形式存在内存中，并且可以在任何支持JavaScript的环境中生成，所以可以在浏览器和Node中生成。这为前后端同构提供了先决条件。

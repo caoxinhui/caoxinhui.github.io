@@ -603,3 +603,34 @@ Hooks规则
 - 仅顶层使用 hooks
 
 不要在循环语句，条件语句，嵌套函数中使用 hooks。这样可以确保每次组件渲染的时候，hooks以相同的次序被调用。这就使得 react 可以在多次 useState 和 useEffect 的调用中保存状态。
+
+
+React
+高阶组件：给一个组件注入参数
+```js
+function withTimer(Wrappedcomponent){
+    return class extends React.Component{
+        //获取当前时间
+        render(){
+            return <Wrappedcomponent time={time}/>
+        }
+    }
+}
+```
+
+函数作为子组件，利用好 <></> 这种形式，组件如何render她的内容，有很大一部分可以由使用它的人决定。
+```js
+class MyComponent extends React.Component{
+    render(){
+        return (
+            {this.props.children('not')}
+        )
+    }
+}
+
+<MyComponent>
+{(name)=>{
+    return <div>{name}</div>
+}}
+</MyComponent>
+```

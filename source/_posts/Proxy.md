@@ -26,3 +26,36 @@ obj.count = 1
 ```
 
 以上代码说明，Proxy 实际上重载了点运算符，即用自己的定义覆盖了语言的原始定义。
+
+
+要使proxy起作用，必须针对proxy实例进行操作，而不是目标对象。如果handler没有设置任何拦截，那就等同于直接通向原对象
+```js
+const target = {}
+const handler = {}
+const proxy = new Proxy(target, handler)
+proxy.a = 'b'
+console.log(target.a)
+```
+
+```js
+const handler = {
+    get: function (target, name) {
+        if (name === 'prototype') return Object.prototype
+        return 'Hello, ' + name
+    },
+    apply: function (target, thisBinding, args) {
+        return args[0]
+    },
+    constructor: function (target, args) {
+        return args[1]
+    }
+}
+var fproxy = new Proxy(function (x, y) {
+    return x + y
+}, handler)
+
+fproxy(1, 2)
+new fproxy(1, 2)
+fproxy.prototype
+fproxy.foo
+```

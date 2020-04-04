@@ -634,3 +634,50 @@ class MyComponent extends React.Component{
 }}
 </MyComponent>
 ```
+
+
+
+### 生命周期[http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/]
+
+三个阶段
+- render
+主要用于计算当前的状态
+- pre-commit
+还没有更新dom，当时可以读取dom的内容
+-commit
+把实际的状态都更新到dom上
+
+#### constructor
+- 用于初始化内部状态，很少使用
+- 唯一可以直接修改state的地方
+
+#### getDerivedStateFromProps
+用外部的属性去初始化内部的状态
+
+
+Redux 中间件
+1. 截获action
+2. 发出action
+
+
+immutable data 不可变数据
+
+为何需要不可变数据
+1. 性能优化
+2. 已与调试和跟踪
+3. 易于推测
+
+
+如何操作不可变数据
+1. 原生写法{...},Object.assign
+2. immutability-helper
+3. immer
+
+```js
+const state={filter:'completed',todos:['Learn React']}
+const newState={...state,todos:[...state.todos,'Learn Redux']}
+const newState2 = Object.assign({},state,{todos:[
+        ...state.todos,
+        'Learn Redux'
+    ]})
+```

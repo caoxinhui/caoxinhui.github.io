@@ -54,7 +54,7 @@
 <meta property="og:description" content="你不知道的JS 闭包晦涩难懂  函数记住并访问其所在的词法作用域，叫做闭包现象，而此时函数对作用域的引用叫做闭包。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-27T02:03:49.000Z">
-<meta property="article:modified_time" content="2020-02-28T01:23:59.811Z">
+<meta property="article:modified_time" content="2020-03-21T04:54:36.783Z">
 <meta property="article:author" content="caoxinhui">
 <meta name="twitter:card" content="summary">
 
@@ -241,7 +241,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 09:23:59" itemprop="dateModified" datetime="2020-02-28T09:23:59+08:00">2020-02-28</time>
+                <time title="修改时间：2020-03-21 12:54:36" itemprop="dateModified" datetime="2020-03-21T12:54:36+08:00">2020-03-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -319,8 +319,10 @@
 
 <h4 id="闭包应用场景"><a href="#闭包应用场景" class="headerlink" title="闭包应用场景"></a>闭包应用场景</h4><ul>
 <li>img 上报数据<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> report = <span class="function"><span class="keyword">function</span> (<span class="params">src</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> img = <span class="keyword">new</span> Image()</span><br><span class="line">    img.src=src</span><br><span class="line">&#125;</span><br><span class="line">report(<span class="string">""</span>)</span><br></pre></td></tr></table></figure>
-但是 report 不是每次都成功发起 HTTP 请求。<br>原因是，img 在 report 是局部变量，当 report 函数调用结束后， img 就会被回收。而此时或许还没来得及发起 HTTP 请求</li>
+
+</li>
 </ul>
+<p>但是 report 不是每次都成功发起 HTTP 请求。<br>原因是，img 在 report 是局部变量，当 report 函数调用结束后， img 就会被回收。而此时或许还没来得及发起 HTTP 请求</p>
 <p>解决，把 img 用闭包包裹起来</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> report = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> imgs = []</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">src</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> img = <span class="keyword">new</span> Image()</span><br><span class="line">        imgs.push(src)</span><br><span class="line">        img.src=src</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()</span><br><span class="line">report(<span class="string">""</span>)</span><br></pre></td></tr></table></figure>
 
@@ -431,14 +433,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-count">58</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

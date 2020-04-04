@@ -207,7 +207,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/01/01/ES6/">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/02/27/%E9%97%AD%E5%8C%85/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -221,7 +221,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/01/01/ES6/" class="post-title-link" itemprop="url">ES6</a>
+            <a href="/2020/02/27/%E9%97%AD%E5%8C%85/" class="post-title-link" itemprop="url">闭包</a>
         </h2>
 
         <div class="post-meta">
@@ -231,86 +231,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-01-01 13:56:44" itemprop="dateCreated datePublished" datetime="2020-01-01T13:56:44+08:00">2020-01-01</time>
+              <time title="创建时间：2020-02-27 10:03:49" itemprop="dateCreated datePublished" datetime="2020-02-27T10:03:49+08:00">2020-02-27</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-24 09:24:40" itemprop="dateModified" datetime="2020-02-24T09:24:40+08:00">2020-02-24</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>本文对ES6知识点进行整理</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/01/ES6/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/02/19/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="caoxinhui">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="caoxinhui">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/19/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/" class="post-title-link" itemprop="url">最长公共子序列</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-19 19:50:27" itemprop="dateCreated datePublished" datetime="2020-02-19T19:50:27+08:00">2020-02-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-24 09:24:40" itemprop="dateModified" datetime="2020-02-24T09:24:40+08:00">2020-02-24</time>
+                <time title="修改时间：2020-03-21 12:54:36" itemprop="dateModified" datetime="2020-03-21T12:54:36+08:00">2020-03-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -318,8 +246,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
                   </a>
                 </span>
             </span>
@@ -335,85 +263,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>dp[i][j] 表示 str1[0…i] 与 str2[0…j] 的最长公共子序列的长度</p>
+          <h3 id="你不知道的JS"><a href="#你不知道的JS" class="headerlink" title="你不知道的JS"></a>你不知道的JS</h3><blockquote>
+<p>闭包晦涩难懂</p>
+</blockquote>
+<p>函数记住并访问其所在的词法作用域，叫做闭包现象，而此时函数对作用域的引用叫做闭包。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/02/19/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/#more" rel="contents">
+              <a class="btn" href="/2020/02/27/%E9%97%AD%E5%8C%85/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/02/23/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="caoxinhui">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="caoxinhui">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/23/%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="post-title-link" itemprop="url">字符串</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-02-23 11:19:32 / 修改时间：11:31:05" itemprop="dateCreated datePublished" datetime="2020-02-23T11:19:32+08:00">2020-02-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="判断两个字符串是否为变形词"><a href="#判断两个字符串是否为变形词" class="headerlink" title="判断两个字符串是否为变形词"></a>判断两个字符串是否为变形词</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isDeformation</span>(<span class="params">str1, str2</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!str1 || !str2 || str1.length !== str2.length) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> map = <span class="built_in">Array</span>(<span class="number">256</span>).fill(<span class="number">0</span>)</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; str1.length; i++) &#123;</span><br><span class="line">    map[str1[i]]++</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; str2.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (map[str2[i]]-- === <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
       
     </div>
 
@@ -455,10 +316,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-02-22 13:44:24 / 修改时间：18:04:50" itemprop="dateCreated datePublished" datetime="2020-02-22T13:44:24+08:00">2020-02-22</time>
+              <time title="创建时间：2020-02-22 13:44:24" itemprop="dateCreated datePublished" datetime="2020-02-22T13:44:24+08:00">2020-02-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-03-21 12:54:36" itemprop="dateModified" datetime="2020-03-21T12:54:36+08:00">2020-03-21</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -483,51 +350,169 @@
 
       
           <h3 id="不用额外变量交换两个整数的值"><a href="#不用额外变量交换两个整数的值" class="headerlink" title="不用额外变量交换两个整数的值"></a>不用额外变量交换两个整数的值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = a ^ b</span><br><span class="line">b = a ^ b</span><br><span class="line">a = a ^ b</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/22/%E4%BD%8D%E8%BF%90%E7%AE%97/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
 
-<h3 id="不用比较找到两数中较大的数（32位整数）"><a href="#不用比较找到两数中较大的数（32位整数）" class="headerlink" title="不用比较找到两数中较大的数（32位整数）"></a>不用比较找到两数中较大的数（32位整数）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">flip</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> n ^ <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sign</span>(<span class="params">number</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> flip((number &gt;&gt; <span class="number">1</span>) &amp; <span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getBigger</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> c = a - b</span><br><span class="line">  <span class="keyword">const</span> signC = sign(c)</span><br><span class="line">  <span class="keyword">const</span> flipC = flip(signC)</span><br><span class="line">  <span class="keyword">return</span> a * signC + b * flipC</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
-<h3 id="不用比较找到两数中较大的数"><a href="#不用比较找到两数中较大的数" class="headerlink" title="不用比较找到两数中较大的数"></a>不用比较找到两数中较大的数</h3><p>👇如果a的符号和b的符号不同，(difSignAB=1,sameSignAB=0)</p>
-<ul>
-<li>如果a为正，b为负(signA=1,signB=0)，返回a</li>
-<li>如果a为负，b为正(signA=0,signB=1)，返回b<br>👇如果a的符号和b的符号相同，(difSignAB=0,sameSignAB=1)</li>
-<li>如果a-b为正，signC=1，返回a</li>
-<li>如果a-b为负，signC=0，返回b<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">flip</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> n ^ <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sign</span>(<span class="params">number</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> flip((number &gt;&gt; <span class="number">1</span>) &amp; <span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getBigger</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> c = a - b</span><br><span class="line">  <span class="keyword">const</span> signA = sign(a)</span><br><span class="line">  <span class="keyword">const</span> signB = sign(b)</span><br><span class="line">  <span class="keyword">const</span> signC = sign(c)</span><br><span class="line">  <span class="keyword">const</span> difSignAB = signA ^ signB</span><br><span class="line">  <span class="keyword">const</span> sameSignAB = flip(difSignAB)</span><br><span class="line">  <span class="keyword">const</span> returnA = difSignAB * signA + sameSignAB * signC</span><br><span class="line">  <span class="keyword">const</span> returnB = flip(returnA)</span><br><span class="line">  <span class="keyword">return</span> a * returnA + b * returnB</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2019/12/29/Server-Side-Rendering/">
 
-</li>
-</ul>
-<h3 id="位运算符实现加减乘除"><a href="#位运算符实现加减乘除" class="headerlink" title="位运算符实现加减乘除"></a>位运算符实现加减乘除</h3><h4 id="加"><a href="#加" class="headerlink" title="加"></a>加</h4><ul>
-<li>在完全不考虑进位的情况下，a^b就是正确结果</li>
-<li>在只算进位的情况下，进位(a&amp;b)&lt;&lt;1</li>
-<li>把完全不考虑进位的相加值与只考虑进位的产生值再相加，就是最终结果<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> sum = a</span><br><span class="line">  <span class="keyword">while</span> (b !== <span class="number">0</span>) &#123;</span><br><span class="line">    sum = a ^ b</span><br><span class="line">    b = (a &amp; b) &lt;&lt; <span class="number">1</span></span><br><span class="line">    a = sum</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="caoxinhui">
+      <meta itemprop="description" content="">
+    </span>
 
-</li>
-</ul>
-<h4 id="减"><a href="#减" class="headerlink" title="减"></a>减</h4><p>实现a-b只要实现a+(-b)即可，得到一个数的相反数，就是这个数的二进制数表达取反加一的结果。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">negNum</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> add(~n, <span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">minus</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> add(a, negNum(b))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="乘"><a href="#乘" class="headerlink" title="乘"></a>乘</h4><p>a * b = a * 2^0 * b0 + a * 2^1 * b1 + …… + a * 2^i * bi + a * 2^31 * b31 </p>
-<ul>
-<li>b最右侧为1时，res = res + a，同时b右移1位，a左移一位</li>
-<li>b最右侧为0时，res不变，同时b右移1位，a左移一位<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multi</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> res = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> (b !== <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> ((b &amp; <span class="number">1</span>) !== <span class="number">0</span>) &#123;</span><br><span class="line">      res = add(res, a)</span><br><span class="line">    &#125;</span><br><span class="line">    a &lt;&lt;= <span class="number">1</span></span><br><span class="line">    b &gt;&gt;= <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="caoxinhui">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/29/Server-Side-Rendering/" class="post-title-link" itemprop="url">Server Side Rendering</a>
+        </h2>
 
-</li>
-</ul>
-<h4 id="除"><a href="#除" class="headerlink" title="除"></a>除</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isNeg</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> n &lt; <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">div</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> x = isNeg(a) ? negNum(a) : a</span><br><span class="line">  <span class="keyword">let</span> y = isNeg(b) ? negNum(b) : b</span><br><span class="line">  <span class="keyword">let</span> res = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">31</span>; i &gt; <span class="number">-1</span>; i = minus(i, <span class="number">1</span>)) &#123;</span><br><span class="line">    <span class="keyword">if</span> ((x &gt;&gt; i) &gt;= y) &#123;</span><br><span class="line">      res |= (<span class="number">1</span> &lt;&lt; i)</span><br><span class="line">      x = minus(x, y &lt;&lt; i)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> isNeg(a) ^ isNeg(b) ? negNum(res) : res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isNeg</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> n &lt; <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">div</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> x = isNeg(a) ? negNum(a) : a</span><br><span class="line">  <span class="keyword">let</span> y = isNeg(b) ? negNum(b) : b</span><br><span class="line">  <span class="keyword">let</span> res = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">31</span>; i &gt; <span class="number">-1</span>; i = minus(i, <span class="number">1</span>)) &#123;</span><br><span class="line">    <span class="keyword">if</span> ((x &gt;&gt; i) &gt;= y) &#123;</span><br><span class="line">      res |= (<span class="number">1</span> &lt;&lt; i)</span><br><span class="line">      x = minus(x, y &lt;&lt; i)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> isNeg(a) ^ isNeg(b) ? negNum(res) : res</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">divide</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (b === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'divisor is 0'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (a === <span class="built_in">Number</span>.MAX_SAFE_INTEGER &amp;&amp; b === <span class="built_in">Number</span>.MIN_SAFE_INTEGER) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (b === <span class="built_in">Number</span>.MIN_SAFE_INTEGER) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (a === <span class="built_in">Number</span>.MIN_SAFE_INTEGER) &#123;</span><br><span class="line">    <span class="keyword">let</span> res = div(add(a, <span class="number">1</span>), b)</span><br><span class="line">    <span class="keyword">return</span> add(res, div(minus(a, multi(res, b)), b))</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> div(a, b)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+              <time title="创建时间：2019-12-29 16:49:37" itemprop="dateCreated datePublished" datetime="2019-12-29T16:49:37+08:00">2019-12-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-03-21 12:54:36" itemprop="dateModified" datetime="2020-03-21T12:54:36+08:00">2020-03-21</time>
+              </span>
 
-<h3 id="二进制表达式有多少1"><a href="#二进制表达式有多少1" class="headerlink" title="二进制表达式有多少1"></a>二进制表达式有多少1</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">count1</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> res = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> (n !== <span class="number">0</span>) &#123;</span><br><span class="line">    res += n &amp; <span class="number">1</span></span><br><span class="line">    n &gt;&gt;= <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>n &amp;= (n - 1) 操作，是抹掉最右边的1</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">count2</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> res = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> (n !== <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="comment">// 抹掉最右边的1</span></span><br><span class="line">    n &amp;= (n - <span class="number">1</span>)</span><br><span class="line">    res++</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res                              </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">count3</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> res = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> (n !== <span class="number">0</span>) &#123;</span><br><span class="line">    n -= n &amp; (~n + <span class="number">1</span>)</span><br><span class="line">    res++</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+      </header>
 
-<h3 id="在其他数都出现偶数次的数组中找到出现奇数次的数"><a href="#在其他数都出现偶数次的数组中找到出现奇数次的数" class="headerlink" title="在其他数都出现偶数次的数组中找到出现奇数次的数"></a>在其他数都出现偶数次的数组中找到出现奇数次的数</h3><p>遍历数组，对每个数异或，最后的值就是出现奇数次的那个数。异或满足交换律和结合律。像个相同的数异或之后为0</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">oddTimesNum</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> res = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    res ^= arr[i]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
+      
+          <h3 id="实现一个简单的服务端渲染"><a href="#实现一个简单的服务端渲染" class="headerlink" title="实现一个简单的服务端渲染"></a>实现一个简单的服务端渲染</h3><p>在前后端渲染相同的component，将输出一致的dom结构。完善的component属性及生命周期与客户端的render时机是react同构的关键<br>react的虚拟dom以对象树的形式保存在内存中，并且是可以在任何支持JavaScript的环境中生成的，所以可以在浏览器和node中生成。这为前后端同构提供了先决条件。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/12/29/Server-Side-Rendering/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
 
-<h3 id="有两个数出现了奇数次，打印这两个数"><a href="#有两个数出现了奇数次，打印这两个数" class="headerlink" title="有两个数出现了奇数次，打印这两个数"></a>有两个数出现了奇数次，打印这两个数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printOddTimesNum</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> e0 = <span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> e0hasOne = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    e0 ^= arr[i]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> rightOne = e0 &amp; (~e0 + <span class="number">1</span>)</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> ((arr[i] &amp; rightOne) !== <span class="number">0</span>) &#123;</span><br><span class="line">      e0hasOne ^= arr[i]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> annother = e0 ^ e0hasOne</span><br><span class="line">  <span class="keyword">return</span> &#123; annother, e0hasOne &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="其他数字都出现k次的数组中找到只出现一次的数"><a href="#其他数字都出现k次的数组中找到只出现一次的数" class="headerlink" title="其他数字都出现k次的数组中找到只出现一次的数"></a>其他数字都出现k次的数组中找到只出现一次的数</h3><p>k进制的两个数，在i位上无进位相加的结果就是(c(i)+d(i))%k,那么如果k个相同的k进制数进行无进位相加，相加的结果一定是每一位上都是0的k进制数</p>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/03/08/JavaScript%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="caoxinhui">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="caoxinhui">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/08/JavaScript%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" class="post-title-link" itemprop="url">JavaScript深浅拷贝</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-08 13:03:33" itemprop="dateCreated datePublished" datetime="2020-03-08T13:03:33+08:00">2020-03-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-03-21 12:54:36" itemprop="dateModified" datetime="2020-03-21T12:54:36+08:00">2020-03-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">基础</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h3><h4 id="手工实现"><a href="#手工实现" class="headerlink" title="手工实现"></a>手工实现</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">shallowCopy</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> copy = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> obj) &#123;</span><br><span class="line">        copy[i] = obj[i]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> copy</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/08/JavaScript%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -577,7 +562,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-22 13:33:22" itemprop="dateModified" datetime="2020-02-22T13:33:22+08:00">2020-02-22</time>
+                <time title="修改时间：2020-03-21 12:54:36" itemprop="dateModified" datetime="2020-03-21T12:54:36+08:00">2020-03-21</time>
               </span>
 
           
@@ -618,7 +603,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2019/12/28/Typescript/">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/02/17/%E9%A1%B9%E7%9B%AE%E8%B8%A9%E5%9D%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -632,7 +617,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/12/28/Typescript/" class="post-title-link" itemprop="url">Typescript</a>
+            <a href="/2020/02/17/%E9%A1%B9%E7%9B%AE%E8%B8%A9%E5%9D%91/" class="post-title-link" itemprop="url">项目踩坑</a>
         </h2>
 
         <div class="post-meta">
@@ -642,15 +627,26 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-12-28 17:52:28" itemprop="dateCreated datePublished" datetime="2019-12-28T17:52:28+08:00">2019-12-28</time>
+              <time title="创建时间：2020-02-17 11:46:15" itemprop="dateCreated datePublished" datetime="2020-02-17T11:46:15+08:00">2020-02-17</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-22 12:02:25" itemprop="dateModified" datetime="2020-02-22T12:02:25+08:00">2020-02-22</time>
+                <time title="修改时间：2020-03-04 20:56:07" itemprop="dateModified" datetime="2020-03-04T20:56:07+08:00">2020-03-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E5%8E%86/" itemprop="url" rel="index">
+                    <span itemprop="name">项目经历</span>
+                  </a>
+                </span>
+            </span>
 
           
 
@@ -663,10 +659,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Typescript-学习教程"><a href="#Typescript-学习教程" class="headerlink" title="Typescript 学习教程"></a>Typescript 学习教程</h2>
+          <p>最近发现，项目重构的过程中，很容易出bug</p>
+<ul>
+<li><p>项目重构相较于项目 init ，不会那么谨慎。造成漏洞</p>
+</li>
+<li><p>测试资源也没有合理分配，导致项目重构了，却没有经过测试。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/12/28/Typescript/#more" rel="contents">
+              <a class="btn" href="/2020/02/17/%E9%A1%B9%E7%9B%AE%E8%B8%A9%E5%9D%91/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -690,7 +690,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/02/13/Refs/">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/02/29/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -704,7 +704,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/13/Refs/" class="post-title-link" itemprop="url">Refs</a>
+            <a href="/2020/02/29/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/" class="post-title-link" itemprop="url">面试题汇总</a>
         </h2>
 
         <div class="post-meta">
@@ -714,14 +714,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-02-13 20:23:51" itemprop="dateCreated datePublished" datetime="2020-02-13T20:23:51+08:00">2020-02-13</time>
+              <time title="创建时间：2020-02-29 12:21:31" itemprop="dateCreated datePublished" datetime="2020-02-29T12:21:31+08:00">2020-02-29</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-20 19:46:27" itemprop="dateModified" datetime="2020-02-20T19:46:27+08:00">2020-02-20</time>
+                <time title="修改时间：2020-03-04 20:55:52" itemprop="dateModified" datetime="2020-03-04T20:55:52+08:00">2020-03-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -729,8 +729,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
-                    <span itemprop="name">基础</span>
+                  <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
                   </a>
                 </span>
             </span>
@@ -746,10 +746,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="本篇介绍-Refs-基础知识"><a href="#本篇介绍-Refs-基础知识" class="headerlink" title="本篇介绍 Refs 基础知识"></a>本篇介绍 Refs 基础知识</h3>
+          <h3 id="遍历一个-DOM-树"><a href="#遍历一个-DOM-树" class="headerlink" title="遍历一个 DOM 树"></a>遍历一个 DOM 树</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">traversal</span>(<span class="params">node</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node &amp;&amp; node.nodeType===<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(node.tagName)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> childs = node.childNodes</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;childs.length;i++)&#123;</span><br><span class="line">        traversal(childs[i])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/02/13/Refs/#more" rel="contents">
+              <a class="btn" href="/2020/02/29/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -773,7 +773,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/02/19/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/01/10/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -787,7 +787,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/19/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">汉诺塔问题</a>
+            <a href="/2020/01/10/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">项目总结</a>
         </h2>
 
         <div class="post-meta">
@@ -797,14 +797,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-02-19 16:07:55" itemprop="dateCreated datePublished" datetime="2020-02-19T16:07:55+08:00">2020-02-19</time>
+              <time title="创建时间：2020-01-10 18:02:54" itemprop="dateCreated datePublished" datetime="2020-01-10T18:02:54+08:00">2020-01-10</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-20 10:30:52" itemprop="dateModified" datetime="2020-02-20T10:30:52+08:00">2020-02-20</time>
+                <time title="修改时间：2020-03-01 16:58:23" itemprop="dateModified" datetime="2020-03-01T16:58:23+08:00">2020-03-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -812,8 +812,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E5%8E%86/" itemprop="url" rel="index">
+                    <span itemprop="name">项目经历</span>
                   </a>
                 </span>
             </span>
@@ -829,15 +829,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="汉诺塔问题"><a href="#汉诺塔问题" class="headerlink" title="汉诺塔问题"></a>汉诺塔问题</h3><p>问题：假设有 from 柱子，mid 柱子，to柱子，都在from的圆盘1~i完全移动到to，最优解为： </p>
-<ol>
-<li>圆盘1~i-1从from移动到mid</li>
-<li>圆盘i从from 移动到to</li>
-<li>1~i-1从mid 移动到to</li>
-</ol>
+          <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>当业务发展到达某一程度，有限的开发人力和冗长的开发流程无法满足蓬勃发展的业务需求。如果完全依靠传统的开发模式，唯有通过加班来解决。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/02/19/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/#more" rel="contents">
+              <a class="btn" href="/2020/01/10/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -861,7 +856,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/02/19/%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/02/29/react-%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86-class-%E5%92%8C-function/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -875,7 +870,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/19/%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/" class="post-title-link" itemprop="url">最长递增子序列</a>
+            <a href="/2020/02/29/react-%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86-class-%E5%92%8C-function/" class="post-title-link" itemprop="url">react 如何区分 class 和 function</a>
         </h2>
 
         <div class="post-meta">
@@ -885,26 +880,15 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-02-19 14:25:26" itemprop="dateCreated datePublished" datetime="2020-02-19T14:25:26+08:00">2020-02-19</time>
+              <time title="创建时间：2020-02-29 13:11:20" itemprop="dateCreated datePublished" datetime="2020-02-29T13:11:20+08:00">2020-02-29</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-20 10:30:52" itemprop="dateModified" datetime="2020-02-20T10:30:52+08:00">2020-02-20</time>
+                <time title="修改时间：2020-03-01 16:58:23" itemprop="dateModified" datetime="2020-03-01T16:58:23+08:00">2020-03-01</time>
               </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-            </span>
 
           
 
@@ -917,11 +901,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>生成长度为 N 的数组dp，dp[i]表示在arr[i] 这个数结尾的情况下，arr[0…i] 中的最长递归子序列</p>
-<p>如果最长递归子序列以arr[i]结尾，那么在arr[0…i]中所有比arr[i]小的数，都可以作为倒数第二个数。在这么多倒数第二个数的选择中，以哪个数结尾的最大递增子序列更大，就选哪个数作为倒数第二个数。</p>
+          <p>常规 React 组件的定义方式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Greeting</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Greeting</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/02/19/%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/#more" rel="contents">
+              <a class="btn" href="/2020/02/29/react-%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86-class-%E5%92%8C-function/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -945,7 +929,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/02/18/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2019/12/28/%E5%80%92%E8%AE%A1%E6%97%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -959,7 +943,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/18/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/" class="post-title-link" itemprop="url">斐波那契数列</a>
+            <a href="/2019/12/28/%E5%80%92%E8%AE%A1%E6%97%B6/" class="post-title-link" itemprop="url">倒计时</a>
         </h2>
 
         <div class="post-meta">
@@ -969,14 +953,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-02-18 21:59:25" itemprop="dateCreated datePublished" datetime="2020-02-18T21:59:25+08:00">2020-02-18</time>
+              <time title="创建时间：2019-12-28 17:34:28" itemprop="dateCreated datePublished" datetime="2019-12-28T17:34:28+08:00">2019-12-28</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-20 10:30:52" itemprop="dateModified" datetime="2020-02-20T10:30:52+08:00">2020-02-20</time>
+                <time title="修改时间：2020-03-01 16:58:23" itemprop="dateModified" datetime="2020-03-01T16:58:23+08:00">2020-03-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -984,8 +968,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E5%8E%86/" itemprop="url" rel="index">
+                    <span itemprop="name">项目经历</span>
                   </a>
                 </span>
             </span>
@@ -1001,10 +985,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>斐波那契数列规则 ： <code>F(N) = F(N-1) + F(N-2)</code><br>斐波那契数列为 1、1、2、3……</p>
+          <h2 id="最近用两种写发写了倒计时的功能"><a href="#最近用两种写发写了倒计时的功能" class="headerlink" title="最近用两种写发写了倒计时的功能"></a>最近用两种写发写了倒计时的功能</h2>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/02/18/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/#more" rel="contents">
+              <a class="btn" href="/2019/12/28/%E5%80%92%E8%AE%A1%E6%97%B6/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1096,14 +1080,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-count">58</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

@@ -207,7 +207,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/02/29/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/04/04/Proxy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -221,7 +221,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/29/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/" class="post-title-link" itemprop="url">面试题汇总</a>
+            <a href="/2020/04/04/Proxy/" class="post-title-link" itemprop="url">Proxy</a>
         </h2>
 
         <div class="post-meta">
@@ -232,7 +232,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-02-29 12:21:31 / 修改时间：17:22:39" itemprop="dateCreated datePublished" datetime="2020-02-29T12:21:31+08:00">2020-02-29</time>
+              <time title="创建时间：2020-04-04 13:07:07 / 修改时间：17:29:21" itemprop="dateCreated datePublished" datetime="2020-04-04T13:07:07+08:00">2020-04-04</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,8 +240,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index">
-                    <span itemprop="name">面试</span>
+                  <a href="/categories/ES6/" itemprop="url" rel="index">
+                    <span itemprop="name">ES6</span>
                   </a>
                 </span>
             </span>
@@ -257,87 +257,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="遍历一个-DOM-树"><a href="#遍历一个-DOM-树" class="headerlink" title="遍历一个 DOM 树"></a>遍历一个 DOM 树</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">traversal</span>(<span class="params">node</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node &amp;&amp; node.nodeType===<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(node.tagName)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> childs = node.childNodes</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;childs.length;i++)&#123;</span><br><span class="line">        traversal(childs[i])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <p>Proxy用于修改某些操作的默认行为，可以理解成在目标对象前拦截。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> proxy = <span class="keyword">new</span> <span class="built_in">Proxy</span>(target,handler)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Proxy</span>(&#123;&#125;, &#123;</span><br><span class="line">    <span class="keyword">get</span>: function (target, key, receiver) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`getting <span class="subst">$&#123;key&#125;</span>!`</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Reflect</span>.get(target, key, receiver)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">set</span>: function (target, key, value, receiver) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`setting <span class="subst">$&#123;key&#125;</span>!`</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Reflect</span>.set(target, key, value, receiver)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">obj.count = <span class="number">1</span></span><br><span class="line">++obj.count</span><br></pre></td></tr></table></figure>
 
+<p>以上代码说明，Proxy 实际上重载了点运算符，即用自己的定义覆盖了语言的原始定义。</p>
+<p>要使proxy起作用，必须针对proxy实例进行操作，而不是目标对象。如果handler没有设置任何拦截，那就等同于直接通向原对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> target = &#123;&#125;</span><br><span class="line"><span class="keyword">const</span> handler = &#123;&#125;</span><br><span class="line"><span class="keyword">const</span> proxy = <span class="keyword">new</span> <span class="built_in">Proxy</span>(target, handler)</span><br><span class="line">proxy.a = <span class="string">'b'</span></span><br><span class="line"><span class="built_in">console</span>.log(target.a)</span><br></pre></td></tr></table></figure>
 
-<h3 id="new-操作的实现"><a href="#new-操作的实现" class="headerlink" title="new 操作的实现"></a>new 操作的实现</h3><ul>
-<li>创建一个空对象，并把 this 指向空对象</li>
-<li>继承了函数的原型</li>
-<li>属性和方法被加入到 this 引用的对象中</li>
-<li>新创建的对象由 this 引用，最后隐式返回 this</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">new</span>(<span class="params">Function</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> obj = &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    obj.__proto__ = <span class="built_in">Function</span>.prototype</span><br><span class="line">    <span class="keyword">let</span> res = <span class="built_in">Function</span>.call(obj)</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span>(res) ===<span class="string">"function"</span> || <span class="keyword">typeof</span>(res) ===<span class="string">"object"</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> obj</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="proto-和-prototype-的区别"><a href="#proto-和-prototype-的区别" class="headerlink" title="proto 和 prototype 的区别"></a><strong>proto</strong> 和 prototype 的区别</h3><ul>
-<li>对象有属性<strong>proto</strong>,指向该对象的构造函数的原型对象</li>
-</ul>
-<h3 id="实现-call-函数"><a href="#实现-call-函数" class="headerlink" title="实现 call 函数"></a>实现 call 函数</h3><p><a href="https://github.com/mqyqingfeng/Blog/issues/11" target="_blank" rel="noopener">参考文章</a></p>
-<p>call 使用方法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    name: <span class="string">"obj name"</span></span><br><span class="line">&#125;</span><br><span class="line">foo.call2(obj)</span><br></pre></td></tr></table></figure>
-<p>call 作用</p>
-<ul>
-<li>将 this 指向了 obj</li>
-<li>执行了 foo 函数</li>
-</ul>
-<p>变形</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    name:<span class="string">"obj name"</span>,</span><br><span class="line">    foo:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>将函数变成对象的属性</li>
-<li>执行函数</li>
-<li>删除函数<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">obj.fn = foo</span><br><span class="line">obj.fn()</span><br><span class="line"><span class="keyword">delete</span> obj.fn</span><br></pre></td></tr></table></figure>
-实现，成功✅<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.call2 = <span class="function"><span class="keyword">function</span> (<span class="params">context</span>) </span>&#123;</span><br><span class="line">    context.fn = <span class="keyword">this</span></span><br><span class="line">    context.fn()</span><br><span class="line">    <span class="keyword">delete</span> context.fn</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    name: <span class="string">"obj name"</span></span><br><span class="line">&#125;</span><br><span class="line">foo.call2(obj)</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>如果传入参数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">hello,age</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">    <span class="built_in">console</span>.log(hello,age)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    name: <span class="string">"obj name"</span></span><br><span class="line">&#125;</span><br><span class="line">foo.call(obj,<span class="string">"hello"</span>,<span class="number">14</span>)</span><br></pre></td></tr></table></figure>
-
-
-<p>实现方式</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.call2 = <span class="function"><span class="keyword">function</span> (<span class="params">context</span>) </span>&#123;</span><br><span class="line">    context.fn = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">let</span> args = []</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">1</span>;i&lt;<span class="built_in">arguments</span>.length;i++)&#123;</span><br><span class="line">        args.push(<span class="string">"arguments["</span> + i + <span class="string">"]"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 执行后 args为 ["arguments[1]", "arguments[2]"]</span></span><br><span class="line">    <span class="built_in">eval</span>(<span class="string">'context.fn('</span> + args + <span class="string">')'</span>)</span><br><span class="line">    <span class="keyword">delete</span> context.fn</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">hello,age</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">    <span class="built_in">console</span>.log(hello,age)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    name: <span class="string">"obj name"</span></span><br><span class="line">&#125;</span><br><span class="line">foo.call2(obj,<span class="string">"hello"</span>,<span class="number">14</span>)</span><br></pre></td></tr></table></figure>
-
-<p>最后，需要注意</p>
-<ul>
-<li><p>this 参数可以传 null，当为 null 的时候，视为指向 window 对象</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> name = <span class="string">"hello"</span></span><br><span class="line"></span><br><span class="line">foo.call2(<span class="literal">null</span>) <span class="comment">// hello</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>函数可以有返回值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">name,age</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        value:<span class="keyword">this</span>.value,</span><br><span class="line">        name:name,</span><br><span class="line">        age:age</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> bar = &#123;</span><br><span class="line">    value:<span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line">foo.call(bar)</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">Function</span>.prototype.call2 = <span class="function"><span class="keyword">function</span> (<span class="params">context</span>) </span>&#123;</span><br><span class="line">    context = context || <span class="built_in">window</span></span><br><span class="line">    context.fn = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">let</span> args = []</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">1</span>;i&lt;<span class="built_in">arguments</span>.length;i++)&#123;</span><br><span class="line">        args.push(<span class="string">"arguments["</span> + i + <span class="string">"]"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 执行后 args为 ["arguments[1]", "arguments[2]", "arguments[3]"]</span></span><br><span class="line">    <span class="keyword">const</span> result = <span class="built_in">eval</span>(<span class="string">'context.fn('</span> + args + <span class="string">')'</span>)</span><br><span class="line">    <span class="keyword">delete</span> context.fn</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">name,age</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        value:<span class="keyword">this</span>.value,</span><br><span class="line">        name:name,</span><br><span class="line">        age:age</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> bar = &#123;</span><br><span class="line">    value:<span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(foo.call2(bar))</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="实现-apply-函数"><a href="#实现-apply-函数" class="headerlink" title="实现 apply 函数"></a>实现 apply 函数</h3><p>与 call 实现方法类似。只不过 argument 参数可以直接通过数组拿，而不用自己生成</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.apply = <span class="function"><span class="keyword">function</span> (<span class="params">context, arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> context = <span class="built_in">Object</span>(context) || <span class="built_in">window</span>;</span><br><span class="line">    context.fn = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> result;</span><br><span class="line">    <span class="keyword">if</span> (!arr) &#123;</span><br><span class="line">        result = context.fn();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> args = [];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) &#123;</span><br><span class="line">            args.push(<span class="string">'arr['</span> + i + <span class="string">']'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        result = <span class="built_in">eval</span>(<span class="string">'context.fn('</span> + args + <span class="string">')'</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> context.fn</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="实现-bind-函数"><a href="#实现-bind-函数" class="headerlink" title="实现 bind 函数"></a>实现 bind 函数</h3><p><a href="https://github.com/mqyqingfeng/Blog/issues/12" target="_blank" rel="noopener">参考文章</a></p>
-<ul>
-<li>返回函数</li>
-<li>可以传入参数<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo=&#123;</span><br><span class="line">    value:<span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.value)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> bindFoo = bar.bind(foo)</span><br><span class="line">bindFoo()</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>实现</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bind2</span>(<span class="params">context</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> self = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> self.apply(context)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>同时，bind 可以实现柯里化</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">    value: <span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.value);</span><br><span class="line">    <span class="built_in">console</span>.log(name);</span><br><span class="line">    <span class="built_in">console</span>.log(age);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bindFoo = bar.bind(foo, <span class="string">'daisy'</span>);</span><br><span class="line">bindFoo(<span class="string">'18'</span>);</span><br></pre></td></tr></table></figure>
-
-<p>实现</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bind2</span>(<span class="params">context</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> self = <span class="keyword">this</span></span><br><span class="line">    <span class="comment">// 获取bind2函数从第二个参数到最后一个参数</span></span><br><span class="line">    <span class="keyword">const</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>,<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 这个时候的arguments是指bind返回的函数传入的参数</span></span><br><span class="line">        <span class="keyword">const</span> bindArgs = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>)</span><br><span class="line">        <span class="keyword">return</span> self.apply(context,args.concat(bindArgs))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.bind2 = <span class="function"><span class="keyword">function</span> (<span class="params">context</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span> !== <span class="string">"function"</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"Function.prototype.bind - what is trying to be bound is not callable"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> fNOP = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> fBound = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> bindArgs = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);</span><br><span class="line">        <span class="keyword">return</span> self.apply(<span class="keyword">this</span> <span class="keyword">instanceof</span> fNOP ? <span class="keyword">this</span> : context, args.concat(bindArgs));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fNOP.prototype = <span class="keyword">this</span>.prototype;</span><br><span class="line">    fBound.prototype = <span class="keyword">new</span> fNOP();</span><br><span class="line">    <span class="keyword">return</span> fBound;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="实现-Promise"><a href="#实现-Promise" class="headerlink" title="实现 Promise"></a>实现 Promise</h3><p><a href="https://github.com/xieranmaya/blog/issues/3" target="_blank" rel="noopener">参考文章</a></p>
-<h3 id="实现项目按需加载，例如引入的-antd-只加载-button-组件"><a href="#实现项目按需加载，例如引入的-antd-只加载-button-组件" class="headerlink" title="实现项目按需加载，例如引入的 antd 只加载 button 组件"></a>实现项目按需加载，例如引入的 antd 只加载 button 组件</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> handler = &#123;</span><br><span class="line">    <span class="keyword">get</span>: function (target, name) &#123;</span><br><span class="line">        <span class="keyword">if</span> (name === <span class="string">'prototype'</span>) <span class="keyword">return</span> <span class="built_in">Object</span>.prototype</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Hello, '</span> + name</span><br><span class="line">    &#125;,</span><br><span class="line">    apply: <span class="function"><span class="keyword">function</span> (<span class="params">target, thisBinding, args</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> args[<span class="number">0</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">constructor</span>: function (target, args) &#123;</span><br><span class="line">        <span class="keyword">return</span> args[<span class="number">1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fproxy = <span class="keyword">new</span> <span class="built_in">Proxy</span>(<span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y</span><br><span class="line">&#125;, handler)</span><br><span class="line"></span><br><span class="line">fproxy(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="keyword">new</span> fproxy(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">fproxy.prototype</span><br><span class="line">fproxy.foo</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -356,7 +284,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/02/29/react-%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86-class-%E5%92%8C-function/">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/04/04/react-router/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -370,7 +298,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/29/react-%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86-class-%E5%92%8C-function/" class="post-title-link" itemprop="url">react 如何区分 class 和 function</a>
+            <a href="/2020/04/04/react-router/" class="post-title-link" itemprop="url">react-router</a>
         </h2>
 
         <div class="post-meta">
@@ -381,7 +309,18 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-02-29 13:11:20 / 修改时间：14:11:31" itemprop="dateCreated datePublished" datetime="2020-02-29T13:11:20+08:00">2020-02-29</time>
+              <time title="创建时间：2020-04-04 16:07:36 / 修改时间：16:09:39" itemprop="dateCreated datePublished" datetime="2020-04-04T16:07:36+08:00">2020-04-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/" itemprop="url" rel="index">
+                    <span itemprop="name">极客时间</span>
+                  </a>
+                </span>
             </span>
 
           
@@ -395,81 +334,111 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>常规 React 组件的定义方式</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Greeting</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Greeting</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
 
-<p>如果 Greeting 是一个函数，React 需要调用它</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Greeting</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> result = Greeting(props)</span><br></pre></td></tr></table></figure>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
-<p>但如果 Greeting 是一个类，React 需要先用 new 操作符将其实例化，然后 调用刚才生成实例的 render 方法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Greeting</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> instance = <span class="keyword">new</span> Greeting(props)</span><br><span class="line"><span class="keyword">const</span> result = instance.render()</span><br></pre></td></tr></table></figure>
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/04/04/Redux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="caoxinhui">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="caoxinhui">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/04/Redux/" class="post-title-link" itemprop="url">Redux</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-04 14:54:04 / 修改时间：16:01:06" itemprop="dateCreated datePublished" datetime="2020-04-04T14:54:04+08:00">2020-04-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/" itemprop="url" rel="index">
+                    <span itemprop="name">极客时间</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>redux的核心概念，全局 store，所有的状态都会放在store中</p>
+<p>产生 store，其中reducer是一个纯函数<br><code>const store = createStore(reducer)</code><br>store的三个方法</p>
+<ol>
+<li>getState()</li>
+<li>dispatch(action)<br>UI上点击了一个button，可能产生一个action，store可以把它dispatch出去，dispatch给reducer，reducer是真正处理action的，并更新store</li>
+<li>subscribe(listener)<br>监听store的变化，store有任何变化都会调用他的 callback-&gt; listener</li>
+</ol>
+<h3 id="理解action"><a href="#理解action" class="headerlink" title="理解action"></a>理解action</h3><p>描述行为</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    type:ADD_TODO,</span><br><span class="line">    text:<span class="string">'Build my first Redux app'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="理解reducer"><a href="#理解reducer" class="headerlink" title="理解reducer"></a>理解reducer</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">todoApp</span>(<span class="params">state = initialState, action</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">        <span class="keyword">case</span> ADD_TODO:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">                todos: [</span><br><span class="line">                    ...state.todos, &#123;</span><br><span class="line">                        text: action.text,</span><br><span class="line">                        completed: <span class="literal">false</span></span><br><span class="line">                    &#125;]</span><br><span class="line">            &#125;)</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">return</span> store</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/364812/images/2473907/ARCH-Classic-Flux__2_.png" alt="flux"><br><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/364812/images/2484555/ARCH-Redux2.png" alt="redux"><br><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/364812/images/2484552/ARCH-Redux2-real.gif" alt="redux状态流"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(state,action)=&gt;<span class="keyword">new</span> state</span><br></pre></td></tr></table></figure>
 
 
-<p>只要在函数调用前加上 new 操作符，你就可以把任何函数当做一个类的构造函数来用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//创建一个 &#123;&#125; 对象并把 Person 中的 this 指向那个对象，以便我可以通过类似 this.name 的形式去设置一些东西，然后把这个对象返回给我</span></span><br><span class="line"><span class="keyword">const</span> fred = <span class="keyword">new</span> Person(<span class="string">"fred"</span>) <span class="comment">// Person &#123; name: 'fred' &#125;</span></span><br><span class="line"><span class="keyword">const</span> geroge = Person(<span class="string">"geroge"</span>) <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<h3 id="理解-combineReducers"><a href="#理解-combineReducers" class="headerlink" title="理解 combineReducers"></a>理解 combineReducers</h3><p>工具函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">todos</span>(<span class="params">state = [], action</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'ADD_TODO'</span>:</span><br><span class="line">            <span class="keyword">return</span> state.concat([action.text])</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> state</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">counter</span>(<span class="params">state = <span class="number">0</span>, action</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'INCREMENT'</span>:</span><br><span class="line">            <span class="keyword">return</span> state + <span class="number">1</span></span><br><span class="line">        <span class="keyword">case</span> <span class="string">'DECREMENT'</span>:</span><br><span class="line">            <span class="keyword">return</span> state - <span class="number">1</span></span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> state</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">import</span> &#123;combineReducers&#125; <span class="keyword">from</span> <span class="string">'redux'</span></span><br><span class="line"><span class="keyword">import</span> todos <span class="keyword">from</span> <span class="string">'./todos'</span></span><br><span class="line"><span class="keyword">import</span> counter <span class="keyword">from</span> <span class="string">'./counter'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> combineReducers(&#123;</span><br><span class="line">    todos,</span><br><span class="line">    counter</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<p>new 操作符同时也把我们放在 Person.prototype 上的东西放到了 fred 对象上</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> fred = <span class="keyword">new</span> Person(<span class="string">"fred"</span>) <span class="comment">// Person &#123; name: 'fred' &#125;</span></span><br><span class="line">Person.prototype.sayHi = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"hello, I' m "</span> + <span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line">fred.sayHi()</span><br></pre></td></tr></table></figure>
+<h3 id="理解-bindActionCreators"><a href="#理解-bindActionCreators" class="headerlink" title="理解 bindActionCreators"></a>理解 bindActionCreators</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTodoWithDispatch</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> action = &#123;</span><br><span class="line">        type: ADD_TODO,</span><br><span class="line">        text</span><br><span class="line">&#125;</span><br><span class="line">    dispatch(action);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dispatch(addTodo(text))</span><br><span class="line">dispatch(completeTodo(index))</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> boundAddTodo = <span class="function"><span class="params">text</span> =&gt;</span> dispatch(addTodo(text));</span><br><span class="line"><span class="keyword">const</span> boundCompleteTodo = <span class="function"><span class="params">index</span> =&gt;</span> dispatch(completeTodo(index));</span><br></pre></td></tr></table></figure>
 
-
-<p>通过类来实现相同的功能</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name) &#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name</span><br><span class="line">    &#125;</span><br><span class="line">    sayHi()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"hello, I'm "</span> + <span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fred = <span class="keyword">new</span> Person(<span class="string">"fred"</span>)</span><br><span class="line">fred.sayHi()</span><br></pre></td></tr></table></figure>
-<ul>
-<li>对于类，如果忘记加 new ，会导致程序报错</li>
-<li>对于函数，如果忘记加 new ，会导致 this 指向全局或者 undefined</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>new Person()</th>
-<th>Person()</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>class</td>
-<td>✅this 是一个 Person 实例</td>
-<td>❌TypeError</td>
-</tr>
-<tr>
-<td>function</td>
-<td>✅this 是一个 Person 实例</td>
-<td>⚠️this 是 window 或 undefined</td>
-</tr>
-</tbody></table>
-<p>如果 React 每次调用前都加 new 会怎么样呢？</p>
-<p>对于箭头函数，会抛出一个错误</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Greeting = <span class="function"><span class="params">()</span> =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>;</span><br><span class="line"><span class="keyword">new</span> Greeting(); <span class="comment">// 🔴 Greeting 不是一个构造函数</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bindActionCreator</span>(<span class="params">actionCreator, dispatch</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> dispatch(actionCreator.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>));</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bindActionCreators</span>(<span class="params">actionCreators, dispatch</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> keys = <span class="built_in">Object</span>.keys(actionCreators);</span><br><span class="line">    <span class="keyword">const</span> boundActionCreators = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; keys.length; i++) &#123;</span><br><span class="line">        <span class="keyword">const</span> key = keys[i];</span><br><span class="line">        <span class="keyword">const</span> actionCreator = actionCreators[key];</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> actionCreator === <span class="string">'function'</span>) &#123;</span><br><span class="line">            boundActionCreators[key] = bindActionCreator(actionCreator, dispatch);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> boundActionCreators;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-<ul>
-<li><p>箭头函数的一个附带作用是它没有自己的 this 值 —— this 解析自离得最近的常规函数</p>
-</li>
-<li><p>箭头函数没有 this，意味着他作为构造函数是无用的。</p>
-</li>
-<li><p>箭头函数没有 prototype</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="params">()</span>=&gt;</span>&#123;&#125;).prototype</span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;).prototype</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>另一个我们不能总是使用 new 的原因是它会妨碍 React 支持返回字符串或其它原始类型的组件。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Greeting</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Hello'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Greeting())  <span class="comment">// Hello</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> Greeting()) <span class="comment">// Greeting &#123;&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  createStore,</span><br><span class="line">  combineReducers,</span><br><span class="line">  bindActionCreators</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">"redux"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Store initial state</span></span><br><span class="line">  <span class="keyword">const</span> initialState = &#123; <span class="attr">count</span>: <span class="number">0</span> &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// reducer</span></span><br><span class="line">  <span class="keyword">const</span> counter = <span class="function">(<span class="params">state = initialState, action</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="string">"PLUS_ONE"</span>:</span><br><span class="line">        <span class="keyword">return</span> &#123; <span class="attr">count</span>: state.count + <span class="number">1</span> &#125;;</span><br><span class="line">      <span class="keyword">case</span> <span class="string">"MINUS_ONE"</span>:</span><br><span class="line">        <span class="keyword">return</span> &#123; <span class="attr">count</span>: state.count - <span class="number">1</span> &#125;;</span><br><span class="line">      <span class="keyword">case</span> <span class="string">"CUSTOM_COUNT"</span>:</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">          count: state.count + action.payload.count</span><br><span class="line">        &#125;;</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> todos = <span class="function">(<span class="params">state = &#123;&#125;</span>) =&gt;</span> state;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Create store</span></span><br><span class="line">  <span class="keyword">const</span> store = createStore(</span><br><span class="line">    combineReducers(&#123;</span><br><span class="line">      todos,</span><br><span class="line">      counter</span><br><span class="line">    &#125;)</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Action creator</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">plusOne</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// action</span></span><br><span class="line">    <span class="keyword">return</span> &#123; <span class="attr">type</span>: <span class="string">"PLUS_ONE"</span> &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">minusOne</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123; <span class="attr">type</span>: <span class="string">"MINUS_ONE"</span> &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">customCount</span>(<span class="params">count</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123; <span class="attr">type</span>: <span class="string">"CUSTOM_COUNT"</span>, <span class="attr">payload</span>: &#123; count &#125; &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  plusOne = bindActionCreators(plusOne, store.dispatch);</span><br><span class="line"></span><br><span class="line">  store.subscribe(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(store.getState()));</span><br><span class="line">  <span class="comment">// store.dispatch(plusOne());</span></span><br><span class="line">  plusOne();</span><br><span class="line">  store.dispatch(minusOne());</span><br><span class="line">  store.dispatch(customCount(<span class="number">5</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> () =&gt; (</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;button onClick=&#123;run&#125;&gt;Run&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;p&gt;* 请打开控制台查看运行结果&lt;/</span>p&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">);</span></span><br></pre></td></tr></table></figure>
 
 
-<p>如果一个函数的返回值不是一个对象，它会被 new 完全忽略。如果你返回了一个字符串或数字，就好像完全没有 return 一样</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Answer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">42</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Answer(); <span class="comment">// ✅ 42</span></span><br><span class="line"><span class="keyword">new</span> Answer(); <span class="comment">// 🔴Answer &#123;&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="将组件-connect-到-store-上"><a href="#将组件-connect-到-store-上" class="headerlink" title="将组件 connect 到 store 上"></a>将组件 connect 到 store 上</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;connect&#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SidePanel</span> <span class="keyword">extends</span> <span class="title">Comment</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mapStateToProps</span>(<span class="params">state</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        nextgen: state.nextgen,</span><br><span class="line">        router: state.router,</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mapDispatchToProps</span>(<span class="params">dispatch</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        actions: bindActionCreators(&#123;...actions&#125;, dispatch)</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(mapStateToProps, mapDispatchToProps)(SidePanel);</span><br></pre></td></tr></table></figure>
 
-<p>检查 Greeting 是否是一个 React 组件类的最符合语言习惯的方式是测试 Greeting.prototype instanceof React.Component</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(B.prototype <span class="keyword">instanceof</span> A); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; bindActionCreators, createStore &#125; <span class="keyword">from</span> <span class="string">"redux"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Provider, connect &#125; <span class="keyword">from</span> <span class="string">"react-redux"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Store initial state</span></span><br><span class="line"><span class="keyword">const</span> initialState = &#123; <span class="attr">count</span>: <span class="number">0</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// reducer</span></span><br><span class="line"><span class="keyword">const</span> counter = <span class="function">(<span class="params">state = initialState, action</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"PLUS_ONE"</span>:</span><br><span class="line">      <span class="keyword">return</span> &#123; <span class="attr">count</span>: state.count + <span class="number">1</span> &#125;;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"MINUS_ONE"</span>:</span><br><span class="line">      <span class="keyword">return</span> &#123; <span class="attr">count</span>: state.count - <span class="number">1</span> &#125;;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"CUSTOM_COUNT"</span>:</span><br><span class="line">      <span class="keyword">return</span> &#123; <span class="attr">count</span>: state.count + action.payload.count &#125;;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> state;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Create store</span></span><br><span class="line"><span class="keyword">const</span> store = createStore(counter);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Action creator</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">plusOne</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// action</span></span><br><span class="line">  <span class="keyword">return</span> &#123; <span class="attr">type</span>: <span class="string">"PLUS_ONE"</span> &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">minusOne</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123; <span class="attr">type</span>: <span class="string">"MINUS_ONE"</span> &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Counter</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; count, plusOne, minusOne &#125; = <span class="keyword">this</span>.props;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div className=<span class="string">"counter"</span>&gt;</span><br><span class="line">        &lt;button onClick=&#123;minusOne&#125;&gt;-<span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">        &lt;span style=&#123;&#123; <span class="attr">display</span>: <span class="string">"inline-block"</span>, <span class="attr">margin</span>: <span class="string">"0 10px"</span> &#125;&#125;&gt;</span><br><span class="line">          &#123;count&#125;</span><br><span class="line">        &lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">        &lt;button onClick=&#123;plusOne&#125;&gt;+&lt;/</span>button&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">function mapStateToProps(state) &#123;</span></span><br><span class="line"><span class="regexp">  return &#123;</span></span><br><span class="line"><span class="regexp">    count: state.count</span></span><br><span class="line"><span class="regexp">  &#125;;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">function mapDispatchToProps(dispatch) &#123;</span></span><br><span class="line"><span class="regexp">  return bindActionCreators(&#123; plusOne, minusOne &#125;, dispatch);</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">const ConnectedCounter = connect(mapStateToProps, mapDispatchToProps)(Counter);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default class CounterSample extends React.Component &#123;</span></span><br><span class="line"><span class="regexp">  render() &#123;</span></span><br><span class="line"><span class="regexp">    return (</span></span><br><span class="line"><span class="regexp">      &lt;Provider store=&#123;store&#125;&gt;</span></span><br><span class="line"><span class="regexp">        &lt;ConnectedCounter /</span>&gt;</span><br><span class="line">      &lt;<span class="regexp">/Provider&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<p>一个函数的 prototype 并不指向他的原型，</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">Person.prototype <span class="comment">// Person &#123;&#125; 🔴 不是 Person 的原型</span></span><br><span class="line">Person.__proto__  <span class="comment">// f()&#123;[native code]&#125; ✅ Person 的原型</span></span><br></pre></td></tr></table></figure>
 
-<p>因此「原型链」更像是 <strong>proto</strong>.<strong>proto</strong>.<strong>proto</strong> 而不是 prototype.prototype.prototype</p>
-<p>那么函数和类的 prototype 属性又是什么？是用 new 调用那个类或函数生成的所有对象的 <strong>proto</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">'Hi, I am '</span> + <span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fred = <span class="keyword">new</span> Person(<span class="string">'Fred'</span>); <span class="comment">// 设置 `fred.__proto__` 为 `Person.prototype`</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Greeting</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> c = <span class="keyword">new</span> Greeting();</span><br><span class="line"><span class="built_in">console</span>.log(c.__proto__); <span class="comment">// Greeting.prototype</span></span><br><span class="line"><span class="built_in">console</span>.log(c.__proto__.__proto__); <span class="comment">// React.Component.prototype</span></span><br><span class="line"><span class="built_in">console</span>.log(c.__proto__.__proto__.__proto__); <span class="comment">// Object.prototype</span></span><br><span class="line"></span><br><span class="line">c.render();      <span class="comment">// 在 c.__proto__ (Greeting.prototype) 上找到</span></span><br><span class="line">c.setState();    <span class="comment">// 在 c.__proto__.__proto__ (React.Component.prototype) 上找到</span></span><br><span class="line">c.toString();    <span class="comment">// 在 c.__proto__.__proto__.__proto__ (Object.prototype) 上找到</span></span><br></pre></td></tr></table></figure>
+<h3 id="异步action"><a href="#异步action" class="headerlink" title="异步action"></a>异步action</h3><p><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/364812/images/2484714/ARCH-Redux2-extended-api.png" alt="redux异步请求"></p>
+<h3 id="redux-中间件（Middleware）"><a href="#redux-中间件（Middleware）" class="headerlink" title="redux 中间件（Middleware）"></a>redux 中间件（Middleware）</h3><ol>
+<li>截获 action</li>
+<li>发出 action</li>
+</ol>
 
       
     </div>
@@ -489,7 +458,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/02/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/02/25/WebStorm%E5%BF%AB%E6%8D%B7%E9%94%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -503,7 +472,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">设计模式</a>
+            <a href="/2020/02/25/WebStorm%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="post-title-link" itemprop="url">WebStorm快捷键</a>
         </h2>
 
         <div class="post-meta">
@@ -513,14 +482,249 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-02-07 16:18:53" itemprop="dateCreated datePublished" datetime="2020-02-07T16:18:53+08:00">2020-02-07</time>
+              <time title="创建时间：2020-02-25 21:08:47" itemprop="dateCreated datePublished" datetime="2020-02-25T21:08:47+08:00">2020-02-25</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 09:23:59" itemprop="dateModified" datetime="2020-02-28T09:23:59+08:00">2020-02-28</time>
+                <time title="修改时间：2020-04-04 15:06:47" itemprop="dateModified" datetime="2020-04-04T15:06:47+08:00">2020-04-04</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>command + option + L 格式化代码<br>command + shift + O 跳到某个文件<br>ctrl + alt + R 运行文件</p>
+<p>command + option + esc 杀进程</p>
+<p>command + / 单行注释</p>
+<p>command + option + / 多行注释</p>
+<p>/** + enter 方法注释</p>
+<p>command + alt + T 用 if…else… 或者 try…catch 包住</p>
+<p>alt + / 与 enter 功能相似，代码自动补全</p>
+<p>command + R 替换</p>
+<p>command + G 查找下一个</p>
+<p>shift + F6 重命名</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/04/04/react%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="caoxinhui">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="caoxinhui">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/04/react%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-title-link" itemprop="url">react性能优化</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-04 14:07:21 / 修改时间：14:14:50" itemprop="dateCreated datePublished" datetime="2020-04-04T14:07:21+08:00">2020-04-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/" itemprop="url" rel="index">
+                    <span itemprop="name">极客时间</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>异步渲染的两个部分</p>
+<ul>
+<li>时间分片<br>DOM操作的优先级低于浏览器原生行为，例如键盘和鼠标输入，从而保证操作的流畅</li>
+<li>渲染挂起<br>虚拟DOM节点可以等待某个异步操作的完成，并指定timeout，之后才完成真正的渲染。</li>
+</ul>
+<h3 id="时间分片"><a href="#时间分片" class="headerlink" title="时间分片"></a>时间分片</h3><ol>
+<li>虚拟dom的diff操作可以分片进行</li>
+<li>React新API：unstable_deferredUpdates<br>UI更新会等其他高优先级的UI更新先完成之后才更新</li>
+<li>Chrome新的API：requestIdleCallback<br>浏览器告诉你什么时候浏览器不忙了</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/04/04/react%E7%BB%84%E4%BB%B6%E5%A4%8D%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="caoxinhui">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="caoxinhui">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/04/react%E7%BB%84%E4%BB%B6%E5%A4%8D%E7%94%A8/" class="post-title-link" itemprop="url">react组件复用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-04 13:28:55 / 修改时间：13:52:01" itemprop="dateCreated datePublished" datetime="2020-04-04T13:28:55+08:00">2020-04-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/" itemprop="url" rel="index">
+                    <span itemprop="name">极客时间</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>组件复用的两种形式：高阶组价 和 函数作为子组件</p>
+<h3 id="高阶组件"><a href="#高阶组件" class="headerlink" title="高阶组件"></a>高阶组件</h3><p>高阶组件一般不会有自己的UI展现，而只是为他封装的组件提供额外的功能或者数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Clock</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Clock constructed"</span>);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123; <span class="attr">date</span>: <span class="keyword">new</span> <span class="built_in">Date</span>() &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Clock did mount"</span>);</span><br><span class="line">    <span class="keyword">this</span>.timerID = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.tick(), <span class="number">1000</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Clock will unmount"</span>);</span><br><span class="line">    clearInterval(<span class="keyword">this</span>.timerID);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidUpdate() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Clock did update"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  tick() &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      date: <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h2&gt;</span><br><span class="line">          It is &#123;<span class="keyword">this</span>.state.date.toLocaleTimeString()&#125;.</span><br><span class="line">        &lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>高阶组件<br>withTimer给已有的组件注入计时器的功能</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">withTimer</span>(<span class="params">WrappedComponent</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    state = &#123; <span class="attr">time</span>: <span class="keyword">new</span> <span class="built_in">Date</span>() &#125;;</span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">      <span class="keyword">this</span>.timerID = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.tick(), <span class="number">1000</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentWillUnmount() &#123;</span><br><span class="line">      clearInterval(<span class="keyword">this</span>.timerID);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    tick() &#123;</span><br><span class="line">      <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">        time: <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    render() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">WrappedComponent</span> <span class="attr">time</span>=<span class="string">&#123;this.state.time&#125;</span> &#123;<span class="attr">...this.props</span>&#125; /&gt;</span>;</span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml">  &#125;;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="函数作为子组件"><a href="#函数作为子组件" class="headerlink" title="函数作为子组件"></a>函数作为子组件</h3><p>把函数作为children，组件如何呈现由使用他的人来决定</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">component</span></span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">        &#123;<span class="keyword">this</span>.props.children(<span class="string">'hello'</span>)&#125;</span><br><span class="line">        &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&lt;MyComponent&gt;</span></span><br><span class="line"><span class="regexp">&#123;(name)=&gt;(</span></span><br><span class="line"><span class="regexp">    &lt;div&gt;&#123;name&#125;&lt;/</span>div&gt;</span><br><span class="line">)&#125;</span><br><span class="line">&lt;<span class="regexp">/MyComponent&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; PureComponent &#125; <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> PropTypes <span class="keyword">from</span> <span class="string">"prop-types"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">AdvancedTabSelector</span> <span class="keyword">extends</span> <span class="title">PureComponent</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> propTypes = &#123;</span><br><span class="line">    value: PropTypes.object,</span><br><span class="line">    options: PropTypes.array,</span><br><span class="line">    onChange: PropTypes.func,</span><br><span class="line">    children: PropTypes.func</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> defaultProps = &#123;</span><br><span class="line">    value: <span class="literal">null</span>,</span><br><span class="line">    options: [],</span><br><span class="line">    onChange: <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;,</span><br><span class="line">    children: <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; options, value, onChange &#125; = <span class="keyword">this</span>.props;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div className=<span class="string">"tab-selector"</span>&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">          &#123;options.map(<span class="function"><span class="params">opt</span> =&gt;</span> (</span><br><span class="line">            &lt;li</span><br><span class="line">              key=&#123;opt.value&#125;</span><br><span class="line">              className=&#123;<span class="string">`tab-item <span class="subst">$&#123;</span></span></span><br><span class="line"><span class="string"><span class="subst">                opt.value === <span class="keyword">this</span>.props.value ? <span class="string">"selected"</span> : <span class="string">""</span></span></span></span><br><span class="line"><span class="string"><span class="subst">              &#125;</span>`</span>&#125;</span><br><span class="line">              onClick=&#123;() =&gt; <span class="keyword">this</span>.props.onChange(opt.value)&#125;</span><br><span class="line">            &gt;</span><br><span class="line">              &#123;opt.name&#125;</span><br><span class="line">            &lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">          ))&#125;</span></span><br><span class="line"><span class="regexp">        &lt;/u</span>l&gt;</span><br><span class="line">        &lt;br /&gt;</span><br><span class="line">        &lt;br /&gt;</span><br><span class="line">        &#123;<span class="keyword">this</span>.props.value &amp;&amp; <span class="keyword">this</span>.props.children(<span class="keyword">this</span>.props.value)&#125;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">const colors = [</span></span><br><span class="line"><span class="regexp">  &#123; name: "Red", value: "red" &#125;,</span></span><br><span class="line"><span class="regexp">  &#123; name: "Blue", value: "blue" &#125;,</span></span><br><span class="line"><span class="regexp">  &#123; name: "Orange", value: "orange" &#125;</span></span><br><span class="line"><span class="regexp">];</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">const animals = [</span></span><br><span class="line"><span class="regexp">  &#123; name: "Tiger", value: "tiger" &#125;,</span></span><br><span class="line"><span class="regexp">  &#123; name: "Elephant", value: "elephant" &#125;,</span></span><br><span class="line"><span class="regexp">  &#123; name: "Cow", value: "cow" &#125;</span></span><br><span class="line"><span class="regexp">];</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export class AdvancedTabSelectorSample extends PureComponent &#123;</span></span><br><span class="line"><span class="regexp">  state = &#123;</span></span><br><span class="line"><span class="regexp">    color: null</span></span><br><span class="line"><span class="regexp">  &#125;;</span></span><br><span class="line"><span class="regexp">  render() &#123;</span></span><br><span class="line"><span class="regexp">    return (</span></span><br><span class="line"><span class="regexp">      &lt;div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;h3&gt;Select color: &lt;/</span>h3&gt;</span><br><span class="line">        &lt;AdvancedTabSelector</span><br><span class="line">          options=&#123;colors&#125;</span><br><span class="line">          value=&#123;<span class="keyword">this</span>.state.color&#125;</span><br><span class="line">          onChange=&#123;c =&gt; <span class="keyword">this</span>.setState(&#123; <span class="attr">color</span>: c &#125;)&#125;</span><br><span class="line">        &gt;</span><br><span class="line">          &#123;color =&gt; (</span><br><span class="line">            &lt;span</span><br><span class="line">              style=&#123;&#123;</span><br><span class="line">                display: <span class="string">"inline-block"</span>,</span><br><span class="line">                backgroundColor: color,</span><br><span class="line">                width: <span class="string">"40px"</span>,</span><br><span class="line">                height: <span class="string">"40px"</span></span><br><span class="line">              &#125;&#125;</span><br><span class="line">            /&gt;</span><br><span class="line">          )&#125;</span><br><span class="line">        &lt;<span class="regexp">/AdvancedTabSelector&gt;</span></span><br><span class="line"><span class="regexp">        &lt;br /</span>&gt;</span><br><span class="line">        &lt;br /&gt;</span><br><span class="line">        &lt;br /&gt;</span><br><span class="line">        &lt;h3&gt;Select animal: <span class="xml"><span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span><br><span class="line">        &lt;AdvancedTabSelector</span><br><span class="line">          options=&#123;animals&#125;</span><br><span class="line">          value=&#123;<span class="keyword">this</span>.state.animal&#125;</span><br><span class="line">          onChange=&#123;c =&gt; <span class="keyword">this</span>.setState(&#123; <span class="attr">animal</span>: c &#125;)&#125;</span><br><span class="line">        &gt;</span><br><span class="line">          &#123;animal =&gt; (</span><br><span class="line">            &lt;img width=<span class="string">"100px"</span> src=&#123;<span class="built_in">require</span>(<span class="string">`../../images/<span class="subst">$&#123;animal&#125;</span>.png`</span>)&#125; /&gt;</span><br><span class="line">          )&#125;</span><br><span class="line">        &lt;<span class="regexp">/AdvancedTabSelector&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/03/12/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="caoxinhui">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="caoxinhui">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/12/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/" class="post-title-link" itemprop="url">防抖和节流</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-12 23:04:36" itemprop="dateCreated datePublished" datetime="2020-03-12T23:04:36+08:00">2020-03-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-04 13:05:36" itemprop="dateModified" datetime="2020-04-04T13:05:36+08:00">2020-04-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -545,96 +749,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="JavaScript模式"><a href="#JavaScript模式" class="headerlink" title="JavaScript模式"></a>JavaScript模式</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/02/27/%E9%97%AD%E5%8C%85/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="caoxinhui">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="caoxinhui">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/27/%E9%97%AD%E5%8C%85/" class="post-title-link" itemprop="url">闭包</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-27 10:03:49" itemprop="dateCreated datePublished" datetime="2020-02-27T10:03:49+08:00">2020-02-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 09:23:59" itemprop="dateModified" datetime="2020-02-28T09:23:59+08:00">2020-02-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
-                    <span itemprop="name">基础</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="你不知道的JS"><a href="#你不知道的JS" class="headerlink" title="你不知道的JS"></a>你不知道的JS</h3><blockquote>
-<p>闭包晦涩难懂</p>
+          <h3 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h3><blockquote>
+<p>你尽管触发事件，但是我一定在事件触发 n 秒后才执行，如果你在一个事件触发的 n 秒内又触发了这个事件，那我就以新的事件的时间为准，n 秒后才执行，总之，就是要等你触发完事件 n 秒内不再触发事件</p>
 </blockquote>
-<p>函数记住并访问其所在的词法作用域，叫做闭包现象，而此时函数对作用域的引用叫做闭包。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/02/27/%E9%97%AD%E5%8C%85/#more" rel="contents">
+              <a class="btn" href="/2020/03/12/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -689,7 +809,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 09:23:59" itemprop="dateModified" datetime="2020-02-28T09:23:59+08:00">2020-02-28</time>
+                <time title="修改时间：2020-03-21 16:26:14" itemprop="dateModified" datetime="2020-03-21T16:26:14+08:00">2020-03-21</time>
               </span>
 
           
@@ -730,7 +850,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/02/25/%E5%85%B3%E4%BA%8E-this/">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/03/21/react/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -744,7 +864,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/25/%E5%85%B3%E4%BA%8E-this/" class="post-title-link" itemprop="url">关于 this</a>
+            <a href="/2020/03/21/react/" class="post-title-link" itemprop="url">react</a>
         </h2>
 
         <div class="post-meta">
@@ -753,26 +873,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-02-25 20:58:44" itemprop="dateCreated datePublished" datetime="2020-02-25T20:58:44+08:00">2020-02-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-28 09:23:59" itemprop="dateModified" datetime="2020-02-28T09:23:59+08:00">2020-02-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
-                    <span itemprop="name">基础</span>
-                  </a>
-                </span>
+              <time title="创建时间：2020-03-21 12:58:52 / 修改时间：16:26:00" itemprop="dateCreated datePublished" datetime="2020-03-21T12:58:52+08:00">2020-03-21</time>
             </span>
 
           
@@ -786,89 +889,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>JavaScript中所有的函数都是对象？🤔这句话该怎么理解呢？<br>下面例子中的函数 foo 和对象 foo 指代的是同一个对象？ </p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/25/%E5%85%B3%E4%BA%8E-this/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/02/25/WebStorm%E5%BF%AB%E6%8D%B7%E9%94%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="caoxinhui">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="caoxinhui">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/25/WebStorm%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="post-title-link" itemprop="url">WebStorm快捷键</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-25 21:08:47" itemprop="dateCreated datePublished" datetime="2020-02-25T21:08:47+08:00">2020-02-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-26 18:26:53" itemprop="dateModified" datetime="2020-02-26T18:26:53+08:00">2020-02-26</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>command + shift + L 格式化代码<br>command + shift + O 跳到某个文件<br>ctrl + alt + R 运行文件</p>
-<p>command + option + esc 杀进程</p>
-<p>command + / 单行注释</p>
-<p>command + option + / 多行注释</p>
-<p>/** + enter 方法注释</p>
-<p>command + alt + T 用 if…else… 或者 try…catch 包住</p>
-<p>alt + / 与 enter 功能相似，代码自动补全</p>
-<p>command + R 替换</p>
-<p>command + G 查找下一个</p>
-<p>shift + F6 重命名</p>
-
+          const state={filter:'completed',todos:['Learn React']}
+const newState={...state,todos:[...state.todos,'Learn Redux']}
+const newState2 = Object.assign({},state,{todos:[
+        ...state.todos,
+        'Learn Redux'
+    ]})
       
     </div>
 
@@ -918,7 +944,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-26 18:11:27" itemprop="dateModified" datetime="2020-02-26T18:11:27+08:00">2020-02-26</time>
+                <time title="修改时间：2020-03-21 13:16:40" itemprop="dateModified" datetime="2020-03-21T13:16:40+08:00">2020-03-21</time>
               </span>
 
           
@@ -940,185 +966,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/12/29/Webpack/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/02/17/%E9%A1%B9%E7%9B%AE%E8%B8%A9%E5%9D%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="caoxinhui">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="caoxinhui">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/17/%E9%A1%B9%E7%9B%AE%E8%B8%A9%E5%9D%91/" class="post-title-link" itemprop="url">项目踩坑</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-17 11:46:15" itemprop="dateCreated datePublished" datetime="2020-02-17T11:46:15+08:00">2020-02-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-26 09:31:52" itemprop="dateModified" datetime="2020-02-26T09:31:52+08:00">2020-02-26</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>最近发现，项目重构的过程中，很容易出bug</p>
-<ul>
-<li><p>项目重构相较于项目 init ，不会那么谨慎。造成漏洞</p>
-</li>
-<li><p>测试资源也没有合理分配，导致项目重构了，却没有经过测试。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/17/%E9%A1%B9%E7%9B%AE%E8%B8%A9%E5%9D%91/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/01/17/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="caoxinhui">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="caoxinhui">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/17/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-title-link" itemprop="url">正则表达式</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-17 15:02:55" itemprop="dateCreated datePublished" datetime="2020-01-17T15:02:55+08:00">2020-01-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-24 09:24:40" itemprop="dateModified" datetime="2020-02-24T09:24:40+08:00">2020-02-24</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="正则匹配语法汇总"><a href="#正则匹配语法汇总" class="headerlink" title="正则匹配语法汇总"></a>正则匹配语法汇总</h2><table>
-<thead>
-<tr>
-<th>正则匹配</th>
-<th>语法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>regex.test(str)</td>
-<td>返回Boolean值</td>
-</tr>
-<tr>
-<td>str.match(regex)</td>
-<td>返回 由匹配内容组成的数组</td>
-</tr>
-<tr>
-<td>regex.exec(str)</td>
-<td>返回数组  [匹配内容，index, input, group]</td>
-</tr>
-<tr>
-<td>str.search(regex)</td>
-<td>返回第一次匹配regex的位置</td>
-</tr>
-<tr>
-<td>str.split(regex)</td>
-<td>返回按regex分割的数组</td>
-</tr>
-<tr>
-<td>str.replace(regex, callback)</td>
-<td>对匹配的内容进行callback替换</td>
-</tr>
-</tbody></table>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/17/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1210,14 +1057,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-count">58</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

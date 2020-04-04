@@ -54,7 +54,7 @@
 <meta property="og:description" content="实现一个简单的服务端渲染在前后端渲染相同的component，将输出一致的dom结构。完善的component属性及生命周期与客户端的render时机是react同构的关键react的虚拟dom以对象树的形式保存在内存中，并且是可以在任何支持JavaScript的环境中生成的，所以可以在浏览器和node中生成。这为前后端同构提供了先决条件。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-29T08:49:37.000Z">
-<meta property="article:modified_time" content="2020-02-18T11:56:02.038Z">
+<meta property="article:modified_time" content="2020-03-21T04:54:36.782Z">
 <meta property="article:author" content="caoxinhui">
 <meta property="article:tag" content="SSR">
 <meta name="twitter:card" content="summary">
@@ -242,7 +242,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 19:56:02" itemprop="dateModified" datetime="2020-02-18T19:56:02+08:00">2020-02-18</time>
+                <time title="修改时间：2020-03-21 12:54:36" itemprop="dateModified" datetime="2020-03-21T12:54:36+08:00">2020-03-21</time>
               </span>
 
           
@@ -298,6 +298,14 @@
 <h3 id="同构"><a href="#同构" class="headerlink" title="同构"></a>同构</h3><blockquote>
 <p>一套代码在服务端运行一遍，在客户端又运行一遍，服务端完成页面构建，客户端完成事件绑定</p>
 </blockquote>
+<p>同构并没有想象中那么美👻</p>
+<ul>
+<li>不容忽视的服务器端和浏览器环境差异，window、document、DOM以及 客户端与服务端渲染不一致。不一致可能会造成页面的闪动</li>
+<li>内存溢出 指程序在为自身申请内存时，没有足够的内存空间供自己使用，出现out of memory<ul>
+<li>注册事件必须放在 <code>componentDidMount</code> 。 在 componentWillMount 里做绑定事件就会发生内存溢出，因为 React 的设计是后端渲染只会运行 componentDidMount 之前的操作，而不会运行 componentWillUnmount 方法（一般解绑事件在这里）。</li>
+</ul>
+</li>
+</ul>
 <h3 id="React-服务端渲染原理"><a href="#React-服务端渲染原理" class="headerlink" title="React 服务端渲染原理"></a>React 服务端渲染原理</h3><blockquote>
 <p>React 的虚拟 DOM 以对象树的形式存在内存中，并且可以在任何支持JavaScript的环境中生成，所以可以在浏览器和Node中生成。这为前后端同构提供了先决条件。</p>
 </blockquote>
@@ -310,7 +318,8 @@
 </li>
 </ul>
 <p>renderToString，会为组件增加checksum，react在客户端通过checksum判断是否需要重新render，相同则不重新render，省略创建dom和挂载dom的过程，接着触发componentDidMount等事件来处理服务端上的未尽事宜（事件绑定等），从而加快了交互时间。不同时，组件将客户端上重新挂载render</p>
-<h3 id="静态资源处理方案"><a href="#静态资源处理方案" class="headerlink" title="静态资源处理方案"></a>静态资源处理方案</h3>
+<h3 id="静态资源处理方案"><a href="#静态资源处理方案" class="headerlink" title="静态资源处理方案"></a>静态资源处理方案</h3><p>静态资源：js、css、img 等非服务器动态运行生成的文件、静态资源被定义为一切可以在客户端或代理端缓存的资源</p>
+
     </div>
 
     
@@ -410,14 +419,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-count">58</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

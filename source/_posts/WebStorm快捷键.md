@@ -7,6 +7,7 @@ command + option + L 格式化代码
 command + shift + O 跳到某个文件
 ctrl + alt + R 运行文件
 alt + f12 打开终端
+cmd + d 复制当前行
 command + option + esc 杀进程
 
 command + / 单行注释

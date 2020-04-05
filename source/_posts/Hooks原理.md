@@ -6,6 +6,8 @@ tags:
 
 ### 前言
 
+!TODO 如何在hooks中使用异步方法？
+
 [参考文章](https://github.com/brickspert/blog/issues/26)
 <!-- more -->
 

@@ -59,3 +59,27 @@ new fproxy(1, 2)
 fproxy.prototype
 fproxy.foo
 ```
+<<<<<<< HEAD
+=======
+
+```js
+function createArray(...elements) {
+    let handler = {
+        get(target, propKey, receiver) {
+            let index = Number(propKey)
+            if (index < 0) {
+                propKey = String(target.length + index)
+            }
+            return Reflect.get(target, propKey, receiver)
+        }
+    }
+    let target = []
+    target.push(...elements)
+    return new Proxy(target, handler)
+}
+
+let arr = createArray('a','b','c')
+console.log(arr[-1])
+```
+
+>>>>>>> a8aa441fb77a94be9fa4c228e9e7986a180f191a

@@ -3,6 +3,9 @@ title: WebStorm快捷键
 date: 2020-02-25 21:08:47
 tags:
 ---
+
+webStorm快捷键汇总
+<!-- more -->
 command + option + L 格式化代码
 command + shift + O 跳到某个文件
 ctrl + alt + R 运行文件
@@ -25,3 +28,7 @@ command + R 替换
 command + G 查找下一个
 
 shift + F6 重命名
+
+cmd + home 回到顶部
+
+ctrl + tab 切换导航栏文件

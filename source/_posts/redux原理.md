@@ -5,7 +5,6 @@ tags:
 ---
 
 本文介绍了 react-imvc 和 redux 对状态更新的原理
-
 ## react-imvc 状态原理
 
 首先回顾一下 react-imvc 更新状态的使用方法。

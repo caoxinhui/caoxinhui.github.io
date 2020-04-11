@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc1a0b3c-0c08-45ae-862d-0610626201f2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/caoxinhui.github.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caoxinhui.github.io.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/Proxy.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Proxy.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +17,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Y4fieSVN0vLM5a7JBxUhKz3F9K" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -27,6 +32,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RunManager" selected="Node.js.helo.js">
     <configuration name="Untitled-1.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$USER_HOME$/Desktop/Untitled-1.js" working-dir="$USER_HOME$/Desktop">
@@ -65,6 +71,9 @@
       <workItem from="1583326647780" duration="70000" />
       <workItem from="1584766435630" duration="5895000" />
       <workItem from="1585977783871" duration="11950000" />
+      <workItem from="1586359861473" duration="1136000" />
+      <workItem from="1586443334731" duration="331000" />
+      <workItem from="1586573457249" duration="404000" />
     </task>
     <servers />
   </component>
@@ -148,10 +157,11 @@
       <screen x="80" y="23" width="1600" height="1027" />
     </state>
     <state x="570" y="275" width="540" height="524" key="StructurePopup/80.23.1600.1027@80.23.1600.1027" timestamp="1582207201458" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1585988025425">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="584" height="520" key="SwitcherDM" timestamp="1586573517369">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.0.1440.900/1440.-180.1920.1080/-1920.-180.1920.1080@0.0.1440.900" timestamp="1585988025425" />
+    <state width="584" height="520" key="SwitcherDM/0.0.1680.1050@0.0.1680.1050" timestamp="1586573517369" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1582711935561">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -164,11 +174,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900/1440.-180.1920.1080/-1920.-180.1920.1080@0.0.1440.900" timestamp="1582951804979" />
-    <state x="433" y="200" width="670" height="580" key="search.everywhere.popup" timestamp="1586082091185">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1586574617634">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="433" y="200" width="670" height="580" key="search.everywhere.popup/0.0.1440.900/1440.-180.1920.1080/-1920.-180.1920.1080@0.0.1440.900" timestamp="1586082091185" />
     <state x="2017" y="60" width="894" height="696" key="search.everywhere.popup/0.0.1440.900/1440.-180.1920.1080/-1920.-180.1920.1080@1440.-180.1920.1080" timestamp="1584782735970" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1583163511394" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1586574617634" />
   </component>
 </project>

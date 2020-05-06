@@ -12,6 +12,15 @@ tags: Git
 该命令会在本地主机生成一个目录，与远程主机的版本库同名。若要指定不同的目录名，将目录名作为git clone 命令的第二个参数
 `git clone <版本库的网址> <本地目录名>`
 
+### git 批量删除本地分支(删除分支名包含指定字符的分支)
+`git branch |grep 'xxx' |xargs git branch -D`
+
+### 删除当前分支以外的分支
+```js
+git branch | xargs git branch -d
+```
+
+
 ### git remote
 每个远程主机都有一个主机名，git remote 用于管理主机名
 

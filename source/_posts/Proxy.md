@@ -7,6 +7,8 @@ categories: ES6
 
 
 Proxy用于修改某些操作的默认行为，可以理解成在目标对象前拦截。
+
+<!-- more -->
 ```js
 var proxy = new Proxy(target,handler)
 ```
@@ -59,8 +61,6 @@ new fproxy(1, 2)
 fproxy.prototype
 fproxy.foo
 ```
-<<<<<<< HEAD
-=======
 
 ```js
 function createArray(...elements) {
@@ -82,4 +82,3 @@ let arr = createArray('a','b','c')
 console.log(arr[-1])
 ```
 
->>>>>>> a8aa441fb77a94be9fa4c228e9e7986a180f191a

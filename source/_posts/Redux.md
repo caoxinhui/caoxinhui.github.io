@@ -10,6 +10,8 @@ redux的核心概念，全局 store，所有的状态都会放在store中
 产生 store，其中reducer是一个纯函数
 `const store = createStore(reducer)
 `
+<!-- more -->
+
 store的三个方法
 1. getState()
 2. dispatch(action)

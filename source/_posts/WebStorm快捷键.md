@@ -32,3 +32,6 @@ shift + F6 重命名
 cmd + home 回到顶部
 
 ctrl + tab 切换导航栏文件
+
+cmd+shift+r 批量替换
+ctrl+shift+g 批量查找

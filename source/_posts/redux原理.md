@@ -9,7 +9,7 @@ tags:
 
 首先回顾一下 react-imvc 更新状态的使用方法。
 
-将 更新状态的方法，放到 `this.store.actions` 中，例如 `UPDATE_COUNT_DOWN_DATA` 方法，然后通过 `UPDATE_COUNT_DOWN_DATA(countDownList)` 执行方法 `UPDATE_COUNT_DOWN_DATA` 中的方法。
+将 更新状态的方法，放到 `this.store.actions` 中，例如 `UPDATE_COUNT_DOWN_DATA` 方法，然后通过 `UPDATE_COUNT_DOWN_DATA(countDownList)` 执行。
 其中，UPDATE_COUNT_DOWN_DATA 方法中的第一个参数是全局的state状态，后面一个参数就是传入的参数。 
 
 ``` js
@@ -42,7 +42,7 @@ let state = {
 
 let listeners = []
 
-function subscribe(listener) {
+function subscribe(listener) iter{
     listeners.push(listener)
 }
 
@@ -309,5 +309,7 @@ const createStore = function(reducer, initState) {
 
 ### 中间件 middleware
 
-> 中间件是对dispatch的扩展
+createStore(reducers[,initialState])
+reducer(previousState,action)=>newState
+
 

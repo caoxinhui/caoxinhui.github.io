@@ -18,6 +18,8 @@ store的三个方法
 UI上点击了一个button，可能产生一个action，store可以把它dispatch出去，dispatch给reducer，reducer是真正处理action的，并更新store
 3. subscribe(listener)
 监听store的变化，store有任何变化都会调用他的 callback-> listener
+4. replaceReducer(nextReducer) 
+更新当前store里的reducer
 
 
 ### 理解action

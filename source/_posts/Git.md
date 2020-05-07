@@ -15,6 +15,8 @@ tags: Git
 ### git 批量删除本地分支(删除分支名包含指定字符的分支)
 `git branch |grep 'xxx' |xargs git branch -D`
 
+
+
 ### 删除当前分支以外的分支
 ```js
 git branch | xargs git branch -d
@@ -334,3 +336,5 @@ npm 脚本有pre和post两个钩子。举例来说，build脚本命令的钩子�
 
 ![git.jpg](http://ww1.sinaimg.cn/large/92babc53gy1gbmq2fukejj21ai35sqm4.jpg)
 
+## Linux命令
+cat file.js 输入 file.js 文件内容

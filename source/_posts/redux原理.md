@@ -42,7 +42,7 @@ let state = {
 
 let listeners = []
 
-function subscribe(listener) iter{
+function subscribe(listener){
     listeners.push(listener)
 }
 
@@ -174,16 +174,16 @@ let state = {
 
 function counterReducer(state, action) {
     switch (action.type) {
-        case 'INCREMENT':
+        case 'INCRE':
             return {
                 count: state.count + 1
             }
-            case 'DECREMENT':
-                return {
-                    count: state.count - 1
-                }
-                default:
-                    return count
+        case 'DECRE':
+            return {
+                count: state.count - 1
+            }
+        default:
+            return count
     }
 }
 
@@ -194,35 +194,57 @@ function InfoReducer(state, action) {
                 ...state,
                 name: action.name
             }
-            case 'SET_DESCRIPTION':
-                return {
-                    ...state,
-                    description: action.description
-                }
-                default:
-                    return state
+        case 'SET_DESCRIPTION':
+            return {
+                ...state,
+                description: action.description
+            }
+        default:
+            return state
     }
 }
 
-const reducer = combineReducers({
+const reducers = combineReducers({
     counter: counterReducer,
     info: InfoReducer
 })
 
 function combineReducers(reducers) {
-    const reducerKeys = Object.keys(reducer)
-    return function combination(state = {}, action) {
+    const reducerKeys = Object.keys(reducers)
+    return function combination(state, actions) {
         const nextState = {}
         for (let i = 0; i < reducerKeys.length; i++) {
             const key = reducerKeys[i]
             const reducer = reducers[key]
-            const previousStateForKey = state[key]
-            const nextStateForKey = reducer(previousStateForKey, action)
+            const previousState = state[key]
+            const nextStateForKey = reducer(previousState, actions)
             nextState[key] = nextStateForKey
+            state[key] = nextStateForKey
         }
         return nextState
     }
 }
+
+let listeners = []
+
+function subscribe(listener) {
+    listeners.push(listener)
+}
+subscribe(() => {
+    console.log(state)
+})
+
+
+function changeCount() {
+    const newState = reducers(state, {type: 'INCRE'})
+    for (let i = 0; i < listeners.length; i++) {
+        listeners[i]()
+    }
+}
+
+changeCount()
+
+
 ```
 
 #### 使用

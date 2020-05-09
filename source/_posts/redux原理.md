@@ -5,26 +5,6 @@ tags:
 ---
 
 本文介绍了 react-imvc 和 redux 对状态更新的原理
-## react-imvc 状态原理
-
-首先回顾一下 react-imvc 更新状态的使用方法。
-
-将 更新状态的方法，放到 `this.store.actions` 中，例如 `UPDATE_COUNT_DOWN_DATA` 方法，然后通过 `UPDATE_COUNT_DOWN_DATA(countDownList)` 执行。
-其中，UPDATE_COUNT_DOWN_DATA 方法中的第一个参数是全局的state状态，后面一个参数就是传入的参数。 
-
-``` js
-const UPDATE_COUNT_DOWN_DATA = (state, payload) => {
-    const {
-        countdownlist
-    } = payload
-    return {
-        ...state,
-        countdownlist
-    }
-}
-```
-
-这样就增加了一个全局的状态countdownlist
 
 <!-- more -->
 
@@ -34,7 +14,7 @@ const UPDATE_COUNT_DOWN_DATA = (state, payload) => {
 
 ### 状态值 只有 count 值
 
-``` js
+```js
 // 修改count值后，使用count的地方都能收到通知。使用发布-订阅模式
 let state = {
     count: 1
@@ -65,7 +45,7 @@ changeCount(4)
 
 ### 将 count 值调整为 initState
 
-``` js
+```js
 const createStore = function(initState) {
     let state = initState
     let listeners = []
@@ -95,7 +75,7 @@ const createStore = function(initState) {
 
 ### 对状态约束，只允许通过 action 操作。（明确改动范围）
 
-``` js
+```js
 function plan(state, action) {
     switch (action.type) {
         case 'INCREMENT':
@@ -142,7 +122,7 @@ const createStore = function(plan, initState) {
 
 #### 使用
 
-``` js
+```js
 let initState = {
     count: 0
 }
@@ -161,7 +141,7 @@ store.changeState({
 
 ### 多文件协作
 
-``` js
+```js
 let state = {
     counter: {
         count: 0
@@ -249,7 +229,7 @@ changeCount()
 
 #### 使用
 
-``` js
+```js
 const reducer = combineReducers({
     counter: counterReducer,
     info: InfoReducer
@@ -280,7 +260,7 @@ store.dispatch({
 
 ### state 拆分与合并
 
-``` js
+```js
 let initState = {
     count: 0
 }
@@ -335,3 +315,77 @@ createStore(reducers[,initialState])
 reducer(previousState,action)=>newState
 
 
+```js
+const createStore = function (reducer, initState) {
+    let state = initState
+    let listeners = []
+
+    function subscribe(listener) {
+        listeners.push(listener)
+    }
+
+    function dispatch(action) {
+        state = reducer(state, action)
+        for (let i = 0; i < listeners.length; i++) {
+            listeners[i]()
+        }
+    }
+
+    function getState() {
+        return state
+    }
+
+    dispatch({type: Symbol()})
+
+    return {
+        subscribe,
+        dispatch,
+        getState
+    }
+}
+let state = {
+
+    count: 0
+
+}
+
+
+function counterReducer(state, action) {
+    switch (action.type) {
+        case 'INCRE':
+            return {
+                count: state.count + 1
+            }
+        case 'DECRE':
+            return {
+                count: state.count - 1
+            }
+        default:
+            return state
+    }
+}
+
+const loggerMiddleware = (action) => {
+    console.log('this state', store.getState());
+    console.log('action', action);
+    next(action);
+    console.log('next state', store.getState());
+}
+
+const exceptionMiddleware = (next) => (action) => {
+    try {
+        next(action)
+    } catch (e) {
+        console.error(e)
+    }
+}
+const store = createStore(counterReducer, state)
+const next = store.dispatch
+
+store.dispatch = exceptionMiddleware(loggerMiddleware)
+
+store.dispatch({
+    type: 'INCRE'
+})
+
+```

@@ -389,3 +389,44 @@ store.dispatch({
 })
 
 ```
+
+## react-imvc 状态管理
+
+```js
+const createStore = function (reducer, initState) {
+    let state = initState
+    let listeners = []
+
+    function subscribe(listener) {
+        listeners.push(listener)
+    }
+
+    function dispatch(action) {
+        state = reducer(state, action)
+        for (let i = 0; i < listeners.length; i++) {
+            listeners[i]()
+        }
+    }
+
+    function getState() {
+        return state
+    }
+
+    dispatch({type: Symbol()})
+    subscribe((data) => {
+        dispatch({
+            type: data.actionType,
+            payload: data.actionPayload
+        })
+    })
+    return {
+        subscribe,
+        dispatch,
+        getState
+    }
+}
+let state = {
+    count: 0
+}
+
+```

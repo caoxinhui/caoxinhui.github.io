@@ -5,8 +5,8 @@ tags:
 categories: 基础
 ---
 
-JavaScript中所有的函数都是对象？🤔这句话该怎么理解呢？
-下面例子中的函数 foo 和对象 foo 指代的是同一个对象？ 
+JavaScript中所有的函数都是对象
+下面例子中的函数 foo 和对象 foo 指代的是同一个对象 
 
 <!-- more -->
 

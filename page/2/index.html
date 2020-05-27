@@ -207,6 +207,85 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/04/04/react%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="caoxinhui">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="caoxinhui">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/04/react%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="post-title-link" itemprop="url">react性能优化</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-04 14:07:21 / 修改时间：14:14:50" itemprop="dateCreated datePublished" datetime="2020-04-04T14:07:21+08:00">2020-04-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/" itemprop="url" rel="index">
+                    <span itemprop="name">极客时间</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>异步渲染的两个部分</p>
+<ul>
+<li>时间分片<br>DOM操作的优先级低于浏览器原生行为，例如键盘和鼠标输入，从而保证操作的流畅</li>
+<li>渲染挂起<br>虚拟DOM节点可以等待某个异步操作的完成，并指定timeout，之后才完成真正的渲染。</li>
+</ul>
+<h3 id="时间分片"><a href="#时间分片" class="headerlink" title="时间分片"></a>时间分片</h3><ol>
+<li>虚拟dom的diff操作可以分片进行</li>
+<li>React新API：unstable_deferredUpdates<br>UI更新会等其他高优先级的UI更新先完成之后才更新</li>
+<li>Chrome新的API：requestIdleCallback<br>浏览器告诉你什么时候浏览器不忙了</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2019/12/28/React/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -261,69 +340,6 @@
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxinhui.github.io/2020/03/21/react/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="caoxinhui">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="caoxinhui">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/21/react/" class="post-title-link" itemprop="url">react</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-03-21 12:58:52 / 修改时间：16:26:00" itemprop="dateCreated datePublished" datetime="2020-03-21T12:58:52+08:00">2020-03-21</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          const state={filter:'completed',todos:['Learn React']}
-const newState={...state,todos:[...state.todos,'Learn Redux']}
-const newState2 = Object.assign({},state,{todos:[
-        ...state.todos,
-        'Learn Redux'
-    ]})
       
     </div>
 
@@ -1063,7 +1079,7 @@ const newState2 = Object.assign({},state,{todos:[
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-count">52</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

@@ -32,84 +32,10 @@ tags:
 
 [css 整理](https://mp.weixin.qq.com/s/W8-Cu8Mjh00Rze5o4bFKag)
 
-``` javascript
-// react-imvc 高阶组件源码
-/**
- * 
- * connect 是一个高阶函数，第一次调用时接受 selector 函数作为参数，返回 withData 函数。
- * withData 函数接受一个 React 组件作为参数，返回新的 React 组件。withData 会将 selector 函数返回的数据，作为 props 传入新的 React 组件
- * selector({ state, handlers, actions }) 函数将得到一个 data 参数，其中包含三个字段 state, handlers, acitons，分别对应 controller 里的 global state, global handlers 和 actions 对象。
- */
-
-import React from 'react'
-import GlobalContext from '../context'
-
-const returnNull = () => null
-export default (selector = returnNull) => InputComponent => {
-    return function Connector(props) {
-        return ( <
-            GlobalContext.Consumer > {
-                ({
-                    state,
-                    handlers,
-                    actions
-                }) => {
-                    return ( <
-                        InputComponent {
-                            ...props
-                        } {
-                            ...selector({
-                                state,
-                                handlers,
-                                actions,
-                                props
-                            })
-                        }
-                        />
-                    )
-                }
-            } <
-            /GlobalContext.Consumer>
-        )
-    }
-}
-```
-
-``` js
-const withData = connect(({
-    state
-}) => {
-    return {
-        content: state.loadingText
-    };
-});
-
-export default withData(Loading);
-
-connect(selector)(ReactComponent);
-// connect 是一个高阶函数，第一次调用时接受 selector 函数作为参数，返回 withData 函数。
-// withData 函数接受一个 React 组件作为参数，返回新的 React 组件
-// withData 会将 selector 函数返回的数据，作为 props 传入新的 React 组件。
-```
-
-``` js
-Object.defineProperties(exports, {
-    For: {
-        enumerable: true,
-        value: For
-    },
-    __esModule: {
-        value: true
-    }
-});
-Object.defineProperties(obj, props);
-// __esModule表示引入的是es6模块
-Object.defineProperty(obj, prop, descriptor);
-```
 
 取消浏览器记录滚动条位置
 
-``` js
+```js
 if ("scrollRestoration" in history) {
     history.scrollRestoration = "manual";
 } else {
@@ -119,7 +45,7 @@ if ("scrollRestoration" in history) {
 
 history.scrollRestoration 是新增的一个属性，值为 auto|manual, 默认为 auto 记录滚动条位置, 设为 manual 时就禁用记录位置的功能
 
-``` js
+```js
 componentDidMount() {
     history.scrollRestoration = 'manual';
 }
@@ -128,7 +54,7 @@ componentWillUnMount() {
 }
 ```
 
-``` js
+```js
 module.exports = {
     entry: {
         index: [path.resolve(__dirname, "../src/single/index.js")]
@@ -148,7 +74,7 @@ webpack 中对代码进行了哪些操作？
 
 多文件打包示例
 
-``` js
+```js
 const webpack = require("webpack");
 const path = require("path");
 
@@ -192,12 +118,12 @@ react-imvc preload是如何实现的？
 
 preload提前加载的方式
 
-``` html
+```html
 <!-- 使用 link 标签静态标记需要预加载的资源 -->
 <link rel="preload" href="/path/to/style.css" as="style">
 ```
 
-``` js
+```js
 // 或使用脚本动态创建一个 link 标签后插入到 head 头部
 // 当浏览器解析到这行代码就会去加载 href 中对应的资源但不执行，待到真正使用到的时候再执行
 const link = document.createElement('link');
@@ -207,43 +133,7 @@ link.href = '/path/to/style.css';
 document.head.appendChild(link);
 ```
 
-``` js
-// 在 HTTP 响应头中加上 preload 字段
-```
-
-React组件还有很多个地方可以直接访问父组件提供的Context：
-
-  + 构造方法
-
-  
-
-``` js
-    constructor(props, context)
-```
-
-  + 生命周期
-
-  
-
-``` js
-   -componentWillReceiveProps(nextProps, nextContext) -
-       shouldComponentUpdate(nextProps, nextState, nextContext) -
-       componetWillUpdate(nextProps, nextState, nextContext)
-```
-
-  + 对于面向函数的无状态组件，可以通过函数的参数直接访问组件的context
-
-  
-
-``` js
-  const StatelessComponent = (props, context) => (
-      ....
-  )
-```
-
-React.createContext 用法欠缺点。对于嵌套很深的context使用起来很臃肿
-
-``` js
+```jsx harmony
 import React from 'react'
 
 const CurrentRoute = React.createContext({
@@ -255,32 +145,22 @@ const CurrentUser = React.createContext({
 const IsStatic = React.createContext(false)
 
 export default function App() {
-    return ( <
-        CurrentRoute.Consumer > {
-            currentRoute =>
-            <
-            CurrentUser.Consumer > {
-                currentUser =>
-                <
-                IsStatic.Consumer > {
-                    isStatic =>
-                    !isStatic &&
-                    currentRoute.path === '/welcome' &&
-                    (currentUser ?
-`Welcome back, ${currentUser.name}!` :
+    return <CurrentRoute.Consumer> {currentRoute =>
+        <CurrentUser.Consumer> {currentUser =>
+            <IsStatic.Consumer> {isStatic =>
+                !isStatic &&
+                currentRoute.path === '/welcome' &&
+                (currentUser ?
+                        `Welcome back, ${currentUser.name}!` :
                         'Welcome!'
-                    )
-                } <
-                /IsStatic.Consumer>
-            } <
-            /CurrentUser.Consumer>
-        } <
-        /CurrentRoute.Consumer>
-    )
+                )
+            } </IsStatic.Consumer>}
+        </CurrentUser.Consumer>}
+    </CurrentRoute.Consumer>
 }
 ```
 
-``` js
+```jsx harmony
 import React, {
     useContext
 } from 'react'
@@ -307,50 +187,4 @@ export default function App() {
 }
 ```
 
-``` js
-import {
-    useContext
-} from 'react'
-import GlobalContext from '../context'
-export default () => {
-    let {
-        ctrl
-    } = useContext(GlobalContext)
-    return ctrl
-}
-```
-
-connect是一个高阶函数，第一次调用时接受selector函数作为参数，返回withData函数
-withData函数接受一个React组件作为参数，返回新的react组件，withData会将selector函数返回的数据，作为props传入新的react组件。
-
-``` js
-import React from 'react'
-import connect from 'react-imvc/hoc/connect'
-const withData = connect(({
-    state
-}) => {
-    return {
-        content: state.loadingText
-    }
-})
-export default withData(Loading)
-
-function Loading(props) {
-    if (!props.content) {
-        return null
-    }
-    return ( <
-        div id = "wxloading"
-        className = "wx_loading" >
-        <
-        div className = "wx_loading_inner" >
-        <
-        i className = "wx_loading_icon" / > {
-            props.content
-        } <
-        /div> <
-        /div>
-    )
-}
-```
 

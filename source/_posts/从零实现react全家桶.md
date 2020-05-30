@@ -21,7 +21,7 @@ tags:
 2. `npm init` 
 3. `touch webpack.dev.config.js` 编写基础配置文件
 
-``` js
+```js
 const path = require('path');
 module.exports = {
     entry: path.join(__dirname, 'src/index.js'),
@@ -32,32 +32,25 @@ module.exports = {
 };
 ```
 
-``` js
+```js
 // src/index.js
 document.getElementById('app').innerHTML = "This is index.html"
 ```
 
 在打包生成的 `bundle.js` 文件目录下，新建index.html，将bundle.js 插入HTML中
 
-``` js
-< !doctype html >
-    <
-    html lang = "en" >
-    <
-    head >
-    <
-    meta charset = "UTF-8" >
-    <
-    title > Document < /title> <
-    /head> <
-    body >
-    <
-    div id = "app" > < /div> <
-    script type = "text/javascript"
-src = "./bundle.js"
-charset = "utf-8" > < /script> <
-    /body> <
-    /html>
+```html
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Document </title></head>
+<body>
+<div id="app"></div>
+<script type="text/javascript" src="./bundle.js" charset="utf-8">
+</script>
+</body>
+</html>
 ```
 
 执行 webpack --config webpack.dev.config.js 生成打包文件，打开index.html 查看页面
@@ -76,7 +69,7 @@ charset = "utf-8" > < /script> <
 
 配置.babelrc文件
 
-``` js
+```json
 {
     "presets": [
         "es2015",
@@ -89,7 +82,7 @@ charset = "utf-8" > < /script> <
 
 修改webpack.dev.config.js，增加babel-loader！
 
-``` js
+```json
 /*cacheDirectory是用来缓存编译结果，下次编译加速*/
 module: {
     rules: [{
@@ -104,21 +97,20 @@ module: {
 
 `cnpm install react react-dom` 
 
-``` js
+```jsx harmony
 //  src/index.js
 import React from 'react';
 import ReactDom from 'react-dom';
 import Hello from './Hello/Hello.js'
 
-ReactDom.render( <
-        div > < Hello / > < /div>, document.getElementById('app'));
+ReactDom.render(<div><Hello/></div>, document.getElementById('app'));
 ```
 
 ### react-router
 
 `cnpm install --save react-router-dom` 
 
-``` js
+```jsx harmony
 import React from 'react';
 import {
     BrowserRouter as Router,
@@ -128,34 +120,19 @@ import {
 } from 'react-router-dom';
 import Home from '../pages/Home/Home';
 import Page1 from '../pages/Page1/Page1';
-const getRouter = () => ( <
-    Router >
-    <
-    div >
-    <
-    ul >
-    <
-    li > < Link to = "/" > 首页 < /Link></li >
-    <
-    li > < Link to = "/page1" > Page1 < /Link></li >
-    <
-    /ul> <
-    Switch >
-    <
-    Route exact path = "/"
-    component = {
-        Home
-    }
-    /> <
-    Route path = "/page1"
-    component = {
-        Page1
-    }
-    /> <
-    /Switch> <
-    /div> <
-    /Router>
-);
+
+const getRouter = () => (<Router>
+    <div>
+        <ul>
+            <li>< Link to="/"> 首页 </Link></li>
+            <li>< Link to="/page1"> Page1 </Link></li>
+        </ul>
+        <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route path="/page1" component={Page1}/>
+        </Switch>
+    </div>
+</Router>);
 
 export default getRouter;
 ```
@@ -166,7 +143,7 @@ export default getRouter;
 
 `npm install webpack-dev-server@2 --save-dev` 
 
-``` js
+```js
 // webpack.dev.config.js
 devServer: {
     contentBase: path.join(__dirname, './dist'),
@@ -185,12 +162,11 @@ devServer: {
 
 > hot : 启用Webpack的模块热替换特性。
 
- 
 `webpack-dev-server --config webpack.dev.config.js --color --progress --hot` 
 
  
 
-``` js
+```js
 // index.js 增加
 if (module.hot) {
     module.hot.accept();
@@ -202,7 +178,7 @@ if (module.hot) {
  --hot 效果可以用以下配置来替代：
  
 
-``` js
+```js
 const webpack = require('webpack');
 devServer: {
     hot: true
@@ -218,7 +194,7 @@ plugins: [
 [详细教程](http://cn.redux.js.org/index.html)
 action / reducer /
 
-``` js
+```js
 export function increment() {
     return {
         type: INCREMENT
@@ -228,7 +204,7 @@ export function increment() {
 
 reducer 是一个纯函数，接收action和旧的state, 生成新的state
 
-``` js
+```js
 export default function reducer(state = initState, action) {
     switch (action.type) {
         case INCREMENT:
@@ -243,7 +219,7 @@ export default function reducer(state = initState, action) {
 
 一个项目有很多的reducers, 我们要把他们整合到一起
 
-``` js
+```js
 export default function combineReducers(state = {}, action) {
     return {
         counter: counter(state.counter, action)
@@ -259,9 +235,9 @@ store 有以下职责：
 * 提供 getState() 方法获取 state；
 * 提供 dispatch(action) 触发reducers方法更新 state；
 * 通过 subscribe(listener) 注册监听器; 
-* 通过 subscribe(listener) 返回的函数注销监听器。
+* 通过 unsubscribe(listener) 返回的函数注销监听器。
 
-``` js
+```jsx harmony
 import {
     createStore
 } from 'redux';
@@ -272,7 +248,7 @@ export default store;
 
 用法
 
-``` js
+```jsx harmony
 import {
     increment
 } from './actions/counter';
@@ -289,7 +265,7 @@ unsubscribe();
 react-redux提供了一个方法connect
 connect接收两个参数，一个mapStateToProps, 就是把redux的state，转为组件的Props，还有一个参数是mapDispatchToprops, 就是把发射actions的方法，转为Props属性函数。
 
-``` js
+```jsx harmony
 import React, {
     Component
 } from 'react';
@@ -305,25 +281,13 @@ import {
 
 class Counter extends Component {
     render() {
-        return ( <
-            div >
-            <
-            div > 当前计数为 {
-                this.props.counter.count
-            } < /div> <
-            button onClick = {
-                () => this.props.increment()
-            } > 自增 <
-            /button> <
-            button onClick = {
-                () => this.props.decrement()
-            } > 自减 <
-            /button> <
-            button onClick = {
-                () => this.props.reset()
-            } > 重置 <
-            /button> <
-            /div>
+        return (
+            <div>
+                <div> 当前计数为 {this.props.counter.count} </div>
+                <button onClick={() => this.props.increment()}> 自增</button>
+                <button onClick={() => this.props.decrement()}> 自减</button>
+                <button onClick={() => this.props.reset()}> 重置</button>
+            </div>
         )
     }
 }
@@ -359,16 +323,15 @@ export default connect(mapStateToProps, mapDispatchToProps)(Counter);
 import {
     Provider
 } from 'react-redux'
-ReactDom.render( <
-    AppContainer >
-    <
-    Provider store = {
-        store
-    } > {
-        RootElement
-    } <
-    /Provider> <
-    /AppContainer>,
+
+ReactDom.render(
+    <AppContainer>
+        <Provider store={store}>
+            {
+                RootElement
+            }
+        </Provider>
+    </AppContainer>,
     document.getElementById('app')
 )
 ```
@@ -386,7 +349,7 @@ npm install css-loader style-loader --save-dev
 * style-loader将所有的计算后的样式加入页面中
 * 二者组合在一起使你能够把样式表嵌入webpack打包后的JS文件中。
 
-``` js
+```js
 {
     test: /\.css$/,
     use: ['style-loader', 'css-loader']
@@ -397,7 +360,7 @@ npm install css-loader style-loader --save-dev
 
 npm install --save-dev url-loader file-loader
 
-``` js
+```js
 // options limit 8192意思是，小于等于8K的图片会被转成base64编码，直接插入HTML中，减少HTTP请求。
 {
     test: /\.(png|jpg|gif)$/,
@@ -414,7 +377,7 @@ npm install --save-dev url-loader file-loader
 
 `npm install bundle-loader --save-dev` 
 
-``` js
+```jsx harmony
 import React, {
     Component
 } from 'react'
@@ -448,36 +411,29 @@ class Bundle extends Component {
 export default Bundle;
 ```
 
-``` js
+```jsx harmony
 import Home from 'bundle-loader?lazy&name=home!pages/Home/Home';
 
-const Loading = function() {
-    return <div > Loading... < /div>
-};
+const Loading = function () {
+    return <div> Loading... < /div>
+        };
 
-const createComponent = (component) => (props) => ( <
-    Bundle load = {
-        component
-    } > {
-        (Component) => Component ? < Component {
-            ...props
-        }
-        /> : <Loading / >
-    } <
-    /Bundle>
-);
-
-<
-Route exact path = "/"
-component = {
-    createComponent(Home)
-}
-/>
+const createComponent = (component) => (props) => (
+<>
+    <Bundle load={component}>
+        {(Component) => Component ? <Component {...props} /> : <Loading/>}
+    </Bundle>;
+    <Route
+        exact
+        path="/"
+        component={createComponent(Home)}
+    />
+</>)
 ```
 
 加个chunkFilename。chunkFilename是除了entry定义的入口js之外的js
 
-``` js
+```js
 output: {
     path: path.join(__dirname, './dist'),
     filename: 'bundle.js',
@@ -487,7 +443,7 @@ output: {
 
 ### 缓存
 
-``` js
+```js
 output: {
     path: path.join(__dirname, './dist'),
     filename: '[name].[chunkhash].js',
@@ -497,7 +453,7 @@ output: {
 
 ### 提取公共代码
 
-``` js
+```js
 entry: {
     app: [
         'react-hot-loader/patch',
@@ -513,7 +469,7 @@ new webpack.optimize.CommonsChunkPlugin({
 
 ### 文件压缩
 
-``` js
+```js
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
@@ -525,7 +481,7 @@ module.exports = {
 
 ### 指定坏境
 
-``` js
+```js
 module.exports = {
     plugins: [
         new webpack.DefinePlugin({
@@ -539,7 +495,7 @@ module.exports = {
 
 ### 打包优化
 
-``` js
+```js
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 plugins: [
     new CleanWebpackPlugin(['dist'])
@@ -548,7 +504,7 @@ plugins: [
 
 ### 抽取css
 
-``` js
+```js
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     module: {
@@ -573,7 +529,7 @@ module.exports = {
 
 [教程](http://www.ruanyifeng.com/blog/2016/06/css_modules.html)
 
-``` js
+```js
 // webpack.dev.config.js
 module: {
     rules: [{
@@ -583,7 +539,7 @@ module: {
 }
 ```
 
-``` js
+```js
 // webpack.config.js
 module: {
     rules: [{

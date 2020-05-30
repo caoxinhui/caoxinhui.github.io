@@ -158,6 +158,7 @@ for (let [, value] of map) {
 - padStart
 - padEnd
 
+
 ### 第六章 数值的扩展
 - Number.isFinite
 - Number.isNaN
@@ -171,7 +172,6 @@ for (let [, value] of map) {
 - Math.trunc 返回整数部分
 - Math.sign  判断正负
 - ** 指数运算符 a ** b = a^b
-
 ### 第七章 数组的扩展
 
 #### Array.from 将两类对象转换成数组👇
@@ -243,18 +243,6 @@ Array.from，扩展运算符，entries，keys，values 会将空位转为 undefi
 
 
 ### 第八章 函数的扩展
-#### 箭头函数
-
-👇undefined，如果把匿名函数改成箭头函数，返回42 
-```js
-
-function foo() {
-  setTimeout(function() {
-    console.log(this.id)
-  }, 100)
-}
-foo.call({ id: 42 })
-```
 
 #### 尾递归
 

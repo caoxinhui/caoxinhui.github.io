@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fc1a0b3c-0c08-45ae-862d-0610626201f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-imvc/controller/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-imvc/controller/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +24,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Markdown" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -74,6 +76,8 @@
       <workItem from="1588936178034" duration="3500000" />
       <workItem from="1588987928763" duration="6219000" />
       <workItem from="1589194129606" duration="2703000" />
+      <workItem from="1589287361440" duration="1174000" />
+      <workItem from="1589375500629" duration="136000" />
     </task>
     <servers />
   </component>
@@ -174,11 +178,12 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900/1440.-180.1920.1080/-1920.-180.1920.1080@0.0.1440.900" timestamp="1589197484008" />
-    <state x="433" y="200" width="670" height="580" key="search.everywhere.popup" timestamp="1589198390496">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1589201846246">
+      <screen x="80" y="23" width="1600" height="1027" />
     </state>
     <state x="433" y="200" width="670" height="580" key="search.everywhere.popup/0.0.1440.900/1440.-180.1920.1080/-1920.-180.1920.1080@0.0.1440.900" timestamp="1589198390496" />
     <state x="2017" y="60" width="894" height="696" key="search.everywhere.popup/0.0.1440.900/1440.-180.1920.1080/-1920.-180.1920.1080@1440.-180.1920.1080" timestamp="1584782735970" />
     <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1586574617634" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/80.23.1600.1027@80.23.1600.1027" timestamp="1589201846246" />
   </component>
 </project>

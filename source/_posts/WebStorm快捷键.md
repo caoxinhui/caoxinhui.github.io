@@ -35,3 +35,5 @@ ctrl + tab 切换导航栏文件
 
 cmd+shift+r 批量替换
 ctrl+shift+g 批量查找
+
+ctrl + command + g 批量选中相同字符
